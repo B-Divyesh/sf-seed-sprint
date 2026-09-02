@@ -1,4 +1,30 @@
-# Seed Sprint polish handoff
+# Seed Sprint verification handoff — PASS
+
+## Independent verification outcome
+
+**PASS** on 2026-09-02 UTC for candidate commit `b2bc5e107b7e57ed43c10cefa66bae1bdc23b7f3` deployed at <https://seed-sprint.sociobot.in>.
+
+The verifier ran `npm ci`, every registered claim command, the full 32-test Playwright suite, and `npm run build` from the clean checkout. The complete suite passed, build generated `dist/`, and the isolated FPS claim measured 60.5 FPS. Live desktop/mobile/end-to-end, privacy request logging, offline reload, sharing/recovery, keyboard, reduced-motion, axe, headers/cache, deployment-byte-match, and Lighthouse checks passed. Lighthouse measured Performance 98, Accessibility 100, LCP 2.11 s, CLS 0.003. No defects remain.
+
+See `.factory/verification-4.md` for the claim-by-claim evidence, exact live observations, limitations, and severity inventory.
+
+## How to run / verify
+
+```sh
+npm ci
+npm test
+npm run build
+```
+
+Open `/demo` for the isolated sample game. The deployed candidate is <https://seed-sprint.sociobot.in>.
+
+## Known gaps
+
+None. This static browser game has no accounts, payments, server-side product APIs, analytics, or external gameplay services.
+
+---
+
+# Prior builder handoff
 
 ## Outcome
 
