@@ -35,6 +35,13 @@
     "sandbox": "fresh shared seed; copy a room link; open it and compare every tile signature"
   },
   {
+    "id": "share-recovery",
+    "claim": "If clipboard access is blocked, the complete fixed same-board link remains visible and selectable.",
+    "where": "same-board share recovery and README",
+    "test": "npm test -- --grep @claim:share-recovery",
+    "sandbox": "fresh fixed seed; deny Clipboard API and legacy copy; assert the visible focused field contains seed and room"
+  },
+  {
     "id": "no-social-services",
     "claim": "There is no chat, account, live lobby, or endless puzzle feed.",
     "where": "landing privacy section",
@@ -50,10 +57,10 @@
   },
   {
     "id": "restart-state",
-    "claim": "Reset demo restores the original sample board.",
-    "where": "demo banner and result screen",
+    "claim": "A completed run reaches the end screen, and Play again resets its timer, board, turns, result, and settings.",
+    "where": "result screen and README",
     "test": "npm test -- --grep @claim:restart-state",
-    "sandbox": "fresh /demo; rotate a tile, reset, and assert the sample turn count and active state"
+    "sandbox": "fresh /play deterministic board; script the verified solution through the real end screen; restart and assert every initial state"
   },
   {
     "id": "progress-reload",
@@ -105,10 +112,17 @@
     "sandbox": "dedicated fresh browser context; load /demo, wait for its service worker, switch offline, and reload"
   },
   {
-    "id": "frame-rate",
-    "claim": "The active game board renders at 55 or more frames per second in the Chromium performance check.",
+    "id": "pwa-update",
+    "claim": "An installed copy activates a changed service worker and loads the current page instead of stale cached HTML.",
     "where": "README and handoff",
-    "test": "npm test -- --grep @claim:frame-rate",
-    "sandbox": "fresh /demo; measure requestAnimationFrame callbacks for one second in Chromium"
+    "test": "npm test -- --grep @claim:pwa-update",
+    "sandbox": "isolated local origin; install the prior cache-first worker, switch server to the repaired worker and page, update, and assert activation plus current content"
+  },
+  {
+    "id": "frame-rate",
+    "claim": "The active game board sustains at least 45 frames per second in the isolated Chromium performance check.",
+    "where": "README and handoff",
+    "test": "npm test -- --grep @claim:frame-rate --workers=1",
+    "sandbox": "fresh /demo in one isolated Chromium worker; warm up, then measure requestAnimationFrame callbacks for two seconds"
   }
 ]

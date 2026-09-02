@@ -4,7 +4,7 @@
 * { box-sizing: border-box; }
 body { min-width: 320px; min-height: 100vh; margin: 0; background-color: #f4e8ce; background-image: radial-gradient(rgba(23, 40, 32, .075) .7px, transparent .8px); background-size: 5px 5px; font-size: 18px; line-height: 1.5; }
 a { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; color: inherit; font-weight: 700; text-underline-offset: 4px; }
-a:focus-visible { outline: 4px solid #e4ad19; outline-offset: 3px; }
+a:focus-visible { outline: 4px solid #00665f; outline-offset: 3px; box-shadow: 0 0 0 7px #fff9ea; }
 .skip-link { position: fixed; z-index: 2; top: -80px; left: 16px; padding: 12px 16px; color: #fff9ea; background: #172820; }
 .skip-link:focus { top: 16px; }
 header { max-width: 1360px; margin: auto; padding: 20px clamp(20px, 4vw, 64px); }

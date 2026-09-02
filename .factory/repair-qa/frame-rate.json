@@ -1,0 +1,10 @@
+{
+  "viewport": "390x844",
+  "cpu_throttling": "4x",
+  "sample_seconds": 5,
+  "fps": 60.0024,
+  "frames": 300,
+  "max_interval_ms": 16.8,
+  "p95_interval_ms": 16.7,
+  "measured_utc": "2026-09-02"
+}

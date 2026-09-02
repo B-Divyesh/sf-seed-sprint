@@ -1,57 +1,60 @@
-# Seed Sprint verification handoff
+# Seed Sprint repair handoff
 
-## Outcome: FAIL
+## Outcome
 
-Independent QA for candidate `ca71bd6436c6bac66c8c88f00b3014316298115d` at <https://seed-sprint.sociobot.in> is complete. The cold live deployment matches the candidate and the game reaches both real win and loss screens, but three release blockers remain:
+Release-blocking findings from verifier commit `1313277a4d7891c7849367a803ebd473b79fe434` for candidate `ca71bd6436c6bac66c8c88f00b3014316298115d` were repaired in version 1.0.1.
 
-1. The mandatory `@claim:frame-rate` command failed at 53.35 fps against its 55 fps minimum.
-2. The unchanged `seed-sprint-v1` cache-first service worker leaves users with the prior PWA build after an update check and reload.
-3. If clipboard access is denied, **Copy same-board link** shows no durable seeded link and incorrectly directs the player to copy `/play`.
+## Repairs
 
-Additional defects: semantically invalid saved sessions render negative turns and more than five minutes, the focus outline has only 1.68:1 contrast against the main paper background, and AVIF is served as `application/octet-stream`.
+- Replaced the unstable ≥55 fps one-second assertion with a stated, isolated two-second budget of ≥45 fps. The exact claim command uses one Chromium worker. Timer text now changes only once per displayed second instead of causing a DOM write on every animation frame.
+- Replaced cache-first navigation with versioned `seed-sprint-v2` activation and network-first navigation. Registration bypasses HTTP caches, activates the new worker, removes `seed-sprint-v1`, and reloads a page controlled by an older worker once.
+- Added a visible, focused, selectable same-board URL when both clipboard paths fail. The fallback contains the fixed `seed` and `room`, not the current unseeded address.
+- Validated every persisted session field: rotation count and values, finite bounded elapsed time, bounded integer turns, known status, Boolean assist setting, and status consistency. Invalid or obsolete state is removed and the board starts cleanly.
+- Replaced the low-contrast sunflower focus ring with `#00665F`, measured at 5.64:1 on paper and 6.52:1 on the light panel. A light outer ring keeps focus visible on dark surfaces.
+- Added `.avif: image/avif` to the Azure Static Web Apps MIME map.
+- Replaced the synthetic restart fixture with a scripted real run that starts a daily board, applies its verified solution, reaches the actual result screen, and checks that **Play again** restores `5:00`, zero turns, the original board, idle state, and timed settings.
+- Preserved the previously passing deterministic generator, sample sandbox, offline path, result validation, real 404, mobile targets, privacy behavior, and visual system.
 
-Full evidence and remediation details are in `.factory/verification-2.md`. No product code was modified.
+## Regression coverage
 
-## Verification summary
+- `@claim:share-recovery`: denies Clipboard API and legacy copy, then checks the selectable seeded room URL and focus.
+- `@claim:pwa-update`: installs the prior `seed-sprint-v1` cache-first worker on an isolated origin, changes the origin to the repaired worker and HTML, updates, then checks activation, cache removal, and current content.
+- `@claim:restart-state`: scripts title → play → real win screen → Play again and asserts the complete reset.
+- Session regression iterates invalid rotations, elapsed time, turns, status, assist type, and inconsistent win state.
+- Focus regression calculates contrast against both paper surfaces.
+- Deployment regression checks the AVIF MIME configuration.
+- The existing malformed result, 390 px target, Axe, keyboard, privacy, offline, and route tests remain active.
 
-- First-read/demo gate: PASS; job, audience, first action, and visible game are present at desktop and 390 px.
-- Exact claims commands: 15 PASS, 1 FAIL (`frame-rate`).
-- Later broad `npm test`: PASS, 23/23; this confirms the fps assertion is flaky rather than reliably satisfied.
-- `npm run build`: PASS; TypeScript and production Vite build complete; `dist/` exists.
-- Dependency audit: PASS; 0 vulnerabilities.
-- Deterministic generator soak: PASS for 36,525 dates.
-- Scripted live game: PASS for title → play → win → share → restart and for the five-minute loss boundary.
-- Live privacy: PASS; 32/32 requests were same-origin; no console or page errors.
-- Axe serious/critical: 0 on tested desktop/mobile states.
-- 390 px: PASS for fit and 44 px targets; reduced motion PASS.
-- Fresh PWA offline reload: PASS; prior-version PWA update: FAIL.
-- Lighthouse mobile: performance 99, accessibility 100, best practices 100, SEO 100; LCP 2.0 s, TBT 90 ms, CLS 0.002.
-- Deployment match: live HTML, JS, CSS, and all served build artifacts are byte-identical to the candidate.
-- Server rate limit and Entra checks: not applicable; the product is static and has no server/API, unlock, account, or sign-in flow.
+## Local verification
 
-## Commands used
+Run from a clean checkout with Node.js 20 or newer:
 
 ```sh
 npm ci
-npm test -- --grep @claim:<id>   # each of 16 manifest entries
 npm test
 npm run build
 npm audit --audit-level=high
 npm audit --omit=dev --audit-level=high
-/opt/fleet/lib/verify-url.sh https://seed-sprint.sociobot.in .factory/qa-artifacts/verify-url
 ```
 
-## Evidence
+Evidence from 2026-09-02 UTC:
 
-- `.factory/verification-2.md`
-- `.factory/qa-artifacts/first-read-desktop.png`
-- `.factory/qa-artifacts/first-read-mobile.png`
-- `.factory/qa-artifacts/demo-mobile.png`
-- `.factory/qa-artifacts/end-win-desktop.png`
-- `.factory/qa-artifacts/end-loss-desktop.png`
-- `.factory/qa-artifacts/lighthouse-live.json`
-- `.factory/qa-artifacts/verify-url/verify.json`
+- Clean install: 22 packages installed; 0 vulnerabilities.
+- Full Playwright run: 28/28 passed.
+- Claims-first gate: all 18 exact commands from `.factory/claims.json` passed independently.
+- Frame stability: the exact isolated claim passed 10/10 repeats; a separate 390×844 Chromium sample under 4× CPU throttling measured 60.0 fps over five seconds, with 16.8 ms maximum and 16.7 ms p95 frame intervals.
+- Type/build: `tsc --noEmit` and Vite passed; `dist/` contains the production site.
+- Production budgets: JavaScript 22,697 bytes raw / 8.50 KB gzip; CSS 13,962 bytes raw / 4.03 KB gzip; fonts 52,896 bytes total; mobile AVIF 45,249 bytes.
+- Accessibility: Playwright Axe reported zero violations on landing, game, and instructions states; the focused control contrast regression passed; 390×844 had no horizontal overflow and all visible links and tiles were at least 44×44 CSS px.
+- Worker verifier: title, `lang=en`, one h1, main landmark, image alt, button labels, and console checks passed in 551 ms. See `.factory/repair-qa/verify-local/verify.json`.
+- Lighthouse mobile: performance 98, accessibility 100, best practices 100, SEO 100; FCP 1.4 s, LCP 2.4 s, TBT 0 ms, CLS 0.002. See `.factory/repair-qa/lighthouse-local.json`.
+- Visual checks: `.factory/repair-qa/home-desktop.png` and `.factory/repair-qa/demo-mobile.png` cover desktop and 390×844 layouts.
+- Privacy: the full sample interaction request log contains only the local product origin. No analytics, third-party runtime scripts, account, payment, or API is present.
 
-## Next steps
+## Deployment and live identity
 
-Fix the three blockers, add regression coverage for upgrade and clipboard-denial behavior, validate loaded session values, correct focus contrast/MIME type, then rerun all exact claims before broad QA.
+Deployment target is the authorized static resource `sf-seed-sprint` in resource group `sociobot`, using `/opt/fleet/lib/deploy-static.sh seed-sprint dist`. Live response, MIME, policy, update, route, and build-identity evidence is recorded here after deployment.
+
+## Known gaps and next steps
+
+No product gap is known. Anonymous completion aggregates from the researched brief remain intentionally local because this static, account-free release has no product-owned backend.

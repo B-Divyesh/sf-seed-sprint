@@ -25,6 +25,7 @@ interface Session {
 const app = document.querySelector<HTMLDivElement>('#app')!;
 const DEMO_SEED = 'SPROUT-7';
 const MAX_SHARED_TURNS = 9_999;
+const MAX_ASSIST_SECONDS = 86_400;
 let cleanupGame: (() => void) | undefined;
 
 function path(): string {
@@ -59,7 +60,7 @@ function shell(content: string, demo = false): string {
     <footer>
       <p><strong>Seed Sprint</strong> is a five-minute daily signal puzzle.</p>
       <nav aria-label="Footer navigation"><a data-route href="/privacy">Privacy</a><a data-route href="/terms">Terms</a><a href="https://hello-factory.sociobot.in" rel="noreferrer">Built by Param Factory <span class="sr-only">(external site)</span></a></nav>
-      <p class="fine-print">Version 1.0.0 · Hero image generated for this game.</p>
+      <p class="fine-print">Version 1.0.1 · Hero image generated for this game.</p>
     </footer>
     <div class="route-announcer sr-only" aria-live="polite"></div>
     <dialog class="help-dialog" aria-labelledby="help-title">
@@ -124,12 +125,34 @@ function initialSession(board: Board, demo: boolean): Session {
 
 function loadSession(board: Board, demo: boolean): Session {
   try {
-    const parsed = JSON.parse(localStorage.getItem(storageKey(board.seed, demo)) || 'null') as Session | null;
-    if (parsed && Array.isArray(parsed.rotations) && parsed.rotations.length === board.tiles.length) return parsed;
+    const key = storageKey(board.seed, demo);
+    const parsed: unknown = JSON.parse(localStorage.getItem(key) || 'null');
+    if (isValidSession(parsed, board)) return parsed;
+    if (parsed !== null) localStorage.removeItem(key);
   } catch {
     // A malformed local entry should not stop a game.
   }
   return initialSession(board, demo);
+}
+
+function isValidSession(value: unknown, board: Board): value is Session {
+  if (!value || typeof value !== 'object') return false;
+  const session = value as Record<string, unknown>;
+  const rotations = session.rotations;
+  const status = session.status;
+  const elapsed = session.elapsed;
+  const turns = session.turns;
+  const assist = session.assist;
+  if (!Array.isArray(rotations) || rotations.length !== board.tiles.length || !rotations.every((rotation) => Number.isInteger(rotation) && rotation >= 0 && rotation <= 3)) return false;
+  if (!['idle', 'playing', 'paused', 'won', 'lost'].includes(String(status))) return false;
+  if (typeof assist !== 'boolean' || typeof elapsed !== 'number' || !Number.isFinite(elapsed) || elapsed < 0) return false;
+  if (typeof turns !== 'number' || !Number.isSafeInteger(turns) || turns < 0 || turns > MAX_SHARED_TURNS) return false;
+  if (elapsed > (assist ? MAX_ASSIST_SECONDS : ROUND_SECONDS)) return false;
+  if (status === 'idle' && (elapsed !== 0 || turns !== 0)) return false;
+  if (status === 'lost' && (assist || elapsed !== ROUND_SECONDS)) return false;
+  if (status === 'won' && !isSolved(board, rotations)) return false;
+  if ((status === 'playing' || status === 'paused') && !assist && elapsed >= ROUND_SECONDS) return false;
+  return true;
 }
 
 function saveSession(board: Board, session: Session, demo: boolean): void {
@@ -156,7 +179,7 @@ function renderGamePage(demo: boolean): void {
           <div class="board-shell" data-board-shell>${boardHtml(board, session.rotations, getPowered(board, session.rotations))}${statusOverlay(session, demo)}</div>
           <p class="board-status" data-status aria-live="polite">${statusText(board, session)}</p>
         </section>
-        <div class="run-notes" role="region" aria-label="Board details"><div><span>Board seed</span><strong>${escapeText(seed)}</strong></div><div><span>Turns</span><strong data-turns>${session.turns}</strong></div><button data-copy-room>Copy same-board link</button><p>Friends can play this exact board at any time.</p></div>
+        <div class="run-notes" role="region" aria-label="Board details"><div><span>Board seed</span><strong>${escapeText(seed)}</strong></div><div><span>Turns</span><strong data-turns>${session.turns}</strong></div><button data-copy-room>Copy same-board link</button><p>Friends can play this exact board at any time.</p><section class="share-recovery room-share-recovery" data-room-share-fallback hidden aria-live="polite"><strong>Copy this same-board link</strong><label for="same-board-link">Your browser blocked copying. Select this fixed link and copy it yourself.</label><input id="same-board-link" data-same-board-link type="url" readonly></section></div>
       </div>
     </section>
   `, demo);
@@ -210,6 +233,7 @@ function startGame(board: Board, session: Session, demo: boolean): void {
   let frame = 0;
   let lastTime = performance.now();
   let lastSavedSecond = Math.floor(session.elapsed);
+  let lastTimerText = session.assist ? 'No limit' : formatTime(ROUND_SECONDS - session.elapsed);
   const shellElement = document.querySelector<HTMLElement>('[data-board-shell]')!;
 
   function refreshBoard(focusIndex?: number): void {
@@ -219,7 +243,8 @@ function startGame(board: Board, session: Session, demo: boolean): void {
     document.querySelector('[data-turns]')!.textContent = String(session.turns);
     document.querySelector('[data-status]')!.textContent = statusText(board, session);
     const timer = document.querySelector<HTMLElement>('[data-timer]');
-    if (timer) timer.textContent = session.assist ? 'No limit' : formatTime(ROUND_SECONDS - session.elapsed);
+    lastTimerText = session.assist ? 'No limit' : formatTime(ROUND_SECONDS - session.elapsed);
+    if (timer) timer.textContent = lastTimerText;
     const pause = document.querySelector<HTMLButtonElement>('[data-pause]');
     if (pause) pause.disabled = session.status !== 'playing';
   }
@@ -253,6 +278,7 @@ function startGame(board: Board, session: Session, demo: boolean): void {
     const fresh = initialSession(board, demo);
     Object.assign(session, fresh);
     lastTime = performance.now();
+    lastSavedSecond = Math.floor(session.elapsed);
     refreshBoard(selected);
   }
 
@@ -292,7 +318,19 @@ function startGame(board: Board, session: Session, demo: boolean): void {
     url.searchParams.set('seed', board.seed);
     url.searchParams.set('room', roomCode(board.seed));
     const copied = await copyText(String(url));
-    announce(copied ? 'Same-board link copied.' : 'The link could not be copied. Copy the address from your browser.');
+    if (copied) {
+      announce('Same-board link copied.');
+      return;
+    }
+    const fallback = document.querySelector<HTMLElement>('[data-room-share-fallback]');
+    const field = document.querySelector<HTMLInputElement>('[data-same-board-link]');
+    if (fallback && field) {
+      field.value = String(url);
+      fallback.hidden = false;
+      field.focus();
+      field.select();
+    }
+    announce('Copying was blocked. The fixed same-board link is ready to select and copy.');
   });
   document.querySelector<HTMLButtonElement>('[data-reset-demo]')?.addEventListener('click', reset);
   document.querySelector<HTMLAnchorElement>('[data-exit-demo]')?.addEventListener('click', () => {
@@ -344,8 +382,12 @@ function startGame(board: Board, session: Session, demo: boolean): void {
         saveCompletion(board.seed, session, demo);
         refreshBoard();
       }
-      const timer = document.querySelector<HTMLElement>('[data-timer]');
-      if (timer) timer.textContent = session.assist ? 'No limit' : formatTime(ROUND_SECONDS - session.elapsed);
+      const timerText = session.assist ? 'No limit' : formatTime(ROUND_SECONDS - session.elapsed);
+      if (timerText !== lastTimerText) {
+        const timer = document.querySelector<HTMLElement>('[data-timer]');
+        if (timer) timer.textContent = timerText;
+        lastTimerText = timerText;
+      }
       if (Math.floor(session.elapsed) !== lastSavedSecond) {
         lastSavedSecond = Math.floor(session.elapsed);
         saveSession(board, session, demo);
@@ -470,7 +512,18 @@ function renderRoute(): void {
 }
 
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => undefined));
+  window.addEventListener('load', () => {
+    const replacingActiveWorker = Boolean(navigator.serviceWorker.controller);
+    let reloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!replacingActiveWorker || reloading) return;
+      reloading = true;
+      location.reload();
+    });
+    navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
+      .then((registration) => registration.update())
+      .catch(() => undefined);
+  });
 }
 
 renderRoute();

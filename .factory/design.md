@@ -19,6 +19,7 @@ Single light treatment, chosen to resemble warm uncoated stock. Dark overlays pr
 | teal | `#087A72` | live signal and focus accents |
 | coral | `#C83E2B` | source, urgency, selected state |
 | sunflower | `#E4AD19` | decorative second-ink layer |
+| focus | `#00665F` | keyboard focus ring; ≥5.6:1 against both paper surfaces |
 | success | `#176B3A` | completed state with icon and text |
 | danger | `#A52D24` | expired state with icon and text |
 

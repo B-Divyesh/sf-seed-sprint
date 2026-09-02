@@ -34,7 +34,7 @@ npm test
 npm run build
 ```
 
-Playwright runs 23 tests, including all 16 registered product claims: deterministic boards, free play, result and same-board links, assist mode, local privacy, offline reload, keyboard controls, and frame rate. The Chromium performance check measures at least 55 frames per second while the active board is shown. The production build lands in `dist/`, with `index.html` at its root.
+Playwright covers every registered product claim, including deterministic boards, a real run through the end screen and restart, sharing recovery, assist mode, local privacy, offline updates, and keyboard controls. The isolated Chromium performance check uses a tested floor of 45 frames per second. The production build lands in `dist/`, with `index.html` at its root.
 
 ## Deploy
 

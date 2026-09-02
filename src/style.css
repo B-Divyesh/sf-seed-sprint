@@ -31,6 +31,7 @@
   --teal: #087a72;
   --coral: #c83e2b;
   --sunflower: #e4ad19;
+  --focus: #00665f;
   --success: #176b3a;
   --danger: #a52d24;
   --display: 'Fraunces', Georgia, serif;
@@ -73,7 +74,7 @@ button, .button {
 button:hover, .button:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--coral); }
 button:active, .button:active { transform: translate(1px, 1px); box-shadow: none; }
 button:disabled { cursor: not-allowed; opacity: .52; transform: none; box-shadow: none; }
-:focus-visible { outline: 4px solid var(--sunflower); outline-offset: 3px; }
+:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; box-shadow: 0 0 0 7px var(--paper-light) !important; }
 .button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
 .primary { color: var(--paper-light); background: var(--ink); }
 .quiet-button { border: 0; padding-inline: 4px; background: transparent; clip-path: none; text-decoration: underline; box-shadow: none; }
@@ -188,6 +189,7 @@ h3 { font-size: 26px; }
 .run-notes span { color: var(--ink-soft); font-size: 14px; text-transform: uppercase; }
 .run-notes strong { overflow-wrap: anywhere; font-family: var(--display); font-size: 24px; }
 .run-notes p { margin: -12px 0 0; color: var(--ink-soft); font-size: 15px; }
+.run-notes .room-share-recovery { grid-column: 1 / -1; margin-top: -8px; }
 .result-overlay { inset: 7%; background: var(--paper-light); }
 .result-stamp { display: grid; min-width: 240px; border: 3px solid currentColor; padding: 22px 32px; transform: rotate(-1.5deg); color: var(--success); text-transform: uppercase; }
 .result-stamp.lost { color: var(--danger); }
@@ -195,6 +197,7 @@ h3 { font-size: 26px; }
 .result-stamp small { font-weight: 700; }
 .result-actions { display: flex; gap: 12px; }
 .share-recovery { display: grid; gap: 6px; width: min(100%, 440px); padding: 12px; border: 2px solid var(--ink); color: var(--ink); background: var(--sunflower); font-size: 14px; text-align: left; }
+.share-recovery[hidden] { display: none; }
 .share-recovery label { font-weight: 400; }
 .share-recovery input { width: 100%; min-height: 44px; border: 2px solid var(--ink); padding: 8px; color: var(--ink); background: var(--paper-light); font: inherit; }
 
