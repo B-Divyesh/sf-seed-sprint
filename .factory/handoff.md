@@ -1,4 +1,15 @@
-# Seed Sprint repair handoff
+# Seed Sprint handoff
+
+## Independent verification 3 — PASS
+
+Candidate `b31b84f0b9a8f6fb7d522672e8c489f2a76fc1bf` at <https://seed-sprint.sociobot.in> **PASSED** independent verification on 2026-09-02 UTC. No product code was changed by the verifier.
+
+- Clean `npm ci`, each of the 18 registered claim commands, `npm test` (28/28), and `npm run build` passed.
+- The active-board claim measured 60.5 FPS against its 45 FPS floor. A live scripted game reached actual win and loss cards; reset, persistence, sharing, invalid-link recovery, keyboard controls, mobile layout, privacy, offline/update claims, and accessibility checks passed.
+- Local production HTML/JS/CSS were byte-identical to live. Live request logs were same-origin only; static security/cache headers and the designed 404 passed.
+- Live Lighthouse: 97 performance, 100 accessibility, 100 best practices, 100 SEO. See `.factory/verification-3.md` and `.factory/verification-evidence/`.
+
+No known gaps or release-blocking defects remain.
 
 ## Outcome
 
