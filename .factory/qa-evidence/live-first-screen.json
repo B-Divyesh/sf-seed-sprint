@@ -1,0 +1,1064 @@
+{
+  "status": 200,
+  "url": "https://seed-sprint.sociobot.in/",
+  "headers": {
+    "cache-control": "public, must-revalidate, max-age=30",
+    "content-encoding": "br",
+    "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+    "content-type": "text/html",
+    "date": "Wed, 02 Sep 2026 03:38:48 GMT",
+    "etag": "\"09478163\"",
+    "last-modified": "Wed, 02 Sep 2026 03:19:36 GMT",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "strict-transport-security": "max-age=10886400; includeSubDomains; preload",
+    "vary": "Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "x-dns-prefetch-control": "off",
+    "x-xss-protection": "1; mode=block"
+  },
+  "data": {
+    "title": "Seed Sprint — play a daily signal puzzle",
+    "lang": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "scrollY": 0,
+      "scrollHeight": 1979
+    },
+    "h1": [
+      "Race the same signal puzzle"
+    ],
+    "mainCount": 1,
+    "visibleText": "Skip to main content\n✦\nSeed Sprint\nDemo\nPrivacy\nHow to play\n\nONE BOARD EVERY UTC DAY\n\nRace the same signal puzzle\n\nFor puzzle friends who want one fair five-minute board without accounts or schedules.\n\nTry it with sample data\nOpens a partly solved practice board.\nFree to play\nWorks offline after your first visit\nProgress stays on this device\nTODAY\n2026-09-02\n·\n·\n◆\n·\n·\n·\n·\n·\n·\n♣\n·\n◆\n·\n·\n·\n·\n·\n◆\nToday’s board is ready\nFinish before the five-minute clock ends.\nPlay today’s board\n\nSAME SEED. DIFFERENT ROUTE.\n\nHow it works\nRotate the tiles.\nJoin every line from the seeds to the sprout.\nBeat five minutes.\nThe board is the same for everyone that day.\nShare your result.\nSend a spoiler-safe card or the board link.\nA small daily game\n\nThere is no chat, account, live lobby, or endless puzzle feed.\n\nYour play stays here\n\nThe game saves progress in this browser. Shared links include only the seed, time, turns, and result.\n\nSeed Sprint is a five-minute daily signal puzzle.\n\nPrivacy\nTerms\nBuilt by Param Factory\n(external site)\n\nVersion 1.0.0 · Hero image generated for this game.\n\nRace the same signal puzzle",
+    "buttons": [
+      {
+        "text": "How to play",
+        "rect": {
+          "x": 1245.40625,
+          "y": 20,
+          "width": 97,
+          "height": 44,
+          "top": 20,
+          "right": 1342.40625,
+          "bottom": 64,
+          "left": 1245.40625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 909.0625,
+          "y": 196.5,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 196.5,
+          "right": 1012.40625,
+          "bottom": 299.84375,
+          "left": 909.0625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1012.40625,
+          "y": 196.5,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 196.5,
+          "right": 1115.734375,
+          "bottom": 299.828125,
+          "left": 1012.40625
+        }
+      },
+      {
+        "text": "◆",
+        "rect": {
+          "x": 1115.734375,
+          "y": 196.5,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 196.5,
+          "right": 1219.0625,
+          "bottom": 299.828125,
+          "left": 1115.734375
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 909.0625,
+          "y": 299.828125,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 299.828125,
+          "right": 1012.40625,
+          "bottom": 403.171875,
+          "left": 909.0625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1012.40625,
+          "y": 299.828125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 299.828125,
+          "right": 1115.734375,
+          "bottom": 403.15625,
+          "left": 1012.40625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1115.734375,
+          "y": 299.828125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 299.828125,
+          "right": 1219.0625,
+          "bottom": 403.15625,
+          "left": 1115.734375
+        }
+      },
+      {
+        "text": "♣",
+        "rect": {
+          "x": 909.0625,
+          "y": 403.15625,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 403.15625,
+          "right": 1012.40625,
+          "bottom": 506.5,
+          "left": 909.0625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1012.40625,
+          "y": 403.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 403.15625,
+          "right": 1115.734375,
+          "bottom": 506.484375,
+          "left": 1012.40625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1115.734375,
+          "y": 403.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 403.15625,
+          "right": 1219.0625,
+          "bottom": 506.484375,
+          "left": 1115.734375
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1219.0625,
+          "y": 403.15625,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 403.15625,
+          "right": 1322.40625,
+          "bottom": 506.5,
+          "left": 1219.0625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 805.734375,
+          "y": 506.484375,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 506.484375,
+          "right": 909.0625,
+          "bottom": 609.8125,
+          "left": 805.734375
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 909.0625,
+          "y": 506.484375,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 506.484375,
+          "right": 1012.40625,
+          "bottom": 609.828125,
+          "left": 909.0625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1012.40625,
+          "y": 506.484375,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 506.484375,
+          "right": 1115.734375,
+          "bottom": 609.8125,
+          "left": 1012.40625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1115.734375,
+          "y": 506.484375,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 506.484375,
+          "right": 1219.0625,
+          "bottom": 609.8125,
+          "left": 1115.734375
+        }
+      },
+      {
+        "text": "◆",
+        "rect": {
+          "x": 1219.0625,
+          "y": 506.484375,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 506.484375,
+          "right": 1322.40625,
+          "bottom": 609.828125,
+          "left": 1219.0625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1012.40625,
+          "y": 609.8125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 609.8125,
+          "right": 1115.734375,
+          "bottom": 713.140625,
+          "left": 1012.40625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1115.734375,
+          "y": 609.8125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 609.8125,
+          "right": 1219.0625,
+          "bottom": 713.140625,
+          "left": 1115.734375
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1219.0625,
+          "y": 609.8125,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 609.8125,
+          "right": 1322.40625,
+          "bottom": 713.15625,
+          "left": 1219.0625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 909.0625,
+          "y": 713.15625,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 713.15625,
+          "right": 1012.40625,
+          "bottom": 816.5,
+          "left": 909.0625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1012.40625,
+          "y": 713.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 713.15625,
+          "right": 1115.734375,
+          "bottom": 816.484375,
+          "left": 1012.40625
+        }
+      },
+      {
+        "text": "",
+        "rect": {
+          "x": 1115.734375,
+          "y": 713.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 713.15625,
+          "right": 1219.0625,
+          "bottom": 816.484375,
+          "left": 1115.734375
+        }
+      },
+      {
+        "text": "◆",
+        "rect": {
+          "x": 1219.0625,
+          "y": 713.15625,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 713.15625,
+          "right": 1322.40625,
+          "bottom": 816.5,
+          "left": 1219.0625
+        }
+      },
+      {
+        "text": "Close instructions",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      }
+    ],
+    "links": [
+      {
+        "text": "Skip to main content",
+        "href": "https://seed-sprint.sociobot.in/#main",
+        "rect": {
+          "x": 16,
+          "y": -80,
+          "width": 198,
+          "height": 51,
+          "top": -80,
+          "right": 214,
+          "bottom": -29,
+          "left": 16
+        }
+      },
+      {
+        "text": "✦ Seed Sprint",
+        "href": "https://seed-sprint.sociobot.in/",
+        "rect": {
+          "x": 97.59375,
+          "y": 24,
+          "width": 164,
+          "height": 36,
+          "top": 24,
+          "right": 261.59375,
+          "bottom": 60,
+          "left": 97.59375
+        }
+      },
+      {
+        "text": "Demo",
+        "href": "https://seed-sprint.sociobot.in/demo",
+        "rect": {
+          "x": 1092.40625,
+          "y": 30,
+          "width": 43,
+          "height": 24,
+          "top": 30,
+          "right": 1135.40625,
+          "bottom": 54,
+          "left": 1092.40625
+        }
+      },
+      {
+        "text": "Privacy",
+        "href": "https://seed-sprint.sociobot.in/privacy",
+        "rect": {
+          "x": 1163.40625,
+          "y": 30,
+          "width": 54,
+          "height": 24,
+          "top": 30,
+          "right": 1217.40625,
+          "bottom": 54,
+          "left": 1163.40625
+        }
+      },
+      {
+        "text": "Try it with sample data",
+        "href": "https://seed-sprint.sociobot.in/demo",
+        "rect": {
+          "x": 97.59375,
+          "y": 616.390625,
+          "width": 236,
+          "height": 49,
+          "top": 616.390625,
+          "right": 333.59375,
+          "bottom": 665.390625,
+          "left": 97.59375
+        }
+      },
+      {
+        "text": "Play today’s board",
+        "href": "https://seed-sprint.sociobot.in/play",
+        "rect": {
+          "x": 915.40625,
+          "y": 523.84375,
+          "width": 194,
+          "height": 49,
+          "top": 523.84375,
+          "right": 1109.40625,
+          "bottom": 572.84375,
+          "left": 915.40625
+        }
+      },
+      {
+        "text": "Privacy",
+        "href": "https://seed-sprint.sociobot.in/privacy",
+        "rect": {
+          "x": 1053,
+          "y": 1878.125,
+          "width": 47,
+          "height": 22.5,
+          "top": 1878.125,
+          "right": 1100,
+          "bottom": 1900.625,
+          "left": 1053
+        }
+      },
+      {
+        "text": "Terms",
+        "href": "https://seed-sprint.sociobot.in/terms",
+        "rect": {
+          "x": 1124,
+          "y": 1878.125,
+          "width": 40,
+          "height": 22.5,
+          "top": 1878.125,
+          "right": 1164,
+          "bottom": 1900.625,
+          "left": 1124
+        }
+      },
+      {
+        "text": "Built by Param Factory (external site)",
+        "href": "https://hello-factory.sociobot.in/",
+        "rect": {
+          "x": 1188,
+          "y": 1878.125,
+          "width": 147,
+          "height": 22.5,
+          "top": 1878.125,
+          "right": 1335,
+          "bottom": 1900.625,
+          "left": 1188
+        }
+      }
+    ],
+    "canvases": [],
+    "board": [
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 702.40625,
+          "y": 196.5,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 196.5,
+          "right": 805.734375,
+          "bottom": 299.828125,
+          "left": 702.40625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 805.734375,
+          "y": 196.5,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 196.5,
+          "right": 909.0625,
+          "bottom": 299.828125,
+          "left": 805.734375
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 909.0625,
+          "y": 196.5,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 196.5,
+          "right": 1012.40625,
+          "bottom": 299.84375,
+          "left": 909.0625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1012.40625,
+          "y": 196.5,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 196.5,
+          "right": 1115.734375,
+          "bottom": 299.828125,
+          "left": 1012.40625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "◆",
+        "role": null,
+        "rect": {
+          "x": 1115.734375,
+          "y": 196.5,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 196.5,
+          "right": 1219.0625,
+          "bottom": 299.828125,
+          "left": 1115.734375
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 1219.0625,
+          "y": 196.5,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 196.5,
+          "right": 1322.40625,
+          "bottom": 299.84375,
+          "left": 1219.0625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 702.40625,
+          "y": 299.828125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 299.828125,
+          "right": 805.734375,
+          "bottom": 403.15625,
+          "left": 702.40625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 805.734375,
+          "y": 299.828125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 299.828125,
+          "right": 909.0625,
+          "bottom": 403.15625,
+          "left": 805.734375
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 909.0625,
+          "y": 299.828125,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 299.828125,
+          "right": 1012.40625,
+          "bottom": 403.171875,
+          "left": 909.0625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1012.40625,
+          "y": 299.828125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 299.828125,
+          "right": 1115.734375,
+          "bottom": 403.15625,
+          "left": 1012.40625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1115.734375,
+          "y": 299.828125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 299.828125,
+          "right": 1219.0625,
+          "bottom": 403.15625,
+          "left": 1115.734375
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 1219.0625,
+          "y": 299.828125,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 299.828125,
+          "right": 1322.40625,
+          "bottom": 403.171875,
+          "left": 1219.0625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 702.40625,
+          "y": 403.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 403.15625,
+          "right": 805.734375,
+          "bottom": 506.484375,
+          "left": 702.40625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 805.734375,
+          "y": 403.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 403.15625,
+          "right": 909.0625,
+          "bottom": 506.484375,
+          "left": 805.734375
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "♣",
+        "role": null,
+        "rect": {
+          "x": 909.0625,
+          "y": 403.15625,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 403.15625,
+          "right": 1012.40625,
+          "bottom": 506.5,
+          "left": 909.0625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1012.40625,
+          "y": 403.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 403.15625,
+          "right": 1115.734375,
+          "bottom": 506.484375,
+          "left": 1012.40625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1115.734375,
+          "y": 403.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 403.15625,
+          "right": 1219.0625,
+          "bottom": 506.484375,
+          "left": 1115.734375
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1219.0625,
+          "y": 403.15625,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 403.15625,
+          "right": 1322.40625,
+          "bottom": 506.5,
+          "left": 1219.0625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 702.40625,
+          "y": 506.484375,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 506.484375,
+          "right": 805.734375,
+          "bottom": 609.8125,
+          "left": 702.40625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 805.734375,
+          "y": 506.484375,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 506.484375,
+          "right": 909.0625,
+          "bottom": 609.8125,
+          "left": 805.734375
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 909.0625,
+          "y": 506.484375,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 506.484375,
+          "right": 1012.40625,
+          "bottom": 609.828125,
+          "left": 909.0625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1012.40625,
+          "y": 506.484375,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 506.484375,
+          "right": 1115.734375,
+          "bottom": 609.8125,
+          "left": 1012.40625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1115.734375,
+          "y": 506.484375,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 506.484375,
+          "right": 1219.0625,
+          "bottom": 609.8125,
+          "left": 1115.734375
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "◆",
+        "role": null,
+        "rect": {
+          "x": 1219.0625,
+          "y": 506.484375,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 506.484375,
+          "right": 1322.40625,
+          "bottom": 609.828125,
+          "left": 1219.0625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 702.40625,
+          "y": 609.8125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 609.8125,
+          "right": 805.734375,
+          "bottom": 713.140625,
+          "left": 702.40625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 805.734375,
+          "y": 609.8125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 609.8125,
+          "right": 909.0625,
+          "bottom": 713.140625,
+          "left": 805.734375
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 909.0625,
+          "y": 609.8125,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 609.8125,
+          "right": 1012.40625,
+          "bottom": 713.15625,
+          "left": 909.0625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1012.40625,
+          "y": 609.8125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 609.8125,
+          "right": 1115.734375,
+          "bottom": 713.140625,
+          "left": 1012.40625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1115.734375,
+          "y": 609.8125,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 609.8125,
+          "right": 1219.0625,
+          "bottom": 713.140625,
+          "left": 1115.734375
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1219.0625,
+          "y": 609.8125,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 609.8125,
+          "right": 1322.40625,
+          "bottom": 713.15625,
+          "left": 1219.0625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 702.40625,
+          "y": 713.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 713.15625,
+          "right": 805.734375,
+          "bottom": 816.484375,
+          "left": 702.40625
+        }
+      },
+      {
+        "tag": "DIV",
+        "text": "·",
+        "role": "presentation",
+        "rect": {
+          "x": 805.734375,
+          "y": 713.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 713.15625,
+          "right": 909.0625,
+          "bottom": 816.484375,
+          "left": 805.734375
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 909.0625,
+          "y": 713.15625,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 713.15625,
+          "right": 1012.40625,
+          "bottom": 816.5,
+          "left": 909.0625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1012.40625,
+          "y": 713.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 713.15625,
+          "right": 1115.734375,
+          "bottom": 816.484375,
+          "left": 1012.40625
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "role": null,
+        "rect": {
+          "x": 1115.734375,
+          "y": 713.15625,
+          "width": 103.328125,
+          "height": 103.328125,
+          "top": 713.15625,
+          "right": 1219.0625,
+          "bottom": 816.484375,
+          "left": 1115.734375
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "text": "◆",
+        "role": null,
+        "rect": {
+          "x": 1219.0625,
+          "y": 713.15625,
+          "width": 103.34375,
+          "height": 103.34375,
+          "top": 713.15625,
+          "right": 1322.40625,
+          "bottom": 816.5,
+          "left": 1219.0625
+        }
+      }
+    ]
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://seed-sprint.sociobot.in/",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "https://seed-sprint.sociobot.in/art/seed-circuit-1200.avif",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2",
+      "type": "font"
+    }
+  ],
+  "consoleMessages": [
+    {
+      "type": "warning",
+      "text": "Service Worker registration blocked by Playwright"
+    }
+  ],
+  "pageErrors": []
+}

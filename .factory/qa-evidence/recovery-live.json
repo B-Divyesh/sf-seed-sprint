@@ -1,0 +1,12 @@
+{
+  "clipboardFailure": {
+    "url": "https://seed-sprint.sociobot.in/play?seed=QA-CLIP",
+    "announcement": "The result could not be copied. Copy the address from your browser."
+  },
+  "corruptStorageRecovery": {
+    "h1": "Connect every seed to the sprout",
+    "timer": "5:00",
+    "startVisible": true,
+    "pageText": "SHARED BOARD\n\nConnect every seed to the sprout\n\nRotate tiles. Each connected line turns green.\n\nTIME LEFT\n5:00\nPause\nRemove timer\n◆\n◆\n♣\n·\n·\n◆\n·\n·\n·\n·\n·\n·\n·\n·\nReady for today’s board?\nThe clock starts when you press play.\nStart five-minute board\n\n3 of 26 route tiles connected.\n\nBOARD SEED\nQA-CORRUPT\nTURNS\n0\nCopy same-board link\n\nFriends can play this exact board at any time."
+  }
+}

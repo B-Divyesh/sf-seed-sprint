@@ -1,0 +1,126 @@
+{
+  "events": 140,
+  "interactions": [
+    {
+      "name": "pointerdown",
+      "duration": 24,
+      "interactionId": 5581,
+      "startTime": 356.79999999701977,
+      "processingStart": 358.29999999701977,
+      "processingEnd": 358.59999999403954
+    },
+    {
+      "name": "pointerup",
+      "duration": 24,
+      "interactionId": 5581,
+      "startTime": 356.79999999701977,
+      "processingStart": 359,
+      "processingEnd": 359.09999999403954
+    },
+    {
+      "name": "click",
+      "duration": 24,
+      "interactionId": 5581,
+      "startTime": 356.79999999701977,
+      "processingStart": 359.09999999403954,
+      "processingEnd": 365.09999999403954
+    },
+    {
+      "name": "pointerdown",
+      "duration": 16,
+      "interactionId": 5588,
+      "startTime": 443,
+      "processingStart": 444.3999999910593,
+      "processingEnd": 444.69999998807907
+    },
+    {
+      "name": "pointerup",
+      "duration": 16,
+      "interactionId": 5588,
+      "startTime": 443.19999998807907,
+      "processingStart": 445,
+      "processingEnd": 445
+    },
+    {
+      "name": "click",
+      "duration": 16,
+      "interactionId": 5588,
+      "startTime": 443.19999998807907,
+      "processingStart": 445,
+      "processingEnd": 449.3999999910593
+    },
+    {
+      "name": "pointerdown",
+      "duration": 32,
+      "interactionId": 5595,
+      "startTime": 482.29999999701977,
+      "processingStart": 483.19999998807907,
+      "processingEnd": 483.3999999910593
+    },
+    {
+      "name": "pointerup",
+      "duration": 32,
+      "interactionId": 5595,
+      "startTime": 482.29999999701977,
+      "processingStart": 483.59999999403954,
+      "processingEnd": 483.59999999403954
+    },
+    {
+      "name": "click",
+      "duration": 32,
+      "interactionId": 5595,
+      "startTime": 482.29999999701977,
+      "processingStart": 483.69999998807907,
+      "processingEnd": 487.8999999910593
+    },
+    {
+      "name": "pointerdown",
+      "duration": 24,
+      "interactionId": 5602,
+      "startTime": 551.0999999940395,
+      "processingStart": 552.3999999910593,
+      "processingEnd": 552.6999999880791
+    },
+    {
+      "name": "pointerup",
+      "duration": 24,
+      "interactionId": 5602,
+      "startTime": 551.0999999940395,
+      "processingStart": 553,
+      "processingEnd": 553
+    },
+    {
+      "name": "click",
+      "duration": 24,
+      "interactionId": 5602,
+      "startTime": 551.0999999940395,
+      "processingStart": 553,
+      "processingEnd": 556.5
+    },
+    {
+      "name": "pointerdown",
+      "duration": 24,
+      "interactionId": 5609,
+      "startTime": 601,
+      "processingStart": 602.0999999940395,
+      "processingEnd": 602.2999999970198
+    },
+    {
+      "name": "pointerup",
+      "duration": 24,
+      "interactionId": 5609,
+      "startTime": 601.0999999940395,
+      "processingStart": 602.5,
+      "processingEnd": 602.5
+    },
+    {
+      "name": "click",
+      "duration": 24,
+      "interactionId": 5609,
+      "startTime": 601.0999999940395,
+      "processingStart": 602.5,
+      "processingEnd": 606.5
+    }
+  ],
+  "maxDuration": 32
+}

@@ -1,0 +1,119 @@
+{
+  "routes": [
+    "/",
+    "/demo",
+    "/play?seed=BOUNDARY-0",
+    "/privacy",
+    "/terms",
+    "/result?seed=SPROUT-7&status=won&time=0&turns=0",
+    "/missing-board"
+  ],
+  "details": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Seed Sprint — play a daily signal puzzle",
+      "h1": [
+        "Race the same signal puzzle"
+      ],
+      "main": 1,
+      "canonical": "https://seed-sprint.sociobot.in/",
+      "focused": {
+        "tag": "H1",
+        "text": "Race the same signal puzzle"
+      }
+    },
+    {
+      "route": "/demo",
+      "status": 200,
+      "title": "Demo — Seed Sprint",
+      "h1": [
+        "Connect every seed to the sprout"
+      ],
+      "main": 1,
+      "canonical": "https://seed-sprint.sociobot.in/demo",
+      "focused": {
+        "tag": "H1",
+        "text": "Connect every seed to the sprout"
+      }
+    },
+    {
+      "route": "/play?seed=BOUNDARY-0",
+      "status": 200,
+      "title": "Play — Seed Sprint",
+      "h1": [
+        "Connect every seed to the sprout"
+      ],
+      "main": 1,
+      "canonical": "https://seed-sprint.sociobot.in/play",
+      "focused": {
+        "tag": "H1",
+        "text": "Connect every seed to the sprout"
+      }
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "title": "Privacy — Seed Sprint",
+      "h1": [
+        "Privacy in plain words"
+      ],
+      "main": 1,
+      "canonical": "https://seed-sprint.sociobot.in/privacy",
+      "focused": {
+        "tag": "H1",
+        "text": "Privacy in plain words"
+      }
+    },
+    {
+      "route": "/terms",
+      "status": 200,
+      "title": "Terms — Seed Sprint",
+      "h1": [
+        "Terms of play"
+      ],
+      "main": 1,
+      "canonical": "https://seed-sprint.sociobot.in/terms",
+      "focused": {
+        "tag": "H1",
+        "text": "Terms of play"
+      }
+    },
+    {
+      "route": "/result?seed=SPROUT-7&status=won&time=0&turns=0",
+      "status": 200,
+      "title": "Shared result — Seed Sprint",
+      "h1": [
+        "This board was connected"
+      ],
+      "main": 1,
+      "canonical": "https://seed-sprint.sociobot.in/result",
+      "focused": {
+        "tag": "H1",
+        "text": "This board was connected"
+      }
+    },
+    {
+      "route": "/missing-board",
+      "status": 200,
+      "title": "Page not found — Seed Sprint",
+      "h1": [
+        "This board link does not exist"
+      ],
+      "main": 1,
+      "canonical": "https://seed-sprint.sociobot.in/missing-board",
+      "focused": {
+        "tag": "H1",
+        "text": "This board link does not exist"
+      }
+    }
+  ],
+  "afterPush": {
+    "url": "https://seed-sprint.sociobot.in/privacy",
+    "focus": "Privacy in plain words"
+  },
+  "afterBack": {
+    "url": "https://seed-sprint.sociobot.in/",
+    "focus": "Race the same signal puzzle"
+  }
+}

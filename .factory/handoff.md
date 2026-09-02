@@ -1,5 +1,27 @@
 # Seed Sprint handoff
 
+## Independent verification result — FAIL
+
+Candidate `9213232858d71b835e3e041a23b2d2d7d2e14ed4` was independently tested on 2026-09-02 against <https://seed-sprint.sociobot.in>. The deployment matches the candidate build byte-for-byte and the full game reaches both win and timeout end screens, but release acceptance fails.
+
+Release-blocking findings:
+
+- `.factory/claims.json` omits advertised claims including free play, spoiler-safe sharing, exact same-board links, assist mode, no-account/no-chat behavior, shared-link fields, and the documented 60 fps result.
+- If clipboard copy and its legacy fallback fail, **Copy result** tells the player to copy the current `/play` address. That address is not the generated result link, and no selectable fallback is shown, blocking the core compare-by-link job.
+
+Additional defects:
+
+- **Play again** resets state and turns but leaves the old timer visible (`4:55` observed instead of `5:00`).
+- Malformed shared-result numbers render as `NaN:NaN` and negative turns.
+- Five mobile header/footer links are below 44 px high.
+- Unknown SPA page routes render the designed not-found screen with HTTP 200 rather than 404.
+
+Passing evidence: all nine post-install claim commands pass; full `npm test` passes 13/13; `npm run build` passes; live Lighthouse is 94/100/100/100; axe has zero serious/critical findings; all live requests are same-origin; offline reload and service-worker update work; the scripted daily run wins in 34 turns; timeout works; frame cadence measured 60.0 fps under 4× CPU throttling.
+
+See `.factory/verification.md` and `.factory/qa-evidence/` for exact commands, measurements, screenshots, and required next steps.
+
+## Builder handoff for the candidate
+
 ## What shipped
 
 - A complete deterministic daily 6×6 signal-routing game with 22–26 routed tiles, three seeds, one sprout, a five-minute loss state, and a verified solution for every generated board.

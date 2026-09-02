@@ -1,0 +1,1656 @@
+{
+  "startedAt": "2026-09-02T03:51:30.226Z",
+  "assertions": [
+    {
+      "name": "live root returns 200",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "axe desktop landing has no serious/critical findings",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "keyboard focus is visibly styled",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "A",
+          "text": "Try it with sample data",
+          "href": "/demo",
+          "outline": "4px solid rgb(228, 173, 25)"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "outline": "4px solid rgb(228, 173, 25)"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "outline": "4px solid rgb(228, 173, 25)"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "◆",
+          "href": null,
+          "outline": "4px solid rgb(228, 173, 25)"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "outline": "4px solid rgb(228, 173, 25)"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "outline": "4px solid rgb(228, 173, 25)"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "outline": "4px solid rgb(228, 173, 25)"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "♣",
+          "href": null,
+          "outline": "4px solid rgb(228, 173, 25)"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "outline": "4px solid rgb(228, 173, 25)"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "outline": "4px solid rgb(228, 173, 25)"
+        }
+      ]
+    },
+    {
+      "name": "instructions dialog takes focus",
+      "pass": true,
+      "detail": "<button data-close-help=\"\">Close instructions</button>"
+    },
+    {
+      "name": "axe instructions dialog has no serious/critical findings",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "closing instructions restores trigger focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "one-click demo is already active",
+      "pass": true,
+      "detail": "4:17"
+    },
+    {
+      "name": "demo banner is persistent and complete",
+      "pass": true,
+      "detail": "Demo\n— sample board, nothing is saved to your daily game.\nReset demo\nStart for real"
+    },
+    {
+      "name": "demo starts with documented 11 turns",
+      "pass": true,
+      "detail": "11"
+    },
+    {
+      "name": "demo storage is isolated",
+      "pass": true,
+      "detail": [
+        "demo:session:SPROUT-7"
+      ]
+    },
+    {
+      "name": "axe desktop demo active has no serious/critical findings",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "R rotates focused tile",
+      "pass": true,
+      "detail": {
+        "before": "tile route r0 ",
+        "after": "tile route r1 "
+      }
+    },
+    {
+      "name": "P pauses active game",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "P resumes paused game",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "assist setting persists across reload",
+      "pass": true,
+      "detail": "No limit"
+    },
+    {
+      "name": "progress persists across reload",
+      "pass": true,
+      "detail": "12"
+    },
+    {
+      "name": "Reset demo restores sample turn count",
+      "pass": true,
+      "detail": "11"
+    },
+    {
+      "name": "leaving demo discards demo data",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "daily title state waits before starting clock",
+      "pass": true,
+      "detail": "5:00"
+    },
+    {
+      "name": "daily play becomes active",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "same-board action copies a seed and room link",
+      "pass": true,
+      "detail": "https://seed-sprint.sociobot.in/play?seed=2026-09-02&room=1OQV0"
+    },
+    {
+      "name": "friend link opens the identical initial board",
+      "pass": true,
+      "detail": {
+        "initial": [
+          {
+            "index": "2",
+            "className": "tile route r2 ",
+            "label": "Row 1, column 3: lines point up. Rotate clockwise."
+          },
+          {
+            "index": "3",
+            "className": "tile route r3 ",
+            "label": "Row 1, column 4: lines point right. Rotate clockwise."
+          },
+          {
+            "index": "4",
+            "className": "tile route r2 ",
+            "label": "Row 1, column 5: seed tile, lines point up. Rotate clockwise."
+          },
+          {
+            "index": "8",
+            "className": "tile route r3 ",
+            "label": "Row 2, column 3: lines point up and left. Rotate clockwise."
+          },
+          {
+            "index": "9",
+            "className": "tile route r2 ",
+            "label": "Row 2, column 4: lines point up and right and down. Rotate clockwise."
+          },
+          {
+            "index": "10",
+            "className": "tile route r3 ",
+            "label": "Row 2, column 5: lines point right and left. Rotate clockwise."
+          },
+          {
+            "index": "14",
+            "className": "tile route r3 powered",
+            "label": "Row 3, column 3: sprout tile, lines point up. Rotate clockwise."
+          },
+          {
+            "index": "15",
+            "className": "tile route r3 ",
+            "label": "Row 3, column 4: lines point up and down and left. Rotate clockwise."
+          },
+          {
+            "index": "16",
+            "className": "tile route r0 ",
+            "label": "Row 3, column 5: lines point up and right and down and left. Rotate clockwise."
+          },
+          {
+            "index": "17",
+            "className": "tile route r1 ",
+            "label": "Row 3, column 6: lines point up and left. Rotate clockwise."
+          },
+          {
+            "index": "19",
+            "className": "tile route r2 ",
+            "label": "Row 4, column 2: lines point left. Rotate clockwise."
+          },
+          {
+            "index": "20",
+            "className": "tile route r3 ",
+            "label": "Row 4, column 3: lines point up and down. Rotate clockwise."
+          },
+          {
+            "index": "21",
+            "className": "tile route r3 ",
+            "label": "Row 4, column 4: lines point up and down. Rotate clockwise."
+          },
+          {
+            "index": "22",
+            "className": "tile route r1 ",
+            "label": "Row 4, column 5: lines point up and right and left. Rotate clockwise."
+          },
+          {
+            "index": "23",
+            "className": "tile route r1 ",
+            "label": "Row 4, column 6: seed tile, lines point right. Rotate clockwise."
+          },
+          {
+            "index": "27",
+            "className": "tile route r3 ",
+            "label": "Row 5, column 4: lines point up. Rotate clockwise."
+          },
+          {
+            "index": "28",
+            "className": "tile route r0 ",
+            "label": "Row 5, column 5: lines point up and right and down and left. Rotate clockwise."
+          },
+          {
+            "index": "29",
+            "className": "tile route r1 ",
+            "label": "Row 5, column 6: lines point up and left. Rotate clockwise."
+          },
+          {
+            "index": "32",
+            "className": "tile route r3 ",
+            "label": "Row 6, column 3: lines point up. Rotate clockwise."
+          },
+          {
+            "index": "33",
+            "className": "tile route r3 ",
+            "label": "Row 6, column 4: lines point up and down. Rotate clockwise."
+          },
+          {
+            "index": "34",
+            "className": "tile route r1 ",
+            "label": "Row 6, column 5: lines point up and right. Rotate clockwise."
+          },
+          {
+            "index": "35",
+            "className": "tile route r3 ",
+            "label": "Row 6, column 6: seed tile, lines point left. Rotate clockwise."
+          }
+        ],
+        "friend": [
+          {
+            "index": "2",
+            "className": "tile route r2 ",
+            "label": "Row 1, column 3: lines point up. Rotate clockwise."
+          },
+          {
+            "index": "3",
+            "className": "tile route r3 ",
+            "label": "Row 1, column 4: lines point right. Rotate clockwise."
+          },
+          {
+            "index": "4",
+            "className": "tile route r2 ",
+            "label": "Row 1, column 5: seed tile, lines point up. Rotate clockwise."
+          },
+          {
+            "index": "8",
+            "className": "tile route r3 ",
+            "label": "Row 2, column 3: lines point up and left. Rotate clockwise."
+          },
+          {
+            "index": "9",
+            "className": "tile route r2 ",
+            "label": "Row 2, column 4: lines point up and right and down. Rotate clockwise."
+          },
+          {
+            "index": "10",
+            "className": "tile route r3 ",
+            "label": "Row 2, column 5: lines point right and left. Rotate clockwise."
+          },
+          {
+            "index": "14",
+            "className": "tile route r3 powered",
+            "label": "Row 3, column 3: sprout tile, lines point up. Rotate clockwise."
+          },
+          {
+            "index": "15",
+            "className": "tile route r3 ",
+            "label": "Row 3, column 4: lines point up and down and left. Rotate clockwise."
+          },
+          {
+            "index": "16",
+            "className": "tile route r0 ",
+            "label": "Row 3, column 5: lines point up and right and down and left. Rotate clockwise."
+          },
+          {
+            "index": "17",
+            "className": "tile route r1 ",
+            "label": "Row 3, column 6: lines point up and left. Rotate clockwise."
+          },
+          {
+            "index": "19",
+            "className": "tile route r2 ",
+            "label": "Row 4, column 2: lines point left. Rotate clockwise."
+          },
+          {
+            "index": "20",
+            "className": "tile route r3 ",
+            "label": "Row 4, column 3: lines point up and down. Rotate clockwise."
+          },
+          {
+            "index": "21",
+            "className": "tile route r3 ",
+            "label": "Row 4, column 4: lines point up and down. Rotate clockwise."
+          },
+          {
+            "index": "22",
+            "className": "tile route r1 ",
+            "label": "Row 4, column 5: lines point up and right and left. Rotate clockwise."
+          },
+          {
+            "index": "23",
+            "className": "tile route r1 ",
+            "label": "Row 4, column 6: seed tile, lines point right. Rotate clockwise."
+          },
+          {
+            "index": "27",
+            "className": "tile route r3 ",
+            "label": "Row 5, column 4: lines point up. Rotate clockwise."
+          },
+          {
+            "index": "28",
+            "className": "tile route r0 ",
+            "label": "Row 5, column 5: lines point up and right and down and left. Rotate clockwise."
+          },
+          {
+            "index": "29",
+            "className": "tile route r1 ",
+            "label": "Row 5, column 6: lines point up and left. Rotate clockwise."
+          },
+          {
+            "index": "32",
+            "className": "tile route r3 ",
+            "label": "Row 6, column 3: lines point up. Rotate clockwise."
+          },
+          {
+            "index": "33",
+            "className": "tile route r3 ",
+            "label": "Row 6, column 4: lines point up and down. Rotate clockwise."
+          },
+          {
+            "index": "34",
+            "className": "tile route r1 ",
+            "label": "Row 6, column 5: lines point up and right. Rotate clockwise."
+          },
+          {
+            "index": "35",
+            "className": "tile route r3 ",
+            "label": "Row 6, column 6: seed tile, lines point left. Rotate clockwise."
+          }
+        ]
+      }
+    },
+    {
+      "name": "friend link names the room",
+      "pass": true,
+      "detail": "Room 1OQV0"
+    },
+    {
+      "name": "live active play sustains at least 55 fps under 4x CPU",
+      "pass": true,
+      "detail": {
+        "frames": 121,
+        "duration": 1.9998000000000002,
+        "fps": 60.00600060006,
+        "maxInterval": 16.800000000000182,
+        "meanInterval": 16.665000000000003
+      }
+    },
+    {
+      "name": "scripted daily run reaches real win screen",
+      "pass": true,
+      "detail": "Connected in 0:04 with 34 turns."
+    },
+    {
+      "name": "axe desktop win screen has no serious/critical findings",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "result is spoiler-safe and links to summary",
+      "pass": true,
+      "detail": "Seed Sprint 2026-09-02\n🟩🟩🟩🟩🟩🟩\n0:04 · 34 turns\nhttps://seed-sprint.sociobot.in/result?seed=2026-09-02&status=won&time=4&turns=34"
+    },
+    {
+      "name": "shared result renders its end summary",
+      "pass": true,
+      "detail": "SHARED RESULT · 2026-09-02\n\nThis board was connected\n🟩 🟩 🟩 🟩 🟩 🟩\n0:04\n34 turns\n\nThe card hides the tile layout. Play the same seed before comparing routes.\n\nPlay this board"
+    },
+    {
+      "name": "shared result hides board layout",
+      "pass": true,
+      "detail": "SHARED RESULT · 2026-09-02\n\nThis board was connected\n🟩 🟩 🟩 🟩 🟩 🟩\n0:04\n34 turns\n\nThe card hides the tile layout. Play the same seed before comparing routes.\n\nPlay this board"
+    },
+    {
+      "name": "restart returns to idle with zero turns",
+      "pass": true,
+      "detail": {
+        "timer": "4:55",
+        "turns": "0"
+      }
+    },
+    {
+      "name": "restart resets timer to five minutes",
+      "pass": false,
+      "detail": "4:55"
+    },
+    {
+      "name": "five-minute boundary reaches loss screen",
+      "pass": true,
+      "detail": "Time ended. Restart this board to try again."
+    },
+    {
+      "name": "malicious shared seed is rendered as text, not markup",
+      "pass": true,
+      "detail": "SHARED RESULT · <IMG SRC=X ONERROR=ALERT(1)>\n\nThis board was connected\n🟩 🟩 🟩 🟩 🟩 🟩\nNaN:NaN\n-9 turns\n\nThe card hides the tile layout. Play the same seed before comparing routes.\n\nPlay this board"
+    },
+    {
+      "name": "malformed result numbers recover to valid values",
+      "pass": false,
+      "detail": "SHARED RESULT · <IMG SRC=X ONERROR=ALERT(1)>\n\nThis board was connected\n🟩 🟩 🟩 🟩 🟩 🟩\nNaN:NaN\n-9 turns\n\nThe card hides the tile layout. Play the same seed before comparing routes.\n\nPlay this board"
+    },
+    {
+      "name": "axe invalid shared result has no serious/critical findings",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "full gameplay flow makes only same-origin requests",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "full gameplay flow has no page errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "full gameplay flow has no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390px landing has no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "scrollWidth": 390,
+        "board": {
+          "x": 16,
+          "y": 639.71875,
+          "width": 358,
+          "height": 402.5,
+          "top": 639.71875,
+          "right": 374,
+          "bottom": 1042.21875,
+          "left": 16
+        },
+        "interactives": [
+          {
+            "text": "Skip to main content",
+            "width": 189,
+            "height": 49.5,
+            "top": -80,
+            "bottom": -30.5
+          },
+          {
+            "text": "✦ Seed Sprint",
+            "width": 145,
+            "height": 31.5,
+            "top": 20.25,
+            "bottom": 51.75
+          },
+          {
+            "text": "Demo",
+            "width": 43,
+            "height": 24,
+            "top": 24,
+            "bottom": 48
+          },
+          {
+            "text": "How to play",
+            "width": 97,
+            "height": 44,
+            "top": 14,
+            "bottom": 58
+          },
+          {
+            "text": "Try it with sample data",
+            "width": 216,
+            "height": 47.5,
+            "top": 417.21875,
+            "bottom": 464.71875
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 696.21875,
+            "bottom": 751.890625
+          },
+          {
+            "text": "",
+            "width": 55.65625,
+            "height": 55.65625,
+            "top": 696.21875,
+            "bottom": 751.875
+          },
+          {
+            "text": "◆",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 696.21875,
+            "bottom": 751.890625
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 751.875,
+            "bottom": 807.546875
+          },
+          {
+            "text": "",
+            "width": 55.65625,
+            "height": 55.65625,
+            "top": 751.875,
+            "bottom": 807.53125
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 751.875,
+            "bottom": 807.546875
+          },
+          {
+            "text": "♣",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 807.53125,
+            "bottom": 863.203125
+          },
+          {
+            "text": "",
+            "width": 55.65625,
+            "height": 55.65625,
+            "top": 807.53125,
+            "bottom": 863.1875
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 807.53125,
+            "bottom": 863.203125
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 807.53125,
+            "bottom": 863.203125
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 863.203125,
+            "bottom": 918.875
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 863.203125,
+            "bottom": 918.875
+          },
+          {
+            "text": "",
+            "width": 55.65625,
+            "height": 55.65625,
+            "top": 863.203125,
+            "bottom": 918.859375
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 863.203125,
+            "bottom": 918.875
+          },
+          {
+            "text": "◆",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 863.203125,
+            "bottom": 918.875
+          },
+          {
+            "text": "",
+            "width": 55.65625,
+            "height": 55.65625,
+            "top": 918.875,
+            "bottom": 974.53125
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 918.875,
+            "bottom": 974.546875
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 918.875,
+            "bottom": 974.546875
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 974.546875,
+            "bottom": 1030.21875
+          },
+          {
+            "text": "",
+            "width": 55.65625,
+            "height": 55.65625,
+            "top": 974.546875,
+            "bottom": 1030.203125
+          },
+          {
+            "text": "",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 974.546875,
+            "bottom": 1030.21875
+          },
+          {
+            "text": "◆",
+            "width": 55.671875,
+            "height": 55.671875,
+            "top": 974.546875,
+            "bottom": 1030.21875
+          },
+          {
+            "text": "Play today’s board",
+            "width": 183,
+            "height": 47.5,
+            "top": 900.65625,
+            "bottom": 948.15625
+          },
+          {
+            "text": "Privacy",
+            "width": 47,
+            "height": 22.5,
+            "top": 2284.78125,
+            "bottom": 2307.28125
+          },
+          {
+            "text": "Terms",
+            "width": 40,
+            "height": 22.5,
+            "top": 2284.78125,
+            "bottom": 2307.28125
+          },
+          {
+            "text": "Built by Param Factory (external site)",
+            "width": 147,
+            "height": 22.5,
+            "top": 2284.78125,
+            "bottom": 2307.28125
+          }
+        ],
+        "undersized": [
+          {
+            "text": "✦ Seed Sprint",
+            "width": 145,
+            "height": 31.5,
+            "top": 20.25,
+            "bottom": 51.75
+          },
+          {
+            "text": "Demo",
+            "width": 43,
+            "height": 24,
+            "top": 24,
+            "bottom": 48
+          },
+          {
+            "text": "Privacy",
+            "width": 47,
+            "height": 22.5,
+            "top": 2284.78125,
+            "bottom": 2307.28125
+          },
+          {
+            "text": "Terms",
+            "width": 40,
+            "height": 22.5,
+            "top": 2284.78125,
+            "bottom": 2307.28125
+          },
+          {
+            "text": "Built by Param Factory (external site)",
+            "width": 147,
+            "height": 22.5,
+            "top": 2284.78125,
+            "bottom": 2307.28125
+          }
+        ]
+      }
+    },
+    {
+      "name": "all mobile links and buttons meet 44px touch target",
+      "pass": false,
+      "detail": [
+        {
+          "text": "✦ Seed Sprint",
+          "width": 145,
+          "height": 31.5,
+          "top": 20.25,
+          "bottom": 51.75
+        },
+        {
+          "text": "Demo",
+          "width": 43,
+          "height": 24,
+          "top": 24,
+          "bottom": 48
+        },
+        {
+          "text": "Privacy",
+          "width": 47,
+          "height": 22.5,
+          "top": 2284.78125,
+          "bottom": 2307.28125
+        },
+        {
+          "text": "Terms",
+          "width": 40,
+          "height": 22.5,
+          "top": 2284.78125,
+          "bottom": 2307.28125
+        },
+        {
+          "text": "Built by Param Factory (external site)",
+          "width": 147,
+          "height": 22.5,
+          "top": 2284.78125,
+          "bottom": 2307.28125
+        }
+      ]
+    },
+    {
+      "name": "axe mobile landing has no serious/critical findings",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "mobile game tiles meet 44px touch target",
+      "pass": true,
+      "detail": {
+        "width": 56.328125,
+        "height": 56.328125
+      }
+    },
+    {
+      "name": "axe mobile demo has no serious/critical findings",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "reduced motion makes transitions effectively instant",
+      "pass": true,
+      "detail": {
+        "transitionDuration": "1e-05s",
+        "animationDuration": "1e-05s",
+        "scrollBehavior": "auto"
+      }
+    },
+    {
+      "name": "service worker installs and update check completes",
+      "pass": true,
+      "detail": {
+        "active": "https://seed-sprint.sociobot.in/sw.js",
+        "waiting": null,
+        "installing": null,
+        "caches": [
+          "seed-sprint-v1"
+        ]
+      }
+    },
+    {
+      "name": "PWA reloads demo while offline",
+      "pass": true,
+      "detail": "PRACTICE BOARD · SPROUT-7\n\nConnect every seed to the sprout\n\nRotate tiles. Each connected line turns green.\n\nTIME LEFT\n4:17\nPause\nRemove timer\n◆\n·\n·\n·\n♣\n·\n·\n·\n·\n◆\n·\n·\n◆\n·\n·\nGame paused\nYour time is stopped.\nResume board\n\n7 of 25 route tiles connected.\n\nBOARD SEED\nSPROUT-7\nTURNS\n11\nCopy same-board link\n\nFriends can play this exact board at any time."
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "image",
+      "url": "https://seed-sprint.sociobot.in/art/seed-circuit-1200.avif"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/demo"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "image",
+      "url": "https://seed-sprint.sociobot.in/art/seed-circuit-1200.avif"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/play?seed=2026-09-02&room=1OQV0"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/result?seed=2026-09-02&status=won&time=4&turns=34"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/play?seed=QA-LOSS"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/play?seed=QA-LOSS"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/result?seed=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E&status=won&time=bogus&turns=-9"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "image",
+      "url": "https://seed-sprint.sociobot.in/art/seed-circuit-720.avif"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/demo"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/demo"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/demo"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/demo"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "document",
+      "url": "https://seed-sprint.sociobot.in/demo"
+    },
+    {
+      "method": "GET",
+      "type": "script",
+      "url": "https://seed-sprint.sociobot.in/assets/index-DACCY-lB.js"
+    },
+    {
+      "method": "GET",
+      "type": "stylesheet",
+      "url": "https://seed-sprint.sociobot.in/assets/index-sqxSbaNw.css"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-regular.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/atkinson-bold.woff2"
+    },
+    {
+      "method": "GET",
+      "type": "font",
+      "url": "https://seed-sprint.sociobot.in/fonts/fraunces-semibold.woff2"
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "axe": {
+    "desktop landing": [],
+    "instructions dialog": [],
+    "desktop demo active": [],
+    "desktop win screen": [],
+    "invalid shared result": [],
+    "mobile landing": [],
+    "mobile demo": []
+  },
+  "rootResponse": {
+    "status": 200,
+    "headers": {
+      "cache-control": "public, must-revalidate, max-age=30",
+      "content-encoding": "br",
+      "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+      "content-type": "text/html",
+      "date": "Wed, 02 Sep 2026 03:51:30 GMT",
+      "etag": "\"09478163\"",
+      "last-modified": "Wed, 02 Sep 2026 03:19:36 GMT",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=10886400; includeSubDomains; preload",
+      "vary": "Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-xss-protection": "1; mode=block"
+    }
+  },
+  "focusOrder": [
+    {
+      "tag": "A",
+      "text": "Try it with sample data",
+      "href": "/demo",
+      "outline": "4px solid rgb(228, 173, 25)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "href": null,
+      "outline": "4px solid rgb(228, 173, 25)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "href": null,
+      "outline": "4px solid rgb(228, 173, 25)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "◆",
+      "href": null,
+      "outline": "4px solid rgb(228, 173, 25)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "href": null,
+      "outline": "4px solid rgb(228, 173, 25)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "href": null,
+      "outline": "4px solid rgb(228, 173, 25)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "href": null,
+      "outline": "4px solid rgb(228, 173, 25)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "♣",
+      "href": null,
+      "outline": "4px solid rgb(228, 173, 25)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "href": null,
+      "outline": "4px solid rgb(228, 173, 25)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "href": null,
+      "outline": "4px solid rgb(228, 173, 25)"
+    }
+  ],
+  "dailySeed": "2026-09-02",
+  "roomLink": "https://seed-sprint.sociobot.in/play?seed=2026-09-02&room=1OQV0",
+  "frameStats4xCpu": {
+    "frames": 121,
+    "duration": 1.9998000000000002,
+    "fps": 60.00600060006,
+    "maxInterval": 16.800000000000182,
+    "meanInterval": 16.665000000000003
+  },
+  "resultText": "Seed Sprint 2026-09-02\n🟩🟩🟩🟩🟩🟩\n0:04 · 34 turns\nhttps://seed-sprint.sociobot.in/result?seed=2026-09-02&status=won&time=4&turns=34",
+  "invalidResultText": "SHARED RESULT · <IMG SRC=X ONERROR=ALERT(1)>\n\nThis board was connected\n🟩 🟩 🟩 🟩 🟩 🟩\nNaN:NaN\n-9 turns\n\nThe card hides the tile layout. Play the same seed before comparing routes.\n\nPlay this board",
+  "mobileLayout": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "scrollWidth": 390,
+    "board": {
+      "x": 16,
+      "y": 639.71875,
+      "width": 358,
+      "height": 402.5,
+      "top": 639.71875,
+      "right": 374,
+      "bottom": 1042.21875,
+      "left": 16
+    },
+    "interactives": [
+      {
+        "text": "Skip to main content",
+        "width": 189,
+        "height": 49.5,
+        "top": -80,
+        "bottom": -30.5
+      },
+      {
+        "text": "✦ Seed Sprint",
+        "width": 145,
+        "height": 31.5,
+        "top": 20.25,
+        "bottom": 51.75
+      },
+      {
+        "text": "Demo",
+        "width": 43,
+        "height": 24,
+        "top": 24,
+        "bottom": 48
+      },
+      {
+        "text": "How to play",
+        "width": 97,
+        "height": 44,
+        "top": 14,
+        "bottom": 58
+      },
+      {
+        "text": "Try it with sample data",
+        "width": 216,
+        "height": 47.5,
+        "top": 417.21875,
+        "bottom": 464.71875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 696.21875,
+        "bottom": 751.890625
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 696.21875,
+        "bottom": 751.875
+      },
+      {
+        "text": "◆",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 696.21875,
+        "bottom": 751.890625
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 751.875,
+        "bottom": 807.546875
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 751.875,
+        "bottom": 807.53125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 751.875,
+        "bottom": 807.546875
+      },
+      {
+        "text": "♣",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 807.53125,
+        "bottom": 863.203125
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 807.53125,
+        "bottom": 863.1875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 807.53125,
+        "bottom": 863.203125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 807.53125,
+        "bottom": 863.203125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 863.203125,
+        "bottom": 918.875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 863.203125,
+        "bottom": 918.875
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 863.203125,
+        "bottom": 918.859375
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 863.203125,
+        "bottom": 918.875
+      },
+      {
+        "text": "◆",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 863.203125,
+        "bottom": 918.875
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 918.875,
+        "bottom": 974.53125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 918.875,
+        "bottom": 974.546875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 918.875,
+        "bottom": 974.546875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 974.546875,
+        "bottom": 1030.21875
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 974.546875,
+        "bottom": 1030.203125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 974.546875,
+        "bottom": 1030.21875
+      },
+      {
+        "text": "◆",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 974.546875,
+        "bottom": 1030.21875
+      },
+      {
+        "text": "Play today’s board",
+        "width": 183,
+        "height": 47.5,
+        "top": 900.65625,
+        "bottom": 948.15625
+      },
+      {
+        "text": "Privacy",
+        "width": 47,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      },
+      {
+        "text": "Terms",
+        "width": 40,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      },
+      {
+        "text": "Built by Param Factory (external site)",
+        "width": 147,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      }
+    ],
+    "undersized": [
+      {
+        "text": "✦ Seed Sprint",
+        "width": 145,
+        "height": 31.5,
+        "top": 20.25,
+        "bottom": 51.75
+      },
+      {
+        "text": "Demo",
+        "width": 43,
+        "height": 24,
+        "top": 24,
+        "bottom": 48
+      },
+      {
+        "text": "Privacy",
+        "width": 47,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      },
+      {
+        "text": "Terms",
+        "width": 40,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      },
+      {
+        "text": "Built by Param Factory (external site)",
+        "width": 147,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      }
+    ]
+  },
+  "mobileTileMin": {
+    "width": 56.328125,
+    "height": 56.328125
+  },
+  "reducedMotion": {
+    "transitionDuration": "1e-05s",
+    "animationDuration": "1e-05s",
+    "scrollBehavior": "auto"
+  },
+  "serviceWorker": {
+    "active": "https://seed-sprint.sociobot.in/sw.js",
+    "waiting": null,
+    "installing": null,
+    "caches": [
+      "seed-sprint-v1"
+    ]
+  },
+  "finishedAt": "2026-09-02T03:51:45.975Z",
+  "passCount": 43,
+  "failCount": 3
+}
