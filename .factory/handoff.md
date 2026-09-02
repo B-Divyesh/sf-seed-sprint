@@ -1,22 +1,33 @@
-# Seed Sprint review handoff
+# Seed Sprint polish handoff
 
 ## Outcome
 
-Adversarial first-read review 1 is complete with verdict **FAIL**. No product code was changed. The full report is in `.factory/review-1.md`.
+Polish round 1 repaired all 17 findings from `.factory/review-1.md`. The product remains a static Vite TypeScript browser game with a deterministic daily routing board, isolated one-click demo, local progress, and local recent-result history.
 
-The cold mobile and desktop first screens pass, the live demo is one-click and isolated, all 18 exact registered claim commands pass from a clean clone, and all previously documented runtime defects remain fixed. Seventeen findings remain: three claim-coverage gaps, copy and terminology issues, incomplete route social metadata and 404 shell metadata/navigation, an omitted sitemap route, and saved recent results that have no user-facing view.
+Repair commit: `28f482e3707c3b0463a21ec51eb0e723f3ae6fad` (`fix: polish review findings`). It was pushed to `main` and deployed to <https://seed-sprint.sociobot.in> on 2026-09-02 UTC.
 
-## Verification performed
+## What changed
 
-- Cold live loads at 390×844 and 1440×900.
-- Live demo state, banner, reset, exit, daily/demo namespace separation, and request log.
-- Every exact `.factory/claims.json` command from a separate clean clone after `npm ci`; 18/18 passed. The frame check measured 60.5 FPS.
-- Live end-state/restart, both clipboard-denial paths, malformed session/result recovery, 390 px targets, service-worker cache, and offline reload.
-- Route/status/title/h1/main/canonical/social metadata sweep across home, demo, play, privacy, terms, result, and 404.
-- Link crawl, browser Back, route focus, responsive overflow, Axe on every route, and the fleet URL verifier.
-- Prior handoff and referenced verification findings checked against live behavior and source.
+- Added registered, observable claim coverage for the seeded demo state, real touch input, arrow-key navigation, and saved recent results. The manifest now has 20 claims.
+- Clarified first-screen wording and terminology: visible markers remain seeds; the deterministic identifier is a board code. Replaced “fair,” unexplained UTC language, “spoiler-safe,” and the ambiguous section slogan.
+- Added a useful local Recent results section with replay, result-view, and confirmed clear actions.
+- Added route-specific titles, descriptions, canonical URLs, Open Graph, and Twitter metadata at runtime and as built static shells for non-JavaScript crawlers. Result metadata stays generic and never reveals layout.
+- Completed the designed 404 shell and sitemap; unknown routes return HTTP 404 with navigation, legal links, metadata, version, and a way home.
+- Bumped the service-worker cache to `seed-sprint-v3` so an existing install updates after this shell change.
 
-## How to verify
+## Verification
+
+- Clean clone: `/tmp/seed-sprint-clean.nXJNFE` ran `npm ci`, `npm test`, and `npm run build`; **32/32 tests passed**. Log: `/tmp/seed-sprint-clean.log`.
+- Every exact command registered in `.factory/claims.json` passed after `npm ci`; the isolated frame-rate claim measured **60.3 FPS**. Log: `/tmp/seed-sprint-claims-final.log`.
+- Local full suite: **32/32 passed** in 35.8 seconds. Log: `/tmp/seed-sprint-final-test.log`.
+- `npm run build` produces `dist/`; shipped JS is 25.40 KB raw / 9.30 KB gzip and CSS is 15.01 KB raw / 4.24 KB gzip.
+- Cold live root check passed in 760 ms: title, `lang=en`, one h1, main landmark, image alt attributes, labels, and zero console/page errors. Evidence: `/tmp/seed-sprint-live.aQhYXJ/verify.json`.
+- Live route check: `/`, `/demo`, `/play`, `/privacy`, `/terms`, and a valid `/result` returned 200; `/missing-board` returned 404. Live `/demo` served its own title/canonical/Open Graph URL and passed touch/reset checks. Evidence: `/tmp/seed-sprint-live.aQhYXJ/live-product-check.json`.
+- Playwright Axe checks are part of the passing suite for landing, demo, instructions, mobile layout, and route screens. The standalone Axe CLI could not start Selenium Chrome in this container; this did not affect the Playwright Axe coverage.
+
+See `.factory/polish-1.md` for the finding-by-finding map and screenshot paths.
+
+## Run and deploy
 
 ```sh
 npm ci
@@ -24,8 +35,8 @@ npm test
 npm run build
 ```
 
-For review-specific evidence and exact proposed fixes, read `.factory/review-1.md`.
+Deploy `dist/` to the `sf-seed-sprint` static app. `staticwebapp.config.json` supplies the headers, explicit route shells, and HTTP 404 override.
 
-## Remaining work
+## Known gaps
 
-Resolve every `F-1-*` item before requesting another review. The next reviewer must rerun the full checklist rather than checking only these differences.
+None. No accounts, payment, analytics, external gameplay API, or server-side state are used.
