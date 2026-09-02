@@ -32,6 +32,34 @@ test('@claim:complete-board the demo reaches a result card', async ({ page }) =>
   await expect(page.getByRole('button', { name: 'Copy result' })).toBeVisible();
 });
 
+test('@claim:demo-seeded-state demo starts partly solved and Reset demo restores it', async ({ page }) => {
+  await page.goto('/demo', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('[data-timer]')).toHaveText(/^4:1[78]$/);
+  await expect(page.locator('[data-turns]')).toHaveText('11');
+  await expect(page.getByRole('button', { name: 'Pause' })).toBeEnabled();
+  const initial = await page.locator('[data-status]').textContent();
+  const [, connected, total] = initial?.match(/(\d+) of (\d+) route tiles/) || [];
+  expect(Number(connected)).toBeGreaterThan(0);
+  expect(Number(connected)).toBeLessThan(Number(total));
+  await page.locator('[data-tile]').first().click();
+  await expect(page.locator('[data-turns]')).toHaveText('12');
+  await page.getByRole('button', { name: 'Reset demo' }).click();
+  await expect(page.locator('[data-timer]')).toHaveText(/^4:1[78]$/);
+  await expect(page.locator('[data-turns]')).toHaveText('11');
+  await expect(page.locator('[data-status]')).toHaveText(initial!);
+});
+
+test('@claim:touch-controls tapping a tile rotates it on a touch screen', async ({ browser }) => {
+  const context = await browser.newContext({ hasTouch: true, isMobile: true, viewport: { width: 390, height: 844 } });
+  const touchPage = await context.newPage();
+  await touchPage.goto('http://127.0.0.1:4173/demo', { waitUntil: 'domcontentloaded' });
+  const tile = touchPage.locator('[data-tile]').first();
+  const before = await tile.getAttribute('class');
+  await tile.tap();
+  await expect(tile).not.toHaveAttribute('class', before!);
+  await context.close();
+});
+
 test('@claim:free-play a player can start a board without an account or payment', async ({ page }) => {
   await page.goto('/play?seed=FREE-PLAY', { waitUntil: 'domcontentloaded' });
   await page.getByRole('button', { name: 'Start five-minute board' }).click();
@@ -67,19 +95,19 @@ test('clipboard denial exposes the generated result link as selectable recovery'
   expect(await page.locator('.route-announcer').textContent()).toContain('result link is ready');
 });
 
-test('@claim:share-recovery clipboard denial exposes a durable seeded same-board link', async ({ page }) => {
+test('@claim:share-recovery clipboard denial exposes a durable board link', async ({ page }) => {
   await page.goto('/play?seed=DENIED-LINK', { waitUntil: 'domcontentloaded' });
   await page.evaluate(() => {
     Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: async () => { throw new Error('denied'); } } });
     document.execCommand = () => false;
   });
-  await page.getByRole('button', { name: 'Copy same-board link' }).click();
+  await page.getByRole('button', { name: 'Copy board link' }).click();
   const recovery = page.locator('[data-room-share-fallback]');
   const field = page.locator('[data-same-board-link]');
   await expect(recovery).toBeVisible();
   await expect(field).toHaveValue(/\/play\?seed=DENIED-LINK&room=[A-Z0-9]+$/);
   await expect(field).toBeFocused();
-  expect(await page.locator('.route-announcer').textContent()).toContain('fixed same-board link is ready');
+  expect(await page.locator('.route-announcer').textContent()).toContain('fixed board link is ready');
   expect(new URL(await field.inputValue()).searchParams.get('seed')).toBe('DENIED-LINK');
 });
 
@@ -87,7 +115,7 @@ test('@claim:same-board-link a copied room link opens the identical board for a 
   await page.goto('/play?seed=ROOM-TEST', { waitUntil: 'domcontentloaded' });
   await captureClipboard(page);
   const signature = await page.locator('[data-tile]').evaluateAll((tiles) => tiles.map((tile) => `${tile.className}|${tile.getAttribute('aria-label')}`));
-  await page.getByRole('button', { name: 'Copy same-board link' }).click();
+  await page.getByRole('button', { name: 'Copy board link' }).click();
   const url = await copiedText(page);
   expect(url).toMatch(/\/play\?seed=ROOM-TEST&room=[A-Z0-9]+$/);
   await page.goto(url, { waitUntil: 'domcontentloaded' });
@@ -127,16 +155,6 @@ test('@claim:restart-state a real completed run reaches the end screen and Play 
   await expect(page.locator('[data-turns]')).toHaveText('0');
   expect(await page.locator('.tile').evaluateAll((tiles) => tiles.map((tile) => tile.className))).toEqual(originalBoard);
   await expect(page.getByRole('button', { name: 'Remove timer' })).toHaveAttribute('aria-pressed', 'false');
-});
-
-test('Reset demo restores its seeded sample state', async ({ page }) => {
-  await page.goto('/demo', { waitUntil: 'domcontentloaded' });
-  await page.locator('[data-tile]').first().click();
-  await expect(page.locator('[data-turns]')).toHaveText('12');
-  await page.getByRole('button', { name: 'Reset demo' }).click();
-  await expect(page.locator('[data-turns]')).toHaveText('11');
-  expect(await page.locator('[data-timer]').textContent()).toMatch(/^4:1[78]$/);
-  await expect(page.locator('[data-status]')).toContainText('route tiles connected');
 });
 
 test('@claim:progress-reload progress stays on this device', async ({ page }) => {
@@ -184,8 +202,22 @@ test('@claim:five-minute-limit a timed round ends at five minutes', async ({ pag
   await expect(page.getByText('Time ended', { exact: true })).toBeVisible();
 });
 
-test('@claim:keyboard-controls keyboard controls rotate and pause', async ({ page }) => {
+test('@claim:keyboard-controls keyboard controls move focus, rotate, and pause', async ({ page }) => {
   await page.goto('/demo', { waitUntil: 'domcontentloaded' });
+  const moves: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -6, ArrowDown: 6 };
+  const tiles = await page.locator('[data-tile]').evaluateAll((elements) => elements.map((element) => Number((element as HTMLElement).dataset.tile)));
+  for (const [key, delta] of Object.entries(moves)) {
+    const candidate = tiles.find((index) => {
+      let next = index + delta;
+      while (next >= 0 && next < 36 && !tiles.includes(next)) next += delta;
+      return next >= 0 && next < 36 && (Math.abs(delta) === 6 || Math.floor(next / 6) === Math.floor(index / 6));
+    });
+    expect(candidate, `${key} has a valid route tile move`).toBeDefined();
+    await page.locator(`[data-tile="${candidate}"]`).focus();
+    await page.keyboard.press(key);
+    const active = await page.evaluate(() => Number((document.activeElement as HTMLElement)?.dataset.tile));
+    expect(active).not.toBe(candidate);
+  }
   const first = page.locator('[data-tile]').first();
   await first.focus();
   const before = await first.getAttribute('class');
@@ -219,8 +251,29 @@ test('@claim:privacy-local game flow sends requests only to its own origin', asy
   page.on('request', (request) => origins.add(new URL(request.url()).origin));
   await page.goto('/demo', { waitUntil: 'domcontentloaded' });
   await page.locator('[data-tile]').first().click();
-  await page.getByRole('button', { name: 'Copy same-board link' }).click();
+  await page.getByRole('button', { name: 'Copy board link' }).click();
   expect([...origins]).toEqual(['http://127.0.0.1:4173']);
+});
+
+test('@claim:recent-results finished boards can be viewed, replayed, and cleared locally', async ({ page }) => {
+  await page.goto('/play?seed=RECENT-RESULT', { waitUntil: 'domcontentloaded' });
+  await page.getByRole('button', { name: 'Start five-minute board' }).click();
+  await solveDemo(page);
+  await expect(page.getByText('Connected', { exact: true })).toBeVisible();
+  await page.goto('/play?seed=RECENT-RESULT', { waitUntil: 'domcontentloaded' });
+  const recent = page.getByRole('region', { name: 'Recent results' });
+  await expect(recent).toContainText('RECENT-RESULT');
+  await expect(recent).toContainText(/Connected in \d:\d{2}/);
+  await recent.getByRole('link', { name: 'View result' }).click();
+  await expect(page).toHaveURL(/\/result\?seed=RECENT-RESULT/);
+  await page.goto('/play?seed=RECENT-RESULT', { waitUntil: 'domcontentloaded' });
+  await page.getByRole('link', { name: 'Replay' }).click();
+  await expect(page).toHaveURL(/\/play\?seed=RECENT-RESULT/);
+  await page.goto('/play?seed=RECENT-RESULT', { waitUntil: 'domcontentloaded' });
+  page.once('dialog', (dialog) => dialog.accept());
+  await page.getByRole('button', { name: 'Clear recent results' }).click();
+  await expect(page.getByText('Finished boards will appear here.')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('daily:completions'))).toBeNull();
 });
 
 test('@claim:offline-reload works offline after the first visit', async ({ browser }) => {
@@ -273,11 +326,11 @@ test('mobile layout fits 390px and keeps game targets usable', async ({ page }) 
 test('play screen and instructions pass automated accessibility checks', async ({ page }) => {
   await page.goto('/demo', { waitUntil: 'domcontentloaded' });
   expect((await new AxeBuilder({ page: page as never }).analyze()).violations).toEqual([]);
-  await page.getByRole('button', { name: 'How to play' }).click();
+  await page.getByRole('button', { name: 'Show instructions' }).click();
   await expect(page.getByRole('dialog')).toBeVisible();
   expect((await new AxeBuilder({ page: page as never }).analyze()).violations).toEqual([]);
   await page.getByRole('button', { name: 'Close instructions' }).click();
-  await expect(page.getByRole('button', { name: 'How to play' })).toBeFocused();
+  await expect(page.getByRole('button', { name: 'Show instructions' })).toBeFocused();
 });
 
 test('privacy, terms, result, and missing routes render one heading', async ({ page }) => {
@@ -322,7 +375,7 @@ test('invalid persisted sessions are rejected field by field', async ({ page }) 
 
 test('keyboard focus indicator clears 3:1 contrast on both paper surfaces', async ({ page }) => {
   await page.goto('/demo', { waitUntil: 'domcontentloaded' });
-  const button = page.getByRole('button', { name: 'Copy same-board link' });
+  const button = page.getByRole('button', { name: 'Copy board link' });
   await button.focus();
   const colors = await button.evaluate((element) => {
     const style = getComputedStyle(element);

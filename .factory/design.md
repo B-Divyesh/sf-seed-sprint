@@ -50,7 +50,7 @@ On a 390 px screen, the introduction stacks above the board, the timer docks abo
 
 ## Difficulty and deterministic board plan
 
-Each UTC date maps to a seeded pseudo-random generator. A solved routing tree is built first, then each tile receives a deterministic non-zero rotation. The verifier solves the board by replaying the saved solution rotations. Daily boards contain 18–26 routed tiles plus inert blockers, which creates a 4–6 minute first run without precise timing.
+Each calendar day maps to a deterministic pseudo-random generator. A solved routing tree is built first, then each tile receives a deterministic non-zero rotation. The verifier solves the board by replaying the saved solution rotations. Daily boards contain 18–26 routed tiles plus inert blockers, which creates a 4–6 minute first run without precise timing.
 
 The demo seed is fixed at `SPROUT-7`. It uses its own `demo:` storage namespace and starts with a partly solved board so the product appears in use immediately.
 

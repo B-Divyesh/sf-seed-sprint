@@ -60,7 +60,7 @@ test('@claim:pwa-update an old cache-first install activates the repaired worker
       await registration.update();
       await Promise.race([changed, new Promise((_, reject) => setTimeout(() => reject(new Error('Worker did not activate')), 5_000))]);
     });
-    await expect.poll(() => page.evaluate(() => caches.keys())).toEqual(['seed-sprint-v2']);
+    await expect.poll(() => page.evaluate(() => caches.keys())).toEqual(['seed-sprint-v3']);
     await page.reload({ waitUntil: 'domcontentloaded' });
     await expect(page.locator('[data-release]')).toHaveText('new');
   } finally {
@@ -72,4 +72,27 @@ test('@claim:pwa-update an old cache-first install activates the repaired worker
 test('static deployment maps AVIF files to image/avif', async () => {
   const config = JSON.parse(await readFile(new URL('../public/staticwebapp.config.json', import.meta.url), 'utf8'));
   expect(config.mimeTypes['.avif']).toBe('image/avif');
+});
+
+test('built route shells publish their own canonical, Open Graph, and Twitter metadata', async () => {
+  const expected = {
+    demo: 'Demo — Seed Sprint',
+    play: 'Play — Seed Sprint',
+    result: 'Shared result — Seed Sprint',
+    privacy: 'Privacy — Seed Sprint',
+    terms: 'Terms — Seed Sprint'
+  };
+  for (const [route, title] of Object.entries(expected)) {
+    const html = await readFile(new URL(`../dist/${route}.html`, import.meta.url), 'utf8');
+    expect(html).toContain(`<title>${title}</title>`);
+    expect(html).toContain(`rel="canonical" href="https://seed-sprint.sociobot.in/${route}"`);
+    expect(html).toContain(`property="og:title" content="${title}"`);
+    expect(html).toContain(`property="og:url" content="https://seed-sprint.sociobot.in/${route}"`);
+    expect(html).toMatch(/name="twitter:title" content="[^"]+"/);
+  }
+});
+
+test('the static 404 shell retains navigation, legal links, and route metadata', async () => {
+  const html = await readFile(new URL('../public/404.html', import.meta.url), 'utf8');
+  for (const expected of ['name="description"', 'rel="canonical"', 'property="og:title"', 'name="twitter:title"', 'rel="apple-touch-icon"', 'href="/privacy"', 'href="/terms"', 'Built by Param Factory', 'Version 1.0.1']) expect(html).toContain(expected);
 });

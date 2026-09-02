@@ -50,23 +50,23 @@
     },
     {
       "route": "/demo",
-      "rewrite": "/index.html"
+      "rewrite": "/demo.html"
     },
     {
       "route": "/play",
-      "rewrite": "/index.html"
+      "rewrite": "/play.html"
     },
     {
       "route": "/result",
-      "rewrite": "/index.html"
+      "rewrite": "/result.html"
     },
     {
       "route": "/privacy",
-      "rewrite": "/index.html"
+      "rewrite": "/privacy.html"
     },
     {
       "route": "/terms",
-      "rewrite": "/index.html"
+      "rewrite": "/terms.html"
     },
     {
       "route": "/*",

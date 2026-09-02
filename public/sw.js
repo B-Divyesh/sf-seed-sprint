@@ -1,4 +1,4 @@
-const CACHE_NAME = 'seed-sprint-v2';
+const CACHE_NAME = 'seed-sprint-v3';
 const OFFLINE_SHELL = ['/', '/favicon.svg', '/manifest.webmanifest', '/art/seed-circuit-720.webp'];
 
 self.addEventListener('install', (event) => {

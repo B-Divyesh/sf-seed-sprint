@@ -14,6 +14,20 @@
     "sandbox": "fresh browser context at /demo; rotate every routed tile to its verified orientation"
   },
   {
+    "id": "demo-seeded-state",
+    "claim": "The sample board opens partly solved with an active timer and reset restores that same sample state.",
+    "where": "landing demo action, README, demo documentation",
+    "test": "npm test -- --grep @claim:demo-seeded-state",
+    "sandbox": "fresh /demo; assert 4:18 timer, 11 turns, partial connected count, then reset and assert the same values"
+  },
+  {
+    "id": "touch-controls",
+    "claim": "Tap a tile to rotate it clockwise on a touch screen.",
+    "where": "README controls",
+    "test": "npm test -- --grep @claim:touch-controls",
+    "sandbox": "fresh touch-enabled 390 px context at /demo; tap one tile and assert its rotation changes"
+  },
+  {
     "id": "free-play",
     "claim": "The game is free to play without an account or payment.",
     "where": "landing facts and README",
@@ -22,7 +36,7 @@
   },
   {
     "id": "share-result",
-    "claim": "A completed board can be shared as a spoiler-safe result link.",
+    "claim": "A completed board can be shared as a result link that hides the board layout.",
     "where": "landing steps and completion screen",
     "test": "npm test -- --grep @claim:share-result",
     "sandbox": "fresh /demo; solve the board; capture Copy result and assert the link contains no tile layout"
@@ -36,7 +50,7 @@
   },
   {
     "id": "share-recovery",
-    "claim": "If clipboard access is blocked, the complete fixed same-board link remains visible and selectable.",
+    "claim": "If clipboard access is blocked, the complete fixed board link remains visible and selectable.",
     "where": "same-board share recovery and README",
     "test": "npm test -- --grep @claim:share-recovery",
     "sandbox": "fresh fixed seed; deny Clipboard API and legacy copy; assert the visible focused field contains seed and room"
@@ -50,7 +64,7 @@
   },
   {
     "id": "shared-link-fields",
-    "claim": "Shared result links include only the seed, time, turns, and result.",
+    "claim": "Shared result links include only the board code, time, turns, and result.",
     "where": "landing privacy section and privacy page",
     "test": "npm test -- --grep @claim:shared-link-fields",
     "sandbox": "fresh /demo; solve, copy the result, and assert its query fields exactly"
@@ -88,7 +102,7 @@
     "claim": "The board works with keyboard controls.",
     "where": "instructions and README",
     "test": "npm test -- --grep @claim:keyboard-controls",
-    "sandbox": "fresh /demo; focus a tile, press R, then pause and resume with P"
+    "sandbox": "fresh /demo; use Arrow keys to move focus, R to rotate, and P to pause and resume"
   },
   {
     "id": "assist-mode",
@@ -103,6 +117,13 @@
     "where": "privacy page and README",
     "test": "npm test -- --grep @claim:privacy-local",
     "sandbox": "fresh /demo with a request log; play and copy a room link; assert all requests are same-origin"
+  },
+  {
+    "id": "recent-results",
+    "claim": "Recent finished boards can be viewed, replayed, and cleared in this browser.",
+    "where": "play page and privacy page",
+    "test": "npm test -- --grep @claim:recent-results",
+    "sandbox": "fresh /play; complete a board, open the recent result, replay it, then clear local history"
   },
   {
     "id": "offline-reload",

@@ -1,14 +1,14 @@
 # Landing copy audit
 
-Checked on 2026-09-02. The first screen states the task, audience, first action, and three facts without scrolling on desktop. No sentence exceeds 22 words. No banned marketing word appears.
+Checked on 2026-09-02 after polish round 1. The first screen states the game, audience, first action, and three facts without scrolling on desktop or 390 px mobile. No landing sentence exceeds 22 words. No banned marketing word appears.
 
 ## First screen
 
 | Copy | Words |
 | --- | ---: |
-| One board every UTC day | 5 |
+| A new board starts at the same time each day | 10 |
 | Race the same signal puzzle | 5 |
-| For puzzle friends who want one fair five-minute board without accounts or schedules. | 13 |
+| For puzzle friends who want one shared five-minute board without accounts or schedules. | 13 |
 | Try it with sample data | 5 |
 | Opens a partly solved practice board. | 6 |
 | Free to play | 3 |
@@ -22,20 +22,18 @@ Checked on 2026-09-02. The first screen states the task, audience, first action,
 
 | Copy | Words |
 | --- | ---: |
-| Same seed. | 2 |
-| Different route. | 2 |
 | How it works | 3 |
 | Rotate the tiles. | 3 |
 | Join every line from the seeds to the sprout. | 9 |
 | Beat five minutes. | 3 |
-| The board is the same for everyone that day. | 9 |
+| The board is identical for everyone that day. | 8 |
 | Share your result. | 3 |
-| Send a spoiler-safe card or the board link. | 8 |
+| Share a result card that hides the board, or send the board link. | 13 |
 | A small daily game | 4 |
 | There is no chat, account, live lobby, or endless puzzle feed. | 11 |
-| Your play stays here | 4 |
+| Data saved in this browser | 5 |
 | The game saves progress in this browser. | 7 |
-| Shared links include only the seed, time, turns, and result. | 10 |
+| Shared links include only the board code, time, turns, and result. | 11 |
 | Seed Sprint is a five-minute daily signal puzzle. | 8 |
 | Hero image generated for this game. | 6 |
 
@@ -45,12 +43,12 @@ Checked on 2026-09-02. The first screen states the task, audience, first action,
 | --- | --- |
 | the 6×6 play area | board |
 | a rotatable square | tile |
-| daily deterministic identifier | seed |
-| source marker | seed |
+| visible source marker | seed |
+| deterministic board identifier | board code |
 | destination marker | sprout |
 | untimed setting | assist mode |
 | isolated sample experience | demo |
-| link to the identical seed | same-board link |
+| link to an identical board | board link |
 | completion summary | result card |
 
-Catalog description: “Race friends on the same five-minute signal puzzle, then compare results with a link.” (14 words, 87 characters.)
+Catalog description: “Race friends on one shared five-minute signal puzzle, then compare results by link.” (13 words, 83 characters.)

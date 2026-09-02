@@ -54,7 +54,7 @@ function shell(content: string, demo = false): string {
     ${demo ? `<aside class="demo-banner" aria-label="Demo mode"><strong>Demo</strong> — sample board, nothing is saved to your daily game. <span><button data-reset-demo>Reset demo</button><a data-route data-exit-demo href="/">Start for real</a></span></aside>` : ''}
     <header class="site-header">
       <a class="wordmark" data-route href="/" aria-label="Seed Sprint home"><span aria-hidden="true">✦</span> Seed Sprint</a>
-      <nav aria-label="Main navigation"><a data-route href="/demo">Demo</a><a data-route href="/privacy">Privacy</a><button class="quiet-button" data-help>How to play</button></nav>
+      <nav aria-label="Main navigation"><a data-route href="/demo">Demo</a><a data-route href="/privacy">Privacy</a><button class="quiet-button" data-help>Show instructions</button></nav>
     </header>
     <main id="main" tabindex="-1">${content}</main>
     <footer>
@@ -79,16 +79,16 @@ function bindShell(): void {
 
 function heroCopy(): string {
   return `<div class="hero-copy">
-    <p class="eyebrow">One board every UTC day</p>
+    <p class="eyebrow">A new board starts at the same time each day</p>
     <h1 tabindex="-1">Race the same signal puzzle</h1>
-    <p class="lede">For puzzle friends who want one fair five-minute board without accounts or schedules.</p>
+    <p class="lede">For puzzle friends who want one shared five-minute board without accounts or schedules.</p>
     <div class="hero-actions"><a class="button primary" data-route href="/demo">Try it with sample data</a><span>Opens a partly solved practice board.</span></div>
     <ul class="plain-facts" aria-label="Game facts"><li>Free to play</li><li>Works offline after your first visit</li><li>Progress stays on this device</li></ul>
   </div>`;
 }
 
 function renderHome(): void {
-  document.title = 'Seed Sprint — play a daily signal puzzle';
+  setMetadata('Seed Sprint — play a daily signal puzzle', 'Rotate a shared five-minute signal puzzle, then compare results with friends through a link.', '/');
   const board = generateBoard(utcSeed());
   app.innerHTML = shell(`
     <section class="hero-section">
@@ -99,8 +99,8 @@ function renderHome(): void {
         <div class="board-shell preview-shell">${boardHtml(board, board.tiles.map((tile) => tile.startRotation), new Set())}<div class="preview-cover"><strong>Today’s board is ready</strong><span>Finish before the five-minute clock ends.</span><a class="button primary" data-route href="/play">Play today’s board</a></div></div>
       </div>
     </section>
-    <section class="how-section" aria-labelledby="how-heading"><div><p class="eyebrow">Same seed. Different route.</p><h2 id="how-heading">How it works</h2></div><ol class="steps"><li><strong>Rotate the tiles.</strong><span>Join every line from the seeds to the sprout.</span></li><li><strong>Beat five minutes.</strong><span>The board is the same for everyone that day.</span></li><li><strong>Share your result.</strong><span>Send a spoiler-safe card or the board link.</span></li></ol></section>
-    <section class="privacy-section" aria-labelledby="limits-heading"><div><h2 id="limits-heading">A small daily game</h2><p>There is no chat, account, live lobby, or endless puzzle feed.</p></div><div><h3>Your play stays here</h3><p>The game saves progress in this browser. Shared links include only the seed, time, turns, and result.</p></div></section>
+    <section class="how-section" aria-labelledby="how-heading"><div><h2 id="how-heading">How it works</h2></div><ol class="steps"><li><strong>Rotate the tiles.</strong><span>Join every line from the seeds to the sprout.</span></li><li><strong>Beat five minutes.</strong><span>The board is identical for everyone that day.</span></li><li><strong>Share your result.</strong><span>Share a result card that hides the board, or send the board link.</span></li></ol></section>
+    <section class="privacy-section" aria-labelledby="limits-heading"><div><h2 id="limits-heading">A small daily game</h2><p>There is no chat, account, live lobby, or endless puzzle feed.</p></div><div><h3>Data saved in this browser</h3><p>The game saves progress in this browser. Shared links include only the board code, time, turns, and result.</p></div></section>
   `);
   bindShell();
 }
@@ -169,18 +169,23 @@ function renderGamePage(demo: boolean): void {
   const room = params.get('room');
   const board = generateBoard(seed);
   const session = loadSession(board, demo);
-  document.title = `${demo ? 'Demo' : 'Play'} — Seed Sprint`;
+  setMetadata(
+    `${demo ? 'Demo' : 'Play'} — Seed Sprint`,
+    demo ? 'Try the partly solved Seed Sprint sample board. Demo play is separate from your daily game.' : 'Play a five-minute signal-routing board and share a result when you finish.',
+    demo ? '/demo' : '/play'
+  );
   app.innerHTML = shell(`
     <section class="play-page">
-      <div class="play-heading"><div><p class="eyebrow">${demo ? 'Practice board · SPROUT-7' : room ? `Room ${escapeText(room)}` : seed === utcSeed() ? 'Today’s UTC board' : 'Shared board'}</p><h1 tabindex="-1">Connect every seed to the sprout</h1></div><p>Rotate tiles. Each connected line turns green.</p></div>
+      <div class="play-heading"><div><p class="eyebrow">${demo ? 'Practice board · SPROUT-7' : room ? `Room ${escapeText(room)}` : seed === utcSeed() ? 'Today’s board' : 'Shared board'}</p><h1 tabindex="-1">Connect every seed to the sprout</h1></div><p>Rotate tiles. Each connected line turns green.</p></div>
       <div class="game-layout">
         <section class="game-panel" aria-label="Signal puzzle">
           <div class="game-toolbar"><div class="timer-block"><span>${session.assist ? 'Assist mode' : 'Time left'}</span><strong data-timer>${session.assist ? 'No limit' : formatTime(ROUND_SECONDS - session.elapsed)}</strong></div><div class="toolbar-actions"><button data-pause ${session.status !== 'playing' ? 'disabled' : ''}>Pause</button><button data-assist aria-pressed="${session.assist}">${session.assist ? 'Use timer' : 'Remove timer'}</button></div></div>
           <div class="board-shell" data-board-shell>${boardHtml(board, session.rotations, getPowered(board, session.rotations))}${statusOverlay(session, demo)}</div>
           <p class="board-status" data-status aria-live="polite">${statusText(board, session)}</p>
         </section>
-        <div class="run-notes" role="region" aria-label="Board details"><div><span>Board seed</span><strong>${escapeText(seed)}</strong></div><div><span>Turns</span><strong data-turns>${session.turns}</strong></div><button data-copy-room>Copy same-board link</button><p>Friends can play this exact board at any time.</p><section class="share-recovery room-share-recovery" data-room-share-fallback hidden aria-live="polite"><strong>Copy this same-board link</strong><label for="same-board-link">Your browser blocked copying. Select this fixed link and copy it yourself.</label><input id="same-board-link" data-same-board-link type="url" readonly></section></div>
+        <div class="run-notes" role="region" aria-label="Board details"><div><span>Board code</span><strong>${escapeText(seed)}</strong></div><div><span>Turns</span><strong data-turns>${session.turns}</strong></div><button data-copy-room>Copy board link</button><p>Friends can play this exact board at any time.</p><section class="share-recovery room-share-recovery" data-room-share-fallback hidden aria-live="polite"><strong>Copy this board link</strong><label for="same-board-link">Your browser blocked copying. Select this fixed link and copy it yourself.</label><input id="same-board-link" data-same-board-link type="url" readonly></section></div>
       </div>
+      ${demo ? '' : renderRecentResults()}
     </section>
   `, demo);
   bindShell();
@@ -319,7 +324,7 @@ function startGame(board: Board, session: Session, demo: boolean): void {
     url.searchParams.set('room', roomCode(board.seed));
     const copied = await copyText(String(url));
     if (copied) {
-      announce('Same-board link copied.');
+      announce('Board link copied.');
       return;
     }
     const fallback = document.querySelector<HTMLElement>('[data-room-share-fallback]');
@@ -330,9 +335,19 @@ function startGame(board: Board, session: Session, demo: boolean): void {
       field.focus();
       field.select();
     }
-    announce('Copying was blocked. The fixed same-board link is ready to select and copy.');
+    announce('Copying was blocked. The fixed board link is ready to select and copy.');
   });
   document.querySelector<HTMLButtonElement>('[data-reset-demo]')?.addEventListener('click', reset);
+  document.querySelector<HTMLButtonElement>('[data-clear-history]')?.addEventListener('click', () => {
+    if (!confirm('Clear all saved recent results from this browser?')) return;
+    try {
+      localStorage.removeItem('daily:completions');
+      renderGamePage(false);
+      announce('Recent results cleared.');
+    } catch {
+      announce('This browser could not clear recent results. Try clearing site storage in your browser settings.');
+    }
+  });
   document.querySelector<HTMLAnchorElement>('[data-exit-demo]')?.addEventListener('click', () => {
     for (const key of Object.keys(localStorage)) if (key.startsWith('demo:')) localStorage.removeItem(key);
   });
@@ -416,6 +431,42 @@ function saveCompletion(seed: string, session: Session, demo: boolean): void {
   }
 }
 
+interface Completion {
+  seed: string;
+  status: 'won' | 'lost';
+  time: number;
+  turns: number;
+}
+
+function readCompletions(): Completion[] {
+  try {
+    const parsed: unknown = JSON.parse(localStorage.getItem('daily:completions') || '[]');
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((entry): entry is Completion => {
+      if (!entry || typeof entry !== 'object') return false;
+      const result = entry as Record<string, unknown>;
+      return typeof result.seed === 'string' && /^[A-Za-z0-9][A-Za-z0-9-]{0,39}$/.test(result.seed)
+        && (result.status === 'won' || result.status === 'lost')
+        && Number.isInteger(result.time) && Number(result.time) >= 0 && Number(result.time) <= ROUND_SECONDS
+        && Number.isSafeInteger(result.turns) && Number(result.turns) >= 0 && Number(result.turns) <= MAX_SHARED_TURNS;
+    }).slice(-14).reverse();
+  } catch {
+    return [];
+  }
+}
+
+function completionLabel(entry: Completion): string {
+  return entry.status === 'won' ? `Connected in ${formatTime(entry.time)}` : 'Time ended';
+}
+
+function renderRecentResults(): string {
+  const entries = readCompletions();
+  const list = entries.length
+    ? `<ol class="recent-list">${entries.map((entry) => `<li><div><strong>${escapeText(entry.seed)}</strong><span>${completionLabel(entry)} · ${entry.turns} turns</span></div><span class="recent-actions"><a data-route href="/play?seed=${encodeURIComponent(entry.seed)}">Replay</a><a data-route href="/result?seed=${encodeURIComponent(entry.seed)}&status=${entry.status}&time=${entry.time}&turns=${entry.turns}">View result</a></span></li>`).join('')}</ol>`
+    : '<p class="recent-empty">Finished boards will appear here. Play today’s board to save one in this browser.</p>';
+  return `<section class="recent-results" role="region" aria-labelledby="recent-results-heading"><div><h2 id="recent-results-heading">Recent results</h2><p>Your last 14 finished boards stay in this browser.</p></div>${list}${entries.length ? '<button data-clear-history>Clear recent results</button>' : ''}<p class="history-message" data-history-message aria-live="polite"></p></section>`;
+}
+
 async function copyText(text: string): Promise<boolean> {
   try {
     await navigator.clipboard.writeText(text);
@@ -465,32 +516,51 @@ function parseSharedResult(params: URLSearchParams): SharedResult | null {
 
 function renderResult(): void {
   const result = parseSharedResult(new URLSearchParams(location.search));
-  document.title = 'Shared result — Seed Sprint';
+  setMetadata('Shared result — Seed Sprint', 'A Seed Sprint result card shows a time and turn count without showing the board layout.', '/result');
   if (!result) {
     app.innerHTML = shell(`<section class="simple-page result-page invalid-result"><p class="eyebrow">Shared result</p><h1 tabindex="-1">This result link is incomplete</h1><p>Ask your friend to resend the result link, or open a board to play your own round.</p><a class="button primary" data-route href="/play">Play today’s board</a></section>`);
     bindShell();
     return;
   }
   const won = result.status === 'won';
-  app.innerHTML = shell(`<section class="simple-page result-page"><p class="eyebrow">Shared result · ${escapeText(result.seed)}</p><h1 tabindex="-1">${won ? 'This board was connected' : 'This board beat the clock'}</h1><div class="shared-card"><div aria-hidden="true">${won ? '🟩 🟩 🟩 🟩 🟩 🟩' : '🟧 🟧 🟧 🟧 🟧 🟧'}</div><strong>${won ? formatTime(result.seconds) : '5:00'}</strong><span>${result.turns} turns</span></div><p>The card hides the tile layout. Play the same seed before comparing routes.</p><a class="button primary" data-route href="/play?seed=${encodeURIComponent(result.seed)}">Play this board</a></section>`);
+  app.innerHTML = shell(`<section class="simple-page result-page"><p class="eyebrow">Shared result · ${escapeText(result.seed)}</p><h1 tabindex="-1">${won ? 'This board was connected' : 'This board beat the clock'}</h1><div class="shared-card"><div aria-hidden="true">${won ? '🟩 🟩 🟩 🟩 🟩 🟩' : '🟧 🟧 🟧 🟧 🟧 🟧'}</div><strong>${won ? formatTime(result.seconds) : '5:00'}</strong><span>${result.turns} turns</span></div><p>The card hides the tile layout. Play the same board before comparing routes.</p><a class="button primary" data-route href="/play?seed=${encodeURIComponent(result.seed)}">Play this board</a></section>`);
   bindShell();
 }
 
 function renderLegal(kind: 'privacy' | 'terms'): void {
   const privacy = kind === 'privacy';
-  document.title = `${privacy ? 'Privacy' : 'Terms'} — Seed Sprint`;
-  app.innerHTML = shell(`<article class="simple-page"><p class="eyebrow">Seed Sprint</p><h1 tabindex="-1">${privacy ? 'Privacy in plain words' : 'Terms of play'}</h1>${privacy ? `<h2>Data saved on this device</h2><p>Seed Sprint saves your current board, settings, and recent daily results in local storage. Demo play uses separate keys that start with <code>demo:</code>.</p><h2>Data sent elsewhere</h2><p>The static game does not send gameplay or personal data to a server. A result link contains the board seed, result, time, and turn count you choose to share.</p><h2>Removing data</h2><p>Clear this site’s storage in your browser to remove every saved board and setting.</p>` : `<h2>Fair use</h2><p>Seed Sprint is free for personal play. Do not disrupt the site or present the game as your own service.</p><h2>No warranty</h2><p>The game is provided as available, without a promise that access will never be interrupted.</p><h2>Your choices</h2><p>You choose whether to copy or send a result link. Shared links can be read by anyone who receives them.</p>`}<p>Last updated: 2 September 2026.</p></article>`);
+  setMetadata(`${privacy ? 'Privacy' : 'Terms'} — Seed Sprint`, privacy ? 'Learn what Seed Sprint saves in this browser and what a shared result link contains.' : 'Read the terms for playing Seed Sprint.', privacy ? '/privacy' : '/terms');
+  app.innerHTML = shell(`<article class="simple-page"><p class="eyebrow">Seed Sprint</p><h1 tabindex="-1">${privacy ? 'Privacy in plain words' : 'Terms of play'}</h1>${privacy ? `<h2>Data saved on this device</h2><p>Seed Sprint saves your current board, settings, and recent results in local storage. Demo play uses separate keys that start with <code>demo:</code>.</p><h2>Data sent elsewhere</h2><p>The static game does not send gameplay or personal data to a server. A result link contains the board code, result, time, and turn count you choose to share.</p><h2>Removing data</h2><p>Clear this site’s storage in your browser to remove every saved board and setting.</p>` : `<h2>Use the game responsibly</h2><p>Seed Sprint is free for personal play. Do not disrupt the site or present the game as your own service.</p><h2>No warranty</h2><p>The game is provided as available, without a promise that access will never be interrupted.</p><h2>Your choices</h2><p>You choose whether to copy or send a result link. Shared links can be read by anyone who receives them.</p>`}<p>Last updated: 2 September 2026.</p></article>`);
   bindShell();
 }
 
 function renderNotFound(): void {
-  document.title = 'Page not found — Seed Sprint';
+  setMetadata('Page not found — Seed Sprint', 'This Seed Sprint board link does not exist. Open today’s board to play.', '/404');
   app.innerHTML = shell(`<section class="simple-page not-found"><div class="lost-seed" aria-hidden="true">◆</div><p class="eyebrow">404</p><h1 tabindex="-1">This board link does not exist</h1><p>The address may be incomplete. Return to today’s puzzle.</p><a class="button primary" data-route href="/">Open today’s board</a></section>`);
   bindShell();
 }
 
 function escapeText(value: string): string {
   return value.replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character]!);
+}
+
+function setMetadata(title: string, description: string, route: string): void {
+  const url = `https://seed-sprint.sociobot.in${route}`;
+  document.title = title;
+  const values: Record<string, string> = {
+    'meta[name="description"]': description,
+    'link[rel="canonical"]': url,
+    'meta[property="og:title"]': title,
+    'meta[property="og:description"]': description,
+    'meta[property="og:url"]': url,
+    'meta[name="twitter:title"]': title,
+    'meta[name="twitter:description"]': description
+  };
+  for (const [selector, value] of Object.entries(values)) {
+    const element = document.querySelector<HTMLMetaElement | HTMLLinkElement>(selector);
+    if (element instanceof HTMLLinkElement) element.href = value;
+    else if (element) element.content = value;
+  }
 }
 
 function renderRoute(): void {
@@ -507,8 +577,6 @@ function renderRoute(): void {
   const heading = document.querySelector<HTMLElement>('h1');
   requestAnimationFrame(() => heading?.focus({ preventScroll: true }));
   announce(heading?.textContent || document.title);
-  const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-  if (canonical) canonical.href = `https://seed-sprint.sociobot.in${route}`;
 }
 
 if ('serviceWorker' in navigator && import.meta.env.PROD) {

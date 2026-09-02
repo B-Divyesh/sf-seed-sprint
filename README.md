@@ -2,9 +2,9 @@
 
 Race friends on the same five-minute signal puzzle, then compare results with a link.
 
-Seed Sprint is a free browser game for puzzle friends. Rotate a daily 6×6 routing board to connect three seeds to one sprout. A timed round allows five minutes. The date creates the board, so every player gets the same verified puzzle.
+Seed Sprint is a free browser game for puzzle friends. Rotate a daily 6×6 routing board to connect three seeds to one sprout. A timed round allows five minutes. Each day uses one shared board with a verified solution.
 
-Play at [seed-sprint.sociobot.in](https://seed-sprint.sociobot.in) or open the [sample board](https://seed-sprint.sociobot.in/demo). The demo starts partly solved and stores data only under separate `demo:` browser keys.
+Play at [seed-sprint.sociobot.in](https://seed-sprint.sociobot.in) or open the [sample board](https://seed-sprint.sociobot.in/demo). The demo starts partly solved and stores data under separate `demo:` browser keys.
 
 ## Controls
 
@@ -15,6 +15,8 @@ Play at [seed-sprint.sociobot.in](https://seed-sprint.sociobot.in) or open the [
 - Remove the timer with assist mode.
 
 Progress and settings stay in local storage on this device. The game sends no gameplay or personal data to another server. It works offline after the first visit.
+
+Recent finished boards appear on the play page. You can replay, view, or clear them there.
 
 ## Run locally
 
@@ -34,11 +36,11 @@ npm test
 npm run build
 ```
 
-Playwright covers every registered product claim, including deterministic boards, a real run through the end screen and restart, sharing recovery, assist mode, local privacy, offline updates, and keyboard controls. The isolated Chromium performance check uses a tested floor of 45 frames per second. The production build lands in `dist/`, with `index.html` at its root.
+Playwright tests every registered product claim. It covers board generation, end states, restarts, sharing, assist mode, privacy, offline updates, touch, and keyboard controls. The browser performance test requires at least 45 frames per second. The production build lands in `dist/`, with `index.html` at its root.
 
 ## Deploy
 
-Deploy the contents of `dist/` as a static site. `staticwebapp.config.json` rewrites only the supported game routes, supplies security headers, and returns the designed 404 page with HTTP status 404 for unknown paths.
+Deploy the contents of `dist/` as a static site. `staticwebapp.config.json` sends supported routes to the game and adds security headers. Unknown paths show the designed 404 page and return HTTP 404.
 
 ## Privacy and licensing
 
