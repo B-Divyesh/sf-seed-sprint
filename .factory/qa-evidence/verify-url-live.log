@@ -1,0 +1,2 @@
+GET https://seed-sprint.sociobot.in -> 200
+{"url":"https://seed-sprint.sociobot.in","loadMs":705,"errors":[],"a11y":{"title":"Seed Sprint — play a daily signal puzzle","lang":"en","h1":1,"main":true,"imgsMissingAlt":0,"buttonsUnlabeled":0,"textLength":1101}}

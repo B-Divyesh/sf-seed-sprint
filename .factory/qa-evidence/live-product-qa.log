@@ -1,0 +1,310 @@
+{
+  "passCount": 43,
+  "failCount": 3,
+  "dailySeed": "2026-09-02",
+  "frameStats4xCpu": {
+    "frames": 121,
+    "duration": 1.9998000000000002,
+    "fps": 60.00600060006,
+    "maxInterval": 16.800000000000182,
+    "meanInterval": 16.665000000000003
+  },
+  "mobileLayout": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "scrollWidth": 390,
+    "board": {
+      "x": 16,
+      "y": 639.71875,
+      "width": 358,
+      "height": 402.5,
+      "top": 639.71875,
+      "right": 374,
+      "bottom": 1042.21875,
+      "left": 16
+    },
+    "interactives": [
+      {
+        "text": "Skip to main content",
+        "width": 189,
+        "height": 49.5,
+        "top": -80,
+        "bottom": -30.5
+      },
+      {
+        "text": "✦ Seed Sprint",
+        "width": 145,
+        "height": 31.5,
+        "top": 20.25,
+        "bottom": 51.75
+      },
+      {
+        "text": "Demo",
+        "width": 43,
+        "height": 24,
+        "top": 24,
+        "bottom": 48
+      },
+      {
+        "text": "How to play",
+        "width": 97,
+        "height": 44,
+        "top": 14,
+        "bottom": 58
+      },
+      {
+        "text": "Try it with sample data",
+        "width": 216,
+        "height": 47.5,
+        "top": 417.21875,
+        "bottom": 464.71875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 696.21875,
+        "bottom": 751.890625
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 696.21875,
+        "bottom": 751.875
+      },
+      {
+        "text": "◆",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 696.21875,
+        "bottom": 751.890625
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 751.875,
+        "bottom": 807.546875
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 751.875,
+        "bottom": 807.53125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 751.875,
+        "bottom": 807.546875
+      },
+      {
+        "text": "♣",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 807.53125,
+        "bottom": 863.203125
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 807.53125,
+        "bottom": 863.1875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 807.53125,
+        "bottom": 863.203125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 807.53125,
+        "bottom": 863.203125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 863.203125,
+        "bottom": 918.875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 863.203125,
+        "bottom": 918.875
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 863.203125,
+        "bottom": 918.859375
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 863.203125,
+        "bottom": 918.875
+      },
+      {
+        "text": "◆",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 863.203125,
+        "bottom": 918.875
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 918.875,
+        "bottom": 974.53125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 918.875,
+        "bottom": 974.546875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 918.875,
+        "bottom": 974.546875
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 974.546875,
+        "bottom": 1030.21875
+      },
+      {
+        "text": "",
+        "width": 55.65625,
+        "height": 55.65625,
+        "top": 974.546875,
+        "bottom": 1030.203125
+      },
+      {
+        "text": "",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 974.546875,
+        "bottom": 1030.21875
+      },
+      {
+        "text": "◆",
+        "width": 55.671875,
+        "height": 55.671875,
+        "top": 974.546875,
+        "bottom": 1030.21875
+      },
+      {
+        "text": "Play today’s board",
+        "width": 183,
+        "height": 47.5,
+        "top": 900.65625,
+        "bottom": 948.15625
+      },
+      {
+        "text": "Privacy",
+        "width": 47,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      },
+      {
+        "text": "Terms",
+        "width": 40,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      },
+      {
+        "text": "Built by Param Factory (external site)",
+        "width": 147,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      }
+    ],
+    "undersized": [
+      {
+        "text": "✦ Seed Sprint",
+        "width": 145,
+        "height": 31.5,
+        "top": 20.25,
+        "bottom": 51.75
+      },
+      {
+        "text": "Demo",
+        "width": 43,
+        "height": 24,
+        "top": 24,
+        "bottom": 48
+      },
+      {
+        "text": "Privacy",
+        "width": 47,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      },
+      {
+        "text": "Terms",
+        "width": 40,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      },
+      {
+        "text": "Built by Param Factory (external site)",
+        "width": 147,
+        "height": 22.5,
+        "top": 2284.78125,
+        "bottom": 2307.28125
+      }
+    ]
+  },
+  "mobileTileMin": {
+    "width": 56.328125,
+    "height": 56.328125
+  },
+  "reducedMotion": {
+    "transitionDuration": "1e-05s",
+    "animationDuration": "1e-05s",
+    "scrollBehavior": "auto"
+  },
+  "serviceWorker": {
+    "active": "https://seed-sprint.sociobot.in/sw.js",
+    "waiting": null,
+    "installing": null,
+    "caches": [
+      "seed-sprint-v1"
+    ]
+  },
+  "invalidResultText": "SHARED RESULT · <IMG SRC=X ONERROR=ALERT(1)>\n\nThis board was connected\n🟩 🟩 🟩 🟩 🟩 🟩\nNaN:NaN\n-9 turns\n\nThe card hides the tile layout. Play the same seed before comparing routes.\n\nPlay this board",
+  "axe": {
+    "desktop landing": [],
+    "instructions dialog": [],
+    "desktop demo active": [],
+    "desktop win screen": [],
+    "invalid shared result": [],
+    "mobile landing": [],
+    "mobile demo": []
+  }
+}

@@ -201,4 +201,3 @@ Deployment match:
 4. Validate and bound `time`, `turns`, `status`, and seed query parameters before rendering shared results.
 5. Increase every mobile link’s interactive box to at least 44 × 44 CSS px.
 6. Return an actual HTTP 404 for unknown page routes while retaining the designed recovery screen.
-

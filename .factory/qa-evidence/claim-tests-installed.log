@@ -1,0 +1,189 @@
+===== CLAIM deterministic-board =====
+npm test -- --grep @claim:deterministic-board
+
+> seed-sprint@1.0.0 test
+> playwright test --grep @claim:deterministic-board
+
+[WebServer] (node:922) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:953) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:971) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:971) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/core.spec.ts:4:1 › @claim:deterministic-board every seed is deterministic and verified (1.7s)
+
+  1 passed (8.8s)
+CLAIM_RESULT deterministic-board exit=0
+===== CLAIM complete-board =====
+npm test -- --grep @claim:complete-board
+
+> seed-sprint@1.0.0 test
+> playwright test --grep @claim:complete-board
+
+[WebServer] (node:1057) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:1122) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1122) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:14:1 › @claim:complete-board the demo reaches a result card (6.8s)
+
+  1 passed (14.6s)
+CLAIM_RESULT complete-board exit=0
+===== CLAIM restart-state =====
+npm test -- --grep @claim:restart-state
+
+> seed-sprint@1.0.0 test
+> playwright test --grep @claim:restart-state
+
+[WebServer] (node:1268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:1334) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1334) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:22:1 › @claim:restart-state reset restores the sample board (1.6s)
+
+  1 passed (8.7s)
+CLAIM_RESULT restart-state exit=0
+===== CLAIM progress-reload =====
+npm test -- --grep @claim:progress-reload
+
+> seed-sprint@1.0.0 test
+> playwright test --grep @claim:progress-reload
+
+[WebServer] (node:1474) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1506) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:1524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:32:1 › @claim:progress-reload progress stays on this device (2.0s)
+
+  1 passed (10.1s)
+CLAIM_RESULT progress-reload exit=0
+===== CLAIM five-minute-limit =====
+npm test -- --grep @claim:five-minute-limit
+
+> seed-sprint@1.0.0 test
+> playwright test --grep @claim:five-minute-limit
+
+[WebServer] (node:1666) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1698) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:1732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:52:1 › @claim:five-minute-limit a timed round ends at five minutes (2.0s)
+
+  1 passed (9.1s)
+CLAIM_RESULT five-minute-limit exit=0
+===== CLAIM demo-isolation =====
+npm test -- --grep @claim:demo-isolation
+
+> seed-sprint@1.0.0 test
+> playwright test --grep @claim:demo-isolation
+
+[WebServer] (node:1875) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1907) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:1925) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1925) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:42:1 › @claim:demo-isolation demo uses only its own storage namespace (2.0s)
+
+  1 passed (9.1s)
+CLAIM_RESULT demo-isolation exit=0
+===== CLAIM keyboard-controls =====
+npm test -- --grep @claim:keyboard-controls
+
+> seed-sprint@1.0.0 test
+> playwright test --grep @claim:keyboard-controls
+
+[WebServer] (node:2075) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:2106) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:2140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:68:1 › @claim:keyboard-controls keyboard controls rotate and pause (1.6s)
+
+  1 passed (8.7s)
+CLAIM_RESULT keyboard-controls exit=0
+===== CLAIM privacy-local =====
+npm test -- --grep @claim:privacy-local
+
+> seed-sprint@1.0.0 test
+> playwright test --grep @claim:privacy-local
+
+[WebServer] (node:2264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:2295) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:2313) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2313) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:81:1 › @claim:privacy-local game flow sends requests only to its own origin (1.4s)
+
+  1 passed (8.7s)
+CLAIM_RESULT privacy-local exit=0
+===== CLAIM offline-reload =====
+npm test -- --grep @claim:offline-reload
+
+> seed-sprint@1.0.0 test
+> playwright test --grep @claim:offline-reload
+
+[WebServer] (node:2471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:2503) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:2522) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2522) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:90:1 › @claim:offline-reload works offline after the first visit (2.0s)
+
+  1 passed (9.2s)
+CLAIM_RESULT offline-reload exit=0
