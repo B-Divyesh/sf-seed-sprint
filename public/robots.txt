@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seed-sprint.sociobot.in/sitemap.xml

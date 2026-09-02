@@ -1,0 +1,12 @@
+{
+  "name": "Seed Sprint",
+  "short_name": "Seed Sprint",
+  "description": "A five-minute daily signal-routing puzzle.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4E8CE",
+  "theme_color": "#F4E8CE",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
