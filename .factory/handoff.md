@@ -43,7 +43,7 @@ Evidence from 2026-09-02 UTC:
 - Full Playwright run: 28/28 passed.
 - Claims-first gate: all 18 exact commands from `.factory/claims.json` passed independently.
 - Frame stability: the exact isolated claim passed 10/10 repeats; a separate 390×844 Chromium sample under 4× CPU throttling measured 60.0 fps over five seconds, with 16.8 ms maximum and 16.7 ms p95 frame intervals.
-- Type/build: `tsc --noEmit` and Vite passed; `dist/` contains the production site.
+- Type/build: strict `tsc --noEmit` and Vite passed; `dist/` contains the production site. No separate lint script is configured.
 - Production budgets: JavaScript 22,697 bytes raw / 8.50 KB gzip; CSS 13,962 bytes raw / 4.03 KB gzip; fonts 52,896 bytes total; mobile AVIF 45,249 bytes.
 - Accessibility: Playwright Axe reported zero violations on landing, game, and instructions states; the focused control contrast regression passed; 390×844 had no horizontal overflow and all visible links and tiles were at least 44×44 CSS px.
 - Worker verifier: title, `lang=en`, one h1, main landmark, image alt, button labels, and console checks passed in 551 ms. See `.factory/repair-qa/verify-local/verify.json`.
