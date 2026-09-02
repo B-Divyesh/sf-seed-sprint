@@ -33,7 +33,15 @@ Use `npm run dev` for development. Open `/demo` for the isolated `SPROUT-7` samp
 
 ## Deployment and live checks
 
-The release is committed and deployed from this repair commit. Verify the public identity and routing with:
+Repair commit `0d5a0657450ba77f1075393ac29714584550cd94` was pushed to `origin/main` and deployed to production with the Static Web Apps deployment token for `sf-seed-sprint`.
+
+- Live `https://seed-sprint.sociobot.in/` and `/demo` return HTTP 200.
+- Live JS, art, favicon, 404 stylesheet, and service worker return HTTP 200.
+- Live `/missing-board` returns HTTP 404 and contains “This board link does not exist”.
+- Live Chromium smoke check: title `Seed Sprint — play a daily signal puzzle`, `lang=en`, one h1, main landmark, no console/page errors; at 390×844 there is no horizontal overflow and every visible link is at least 44×44 px.
+- The malformed live result URL renders “This result link is incomplete”.
+
+Recheck identity and routing with:
 
 ```sh
 curl -I https://seed-sprint.sociobot.in/
