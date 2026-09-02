@@ -1,0 +1,65 @@
+[
+  {
+    "id": "deterministic-board",
+    "claim": "The board is the same for everyone that day, and every generated board has a verified solution.",
+    "where": "landing steps, README",
+    "test": "npm test -- --grep @claim:deterministic-board",
+    "sandbox": "366 deterministic seeds; generate twice and solve each with the stored solution"
+  },
+  {
+    "id": "complete-board",
+    "claim": "A player can connect the sample board and reach a result card.",
+    "where": "demo and README",
+    "test": "npm test -- --grep @claim:complete-board",
+    "sandbox": "fresh browser context at /demo; rotate every routed tile to its verified orientation"
+  },
+  {
+    "id": "restart-state",
+    "claim": "Reset demo restores the original sample board.",
+    "where": "demo banner and result screen",
+    "test": "npm test -- --grep @claim:restart-state",
+    "sandbox": "fresh /demo; rotate a tile, reset, and assert the sample turn count and active state"
+  },
+  {
+    "id": "progress-reload",
+    "claim": "Progress and settings stay on this device.",
+    "where": "landing facts, privacy, README",
+    "test": "npm test -- --grep @claim:progress-reload",
+    "sandbox": "fresh /demo; rotate a tile, reload, and assert the saved turn count"
+  },
+  {
+    "id": "five-minute-limit",
+    "claim": "A timed round allows five minutes before the result screen appears.",
+    "where": "landing, game timer, README",
+    "test": "npm test -- --grep @claim:five-minute-limit",
+    "sandbox": "fresh /demo; set elapsed time to 299.8 seconds, reload, and observe the time-ended result"
+  },
+  {
+    "id": "demo-isolation",
+    "claim": "Demo play uses separate storage and does not change the daily game.",
+    "where": "demo banner, privacy, demo documentation",
+    "test": "npm test -- --grep @claim:demo-isolation",
+    "sandbox": "fresh /demo; interact and assert every storage key begins with demo:"
+  },
+  {
+    "id": "keyboard-controls",
+    "claim": "The board works with keyboard controls.",
+    "where": "instructions and README",
+    "test": "npm test -- --grep @claim:keyboard-controls",
+    "sandbox": "fresh /demo; focus a tile, press R, then pause and resume with P"
+  },
+  {
+    "id": "privacy-local",
+    "claim": "The game does not send gameplay or personal data to another server.",
+    "where": "privacy page and README",
+    "test": "npm test -- --grep @claim:privacy-local",
+    "sandbox": "fresh /demo with a request log; play and copy a room link; assert all requests are same-origin"
+  },
+  {
+    "id": "offline-reload",
+    "claim": "Works offline after your first visit.",
+    "where": "landing facts and README",
+    "test": "npm test -- --grep @claim:offline-reload",
+    "sandbox": "dedicated fresh browser context; load /demo, wait for its service worker, switch offline, and reload"
+  }
+]
