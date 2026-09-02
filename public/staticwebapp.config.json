@@ -1,11 +1,51 @@
 {
   "routes": [
     {
+      "route": "/",
+      "rewrite": "/index.html"
+    },
+    {
       "route": "/assets/*",
       "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
     },
     {
+      "route": "/art/*",
+      "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+    },
+    {
       "route": "/fonts/*",
+      "headers": { "Cache-Control": "public, max-age=2592000" }
+    },
+    {
+      "route": "/*.svg",
+      "headers": { "Cache-Control": "public, max-age=2592000" }
+    },
+    {
+      "route": "/*.png",
+      "headers": { "Cache-Control": "public, max-age=2592000" }
+    },
+    {
+      "route": "/*.xml",
+      "headers": { "Cache-Control": "public, max-age=2592000" }
+    },
+    {
+      "route": "/*.txt",
+      "headers": { "Cache-Control": "public, max-age=2592000" }
+    },
+    {
+      "route": "/*.webmanifest",
+      "headers": { "Cache-Control": "public, max-age=2592000" }
+    },
+    {
+      "route": "/sw.js",
+      "headers": { "Cache-Control": "public, max-age=30, must-revalidate" }
+    },
+    {
+      "route": "/404.css",
+      "headers": { "Cache-Control": "public, max-age=2592000" }
+    },
+    {
+      "route": "/404.html",
       "headers": { "Cache-Control": "public, max-age=2592000" }
     },
     {
