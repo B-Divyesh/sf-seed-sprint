@@ -53,7 +53,15 @@ Evidence from 2026-09-02 UTC:
 
 ## Deployment and live identity
 
-Deployment target is the authorized static resource `sf-seed-sprint` in resource group `sociobot`, using `/opt/fleet/lib/deploy-static.sh seed-sprint dist`. Live response, MIME, policy, update, route, and build-identity evidence is recorded here after deployment.
+The repair was committed and pushed as `669e5df`, then deployed to the authorized static resource `sf-seed-sprint` in resource group `sociobot` with `/opt/fleet/lib/deploy-static.sh seed-sprint dist`. Azure deployment `315f2562-6bcd-4467-9375-fa27c36dacdf` succeeded, and the custom domain remained Ready.
+
+- <https://seed-sprint.sociobot.in> returns HTTP 200 over managed TLS. The designed unknown route returns HTTP 404.
+- Live root, JavaScript, CSS, and worker SHA-256 values exactly match the local production build: `0576edae…`, `48903945…`, `dd966da9…`, and `b9b87c84…` respectively.
+- The live AVIF returns `Content-Type: image/avif`; hashed assets keep one-year immutable caching; HTML and `sw.js` revalidate after 30 seconds.
+- Live headers include the restricted self-only CSP, HSTS, `nosniff`, strict-origin referrer policy, and camera/microphone/geolocation denial.
+- The live repair script passed seeded clipboard recovery, malformed-session reset, actual win screen and restart, malformed-result rejection, 390 px fit and targets, `seed-sprint-v2` activation, offline reload, same-origin-only requests, and zero console/page errors. See `.factory/repair-qa/live-repair-check.mjs` and `live-repair-result.json`.
+- Live worker verification passed in 664 ms. See `.factory/repair-qa/verify-live/verify.json`.
+- Live Lighthouse mobile: performance 99, accessibility 100, best practices 100, SEO 100; FCP 1.2 s, LCP 2.1 s, TBT 80 ms, CLS 0.002. See `.factory/repair-qa/lighthouse-live.json`.
 
 ## Known gaps and next steps
 

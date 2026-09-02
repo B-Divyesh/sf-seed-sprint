@@ -1,0 +1,37 @@
+{
+  "url": "https://seed-sprint.sociobot.in",
+  "deployed_code_commit": "669e5df",
+  "azure_deployment_id": "315f2562-6bcd-4467-9375-fa27c36dacdf",
+  "clipboard_recovery": "https://seed-sprint.sociobot.in/play?seed=LIVE-REPAIR&room=7IRR2",
+  "invalid_session_reset": true,
+  "real_end_screen_and_restart": true,
+  "invalid_result_rejected": true,
+  "mobile_width": 390,
+  "mobile_scroll_width": 390,
+  "service_worker_caches": ["seed-sprint-v2"],
+  "offline_reload": true,
+  "request_origins": ["https://seed-sprint.sociobot.in"],
+  "console_errors": [],
+  "http": {
+    "root": 200,
+    "missing_route": 404,
+    "avif_content_type": "image/avif"
+  },
+  "build_sha256": {
+    "index.html": "0576edaec76fe4c795d801b3cfb6d88862a45c33c8ea289898ce2c54dbf82f54",
+    "assets/index-D2lKU3Pd.js": "48903945ebd6a2780c3b0c0c691e8eee702677f52a276a1db84bd7261da31e75",
+    "assets/index-CFyXKkyM.css": "dd966da9072131a6186c2a8eb8c57ebef6c43f10ef06957a1edb14b9284342fc",
+    "sw.js": "b9b87c84c0cc99e46270e8ce9e81860c472f2d1e4cd420f1363e78d512472413"
+  },
+  "lighthouse": {
+    "performance": 99,
+    "accessibility": 100,
+    "best_practices": 100,
+    "seo": 100,
+    "fcp_seconds": 1.2,
+    "lcp_seconds": 2.1,
+    "tbt_ms": 80,
+    "cls": 0.002
+  },
+  "verified_utc": "2026-09-02"
+}
