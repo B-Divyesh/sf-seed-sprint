@@ -1,0 +1,32 @@
+{
+  "slug": "seed-sprint",
+  "title": "Seed Sprint",
+  "summary": "Race friends on the same five-minute signal puzzle, then compare results with a link.",
+  "territory": "games-creative",
+  "user": "Puzzle friends who want to compare a five-minute daily result on the same fair board, with a link instead of an account or a real-time appointment.",
+  "evidence": [
+    {
+      "url": "https://hn.algolia.com/api/v1/items/48982389",
+      "date": "2026-07-20",
+      "quote_or_summary": "The 2026 Show HN title explicitly presents a daily multiplayer word-puzzle PWA, showing active builder and player interest in daily shared-seed browser play."
+    },
+    {
+      "url": "https://rollsolver.com",
+      "date": "2026-09-01",
+      "quote_or_summary": "The fetched Roll Solver page is the live product for that daily multiplayer-word-puzzle format."
+    }
+  ],
+  "recurrence": "Daily puzzle demand appears across multiple 2026 browser-game launches; the direct daily-multiplayer example validates shared-seed play as a web-native loop.",
+  "current_workaround": "Screenshot a Wordle-style score, coordinate in a group chat, or use an app-specific friend system.",
+  "incumbents_and_gap": "Wordle, Connections, and Roll Solver make solo/daily puzzles habitual. Most comparison is score-only or tied to a particular word mechanic, leaving room for a nonverbal spatial puzzle designed around a compact replay link.",
+  "smallest_useful_product": "A single daily 6x6 signal-routing puzzle: rotate a limited set of tiles to connect sources before the clock. Finish screen produces a spoiler-safe colored result card and an optional room link where friends race the identical seed. Non-goals: infinite puzzle feed, chat, user accounts, or paid hints.",
+  "success_measure": "20% of daily completers open a shared result or room link, and 60% of returning players complete at least three different daily seeds in a week.",
+  "artifact_class": "browser-game",
+  "monetization": "free — the daily link loop needs no gate; a one-time archive of past seeds can fund hosting without changing fairness.",
+  "constraints": "Publish a deterministic UTC seed; prevent result spoilers in link previews; store only anonymous completion aggregates; ensure every generated board has a verified solution.",
+  "est_build_effort": "S",
+  "scale": "small",
+  "why_distinct": "It makes the shared seed and spoiler-safe comparison primary, rather than cloning a word puzzle's vocabulary mechanic.",
+  "confidence": 4,
+  "state": "RESEARCHED"
+}

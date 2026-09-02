@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-02",
+  "tool": "/opt/fleet/lib/gen-image.sh",
+  "deployment": "factory-image",
+  "size": "1536x1024",
+  "quality": "high",
+  "prompt": "Use case: stylized-concept. Asset type: wide landing-page editorial illustration. A top-down risograph collage of a six-by-six botanical signal-routing puzzle, with seed pods connected by thick circuit-like vines to one sprouting plant. Torn handmade paper pieces on warm uncoated stock. Three-ink risograph print, tactile grain, imperfect registration, chunky geometric cut-paper shapes, editorial composition. Landscape with dense visual interest on the right and quiet paper texture on the left. Bottle green, deep teal, coral red, sunflower yellow, cream paper. Flat printmaking studio light. No people, no hands, no text, no letters, no numbers, no logos, no watermark, no recognizable brand, no photorealism, no gradients.",
+  "review": "Accepted. No text, logos, people, obvious seams, or unintended brand symbols were found."
+}
