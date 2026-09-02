@@ -34,11 +34,11 @@ npm test
 npm run build
 ```
 
-Playwright tests cover deterministic generation, complete and failed runs, reset, reload recovery, keyboard input, demo isolation, same-origin requests, offline reload, mobile layout, and accessibility. The production build lands in `dist/`, with `index.html` at its root.
+Playwright runs 23 tests, including all 16 registered product claims: deterministic boards, free play, result and same-board links, assist mode, local privacy, offline reload, keyboard controls, and frame rate. The Chromium performance check measures at least 55 frames per second while the active board is shown. The production build lands in `dist/`, with `index.html` at its root.
 
 ## Deploy
 
-Deploy the contents of `dist/` as a static site. `staticwebapp.config.json` supplies the SPA fallback, security headers, and the designed 404 response.
+Deploy the contents of `dist/` as a static site. `staticwebapp.config.json` rewrites only the supported game routes, supplies security headers, and returns the designed 404 page with HTTP status 404 for unknown paths.
 
 ## Privacy and licensing
 

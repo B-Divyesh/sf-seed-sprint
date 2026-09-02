@@ -1,64 +1,48 @@
-# Seed Sprint handoff
+# Seed Sprint repair handoff
 
-## Independent verification result — FAIL
+## Repair outcome
 
-Candidate `9213232858d71b835e3e041a23b2d2d7d2e14ed4` was independently tested on 2026-09-02 against <https://seed-sprint.sociobot.in>. The deployment matches the candidate build byte-for-byte and the full game reaches both win and timeout end screens, but release acceptance fails.
+This repair resolves every release-blocking finding in independent verification report `3af5ca446ca1a64d4849866cbe08c3f5f2029b3b` while preserving the deterministic daily routing game, demo isolation, local-first storage, service worker, and static deployment.
 
-Release-blocking findings:
-
-- `.factory/claims.json` omits advertised claims including free play, spoiler-safe sharing, exact same-board links, assist mode, no-account/no-chat behavior, shared-link fields, and the documented 60 fps result.
-- If clipboard copy and its legacy fallback fail, **Copy result** tells the player to copy the current `/play` address. That address is not the generated result link, and no selectable fallback is shown, blocking the core compare-by-link job.
-
-Additional defects:
-
-- **Play again** resets state and turns but leaves the old timer visible (`4:55` observed instead of `5:00`).
-- Malformed shared-result numbers render as `NaN:NaN` and negative turns.
-- Five mobile header/footer links are below 44 px high.
-- Unknown SPA page routes render the designed not-found screen with HTTP 200 rather than 404.
-
-Passing evidence: all nine post-install claim commands pass; full `npm test` passes 13/13; `npm run build` passes; live Lighthouse is 94/100/100/100; axe has zero serious/critical findings; all live requests are same-origin; offline reload and service-worker update work; the scripted daily run wins in 34 turns; timeout works; frame cadence measured 60.0 fps under 4× CPU throttling.
-
-See `.factory/verification.md` and `.factory/qa-evidence/` for exact commands, measurements, screenshots, and required next steps.
-
-## Builder handoff for the candidate
-
-## What shipped
-
-- A complete deterministic daily 6×6 signal-routing game with 22–26 routed tiles, three seeds, one sprout, a five-minute loss state, and a verified solution for every generated board.
-- The full loop: ready state, play, pause, refresh recovery, win or timeout, spoiler-safe result card, restart, and same-board friend link.
-- Pointer, touch, and keyboard input. Arrow keys move, `R` rotates, and `P` pauses. Assist mode removes the timer and persists.
-- A one-click `/demo` with the fixed, partly solved `SPROUT-7` board. Demo keys use the `demo:` namespace and are deleted when the player chooses **Start for real**.
-- Local-only daily progress and recent completion history. No accounts, analytics, gameplay API, third-party scripts, or runtime CDN calls.
-- Offline reload through a versioned service worker, plus privacy, terms, result, and designed 404 routes.
-- A product-specific risograph collage system, generated hero art, responsive AVIF/WebP/JPEG delivery, favicon, social preview, and self-hosted OFL fonts.
-- Route titles, canonical URLs, social metadata, sitemap, robots rules, security headers, reduced-motion behavior, mobile layout, and visible keyboard focus.
+- **Clipboard recovery:** denied clipboard and legacy-copy paths now reveal, select, and focus the generated `/result?seed=…&status=…&time=…&turns=…` URL. The player can copy the actual result link without relying on the browser address bar.
+- **Restart consistency:** post-result **Play again** refreshes the visible timer to `5:00`, resets turns to `0`, restores the seeded board, and returns to the idle state.
+- **Safe shared results:** result links accept only a short alphanumeric/hyphen seed, `won` or `lost`, integer time from 0–300, and integer turns from 0–9,999. Invalid links get a designed recovery screen instead of `NaN:NaN` or invalid turn counts.
+- **Mobile targets:** every visible link has a 44×44 px minimum target at 390 px, including the wordmark, header demo link, footer links, and external factory link. The demo controls also meet the minimum.
+- **Real 404:** Static Web Apps routing explicitly rewrites only product routes. Unknown requests receive HTTP 404 and the authored risograph-styled `404.html`, rather than a 200 SPA fallback.
+- **Claims:** `.factory/claims.json` now has 16 claims. Each ID has exactly one `@claim:<id>` Playwright test, including free play, spoiler-safe result sharing, same-board links, no social services, shared-link fields, assist mode, and the frame-rate check.
 
 ## How to run
 
 ```sh
-npm install
-npm run dev
+npm ci
 npm test
 npm run build
 ```
 
-The static deploy root is `dist/`. The demo entry point is `/demo`.
+Use `npm run dev` for development. Open `/demo` for the isolated `SPROUT-7` sample. Static deployment uses `dist/`.
 
-## Verification
+## Verification evidence
 
-- `npm test`: 13 Playwright tests, including all nine claims, deterministic solutions across 366 seeds, both end states, demo isolation, offline reload, keyboard use, mobile sizing, route coverage, and axe scans.
-- `npm run build`: passed. Output is 7.65 KB JavaScript gzip and 3.90 KB CSS gzip.
-- `/opt/fleet/lib/verify-url.sh http://127.0.0.1:4173 <temp-dir>`: HTTP 200, no console errors, one H1, `lang=en`, main landmark, no missing alt text, and no unlabeled buttons. Measured load was 632 ms on the local preview.
-- Lighthouse 12.8.2 mobile simulation: Performance 98, Accessibility 100, Best Practices 100, SEO 100. LCP 2.3 s, CLS 0.002, TBT 90 ms.
-- A 390×844 Chromium pass found no horizontal overflow and measured every board tile at least 44×44 CSS pixels.
-- The requestAnimationFrame timer rendered at 61.1 fps over two seconds at 390×844 with 4× CPU throttling.
-- `npm audit --omit=dev`: no known production vulnerabilities.
+- `npm ci`: passed; 22 packages installed and audit reported no vulnerabilities.
+- Type/build: `npm run build` passed after the repair. Output is 21.37 KB JavaScript raw / 8.08 KB gzip and 13.80 KB CSS raw / 3.98 KB gzip; `dist/` was produced.
+- Browser coverage: all 23 Playwright assertions passed after the repair, including all 16 exact claim tags. The broad run exercised desktop, 390×844 mobile, keyboard rotation/pause, pointer controls, demo storage isolation, offline reload in a dedicated context, same-origin request privacy, result sharing, invalid result recovery, and post-result restart.
+- Accessibility: Playwright Axe scans passed with no violations on landing, active play, and the instructions dialog. The local `verify-url.sh` pass reported title, `lang=en`, one `h1`, a main landmark, no missing image alt text, no unlabeled buttons, and zero console/page errors (597 ms local load).
+- 390 px: regression coverage measures every visible link and game tile at least 44 px in both dimensions, with no horizontal overflow.
+- 404: Azure Static Web Apps emulator served `/demo` with 200 and `/missing-board` with HTTP 404 containing the designed “This board link does not exist” page.
+- Claims: a source audit confirmed all 16 IDs appear exactly once as `@claim:` tags. The frame-rate claim measures at least 55 requestAnimationFrame callbacks per second in Chromium.
 
-The detailed claim matrix is in `.factory/claims.json`. Image provenance and the complete prompt are in `.factory/design.md` and `assets/src/seed-circuit.prompt.json`. The Lighthouse JSON is in `.factory/lighthouse.json`.
+## Deployment and live checks
 
-## Known gaps and next steps
+The release is committed and deployed from this repair commit. Verify the public identity and routing with:
 
-- Same-board links are asynchronous. There is no live presence or leaderboard backend, matching the brief’s no-appointment audience and static deployment.
-- Completion data stays local, so the success metrics cannot be observed in v1. A future privacy-preserving, aggregate-only endpoint could count completions and opened share links.
-- The optional paid archive is a future funding path, not part of this free v1.
-- Lighthouse numbers came from the local production preview. Re-run them against the deployed URL after the factory publishes it.
+```sh
+curl -I https://seed-sprint.sociobot.in/
+curl -i https://seed-sprint.sociobot.in/missing-board
+```
+
+Expected: the home route identifies Seed Sprint and the unknown route returns HTTP 404 with the designed recovery page.
+
+## Known gaps / next steps
+
+- Same-board play is asynchronous by design; there is no chat, lobby, account, or leaderboard backend.
+- Completion history remains local to the browser, so no player or aggregate analytics are collected.

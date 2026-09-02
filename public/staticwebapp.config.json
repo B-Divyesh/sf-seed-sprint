@@ -7,12 +7,32 @@
     {
       "route": "/fonts/*",
       "headers": { "Cache-Control": "public, max-age=2592000" }
+    },
+    {
+      "route": "/demo",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/play",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/result",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/privacy",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/terms",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/*",
+      "statusCode": 404
     }
   ],
-  "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/assets/*", "/art/*", "/fonts/*", "/*.svg", "/*.png", "/*.xml", "/*.txt", "/*.webmanifest", "/sw.js"]
-  },
   "responseOverrides": {
     "404": { "rewrite": "/404.html" }
   },

@@ -14,6 +14,41 @@
     "sandbox": "fresh browser context at /demo; rotate every routed tile to its verified orientation"
   },
   {
+    "id": "free-play",
+    "claim": "The game is free to play without an account or payment.",
+    "where": "landing facts and README",
+    "test": "npm test -- --grep @claim:free-play",
+    "sandbox": "fresh /play board; start the timed round and assert no account or payment step appears"
+  },
+  {
+    "id": "share-result",
+    "claim": "A completed board can be shared as a spoiler-safe result link.",
+    "where": "landing steps and completion screen",
+    "test": "npm test -- --grep @claim:share-result",
+    "sandbox": "fresh /demo; solve the board; capture Copy result and assert the link contains no tile layout"
+  },
+  {
+    "id": "same-board-link",
+    "claim": "Friends can play this exact board at any time.",
+    "where": "board details and README",
+    "test": "npm test -- --grep @claim:same-board-link",
+    "sandbox": "fresh shared seed; copy a room link; open it and compare every tile signature"
+  },
+  {
+    "id": "no-social-services",
+    "claim": "There is no chat, account, live lobby, or endless puzzle feed.",
+    "where": "landing privacy section",
+    "test": "npm test -- --grep @claim:no-social-services",
+    "sandbox": "fresh /demo; assert the board is playable immediately and no account, chat, lobby, or feed UI is present"
+  },
+  {
+    "id": "shared-link-fields",
+    "claim": "Shared result links include only the seed, time, turns, and result.",
+    "where": "landing privacy section and privacy page",
+    "test": "npm test -- --grep @claim:shared-link-fields",
+    "sandbox": "fresh /demo; solve, copy the result, and assert its query fields exactly"
+  },
+  {
     "id": "restart-state",
     "claim": "Reset demo restores the original sample board.",
     "where": "demo banner and result screen",
@@ -49,6 +84,13 @@
     "sandbox": "fresh /demo; focus a tile, press R, then pause and resume with P"
   },
   {
+    "id": "assist-mode",
+    "claim": "Assist mode removes the timer and stays on this device.",
+    "where": "game toolbar and README",
+    "test": "npm test -- --grep @claim:assist-mode",
+    "sandbox": "fresh /demo; remove the timer, reload, and assert the no-limit state persists"
+  },
+  {
     "id": "privacy-local",
     "claim": "The game does not send gameplay or personal data to another server.",
     "where": "privacy page and README",
@@ -61,5 +103,12 @@
     "where": "landing facts and README",
     "test": "npm test -- --grep @claim:offline-reload",
     "sandbox": "dedicated fresh browser context; load /demo, wait for its service worker, switch offline, and reload"
+  },
+  {
+    "id": "frame-rate",
+    "claim": "The active game board renders at 55 or more frames per second in the Chromium performance check.",
+    "where": "README and handoff",
+    "test": "npm test -- --grep @claim:frame-rate",
+    "sandbox": "fresh /demo; measure requestAnimationFrame callbacks for one second in Chromium"
   }
 ]

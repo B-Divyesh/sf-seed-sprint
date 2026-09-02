@@ -24,6 +24,7 @@ interface Session {
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 const DEMO_SEED = 'SPROUT-7';
+const MAX_SHARED_TURNS = 9_999;
 let cleanupGame: (() => void) | undefined;
 
 function path(): string {
@@ -198,7 +199,7 @@ function statusOverlay(session: Session, demo: boolean): string {
   if (session.status === 'paused') return `<div class="game-overlay"><strong>Game paused</strong><span>Your time is stopped.</span><button class="button primary" data-resume>Resume board</button></div>`;
   if (session.status === 'won' || session.status === 'lost') {
     const won = session.status === 'won';
-    return `<div class="game-overlay result-overlay"><div class="result-stamp ${won ? 'won' : 'lost'}"><span>${won ? 'Connected' : 'Time ended'}</span><strong>${won ? formatTime(session.elapsed) : '5:00'}</strong><small>${session.turns} turns · ${session.assist ? 'assist' : 'timed'}</small></div><div class="result-actions"><button class="button primary" data-share-result>Copy result</button><button data-restart>${demo ? 'Reset demo' : 'Play again'}</button></div></div>`;
+    return `<div class="game-overlay result-overlay"><div class="result-stamp ${won ? 'won' : 'lost'}"><span>${won ? 'Connected' : 'Time ended'}</span><strong>${won ? formatTime(session.elapsed) : '5:00'}</strong><small>${session.turns} turns · ${session.assist ? 'assist' : 'timed'}</small></div><div class="result-actions"><button class="button primary" data-share-result>Copy result</button><button data-restart>${demo ? 'Reset demo' : 'Play again'}</button></div><section class="share-recovery" data-share-fallback hidden aria-live="polite"><strong>Copy this result link</strong><label for="shared-result-link">Your browser blocked copying. Select this link and copy it yourself.</label><input id="shared-result-link" data-shared-result-link type="url" readonly></section></div>`;
   }
   return '';
 }
@@ -217,6 +218,8 @@ function startGame(board: Board, session: Session, demo: boolean): void {
     if (focusIndex !== undefined) shellElement.querySelector<HTMLButtonElement>(`[data-tile="${focusIndex}"]`)?.focus();
     document.querySelector('[data-turns]')!.textContent = String(session.turns);
     document.querySelector('[data-status]')!.textContent = statusText(board, session);
+    const timer = document.querySelector<HTMLElement>('[data-timer]');
+    if (timer) timer.textContent = session.assist ? 'No limit' : formatTime(ROUND_SECONDS - session.elapsed);
     const pause = document.querySelector<HTMLButtonElement>('[data-pause]');
     if (pause) pause.disabled = session.status !== 'playing';
   }
@@ -262,7 +265,19 @@ function startGame(board: Board, session: Session, demo: boolean): void {
     url.searchParams.set('turns', String(session.turns));
     const text = `Seed Sprint ${board.seed}\n${iconRow}\n${session.status === 'won' ? `${formatTime(session.elapsed)} · ${session.turns} turns` : 'Time ended'}\n${url}`;
     const copied = await copyText(text);
-    announce(copied ? 'Result copied. It does not reveal the board layout.' : 'The result could not be copied. Copy the address from your browser.');
+    if (copied) {
+      announce('Result copied. It does not reveal the board layout.');
+      return;
+    }
+    const fallback = shellElement.querySelector<HTMLElement>('[data-share-fallback]');
+    const field = shellElement.querySelector<HTMLInputElement>('[data-shared-result-link]');
+    if (fallback && field) {
+      field.value = String(url);
+      fallback.hidden = false;
+      field.focus();
+      field.select();
+    }
+    announce('Copying was blocked. The result link is ready to select and copy.');
   }
 
   document.querySelector<HTMLButtonElement>('[data-pause]')?.addEventListener('click', () => { if (session.status === 'playing') { session.status = 'paused'; saveSession(board, session, demo); refreshBoard(); } });
@@ -383,14 +398,39 @@ function announce(message: string): void {
   if (live) live.textContent = message;
 }
 
+interface SharedResult {
+  seed: string;
+  status: 'won' | 'lost';
+  seconds: number;
+  turns: number;
+}
+
+function wholeNumberInRange(value: string | null, minimum: number, maximum: number): number | null {
+  if (!value || !/^\d+$/.test(value)) return null;
+  const number = Number(value);
+  return Number.isSafeInteger(number) && number >= minimum && number <= maximum ? number : null;
+}
+
+function parseSharedResult(params: URLSearchParams): SharedResult | null {
+  const seed = params.get('seed');
+  const status = params.get('status');
+  const seconds = wholeNumberInRange(params.get('time'), 0, ROUND_SECONDS);
+  const turns = wholeNumberInRange(params.get('turns'), 0, MAX_SHARED_TURNS);
+  if (!seed || !/^[A-Za-z0-9][A-Za-z0-9-]{0,39}$/.test(seed) || (status !== 'won' && status !== 'lost') || seconds === null || turns === null) return null;
+  if (status === 'lost' && seconds !== ROUND_SECONDS) return null;
+  return { seed, status, seconds, turns };
+}
+
 function renderResult(): void {
-  const params = new URLSearchParams(location.search);
-  const seed = params.get('seed') || 'Unknown board';
-  const won = params.get('status') === 'won';
-  const seconds = Number(params.get('time') || 0);
-  const turns = Number(params.get('turns') || 0);
+  const result = parseSharedResult(new URLSearchParams(location.search));
   document.title = 'Shared result — Seed Sprint';
-  app.innerHTML = shell(`<section class="simple-page result-page"><p class="eyebrow">Shared result · ${escapeText(seed)}</p><h1 tabindex="-1">${won ? 'This board was connected' : 'This board beat the clock'}</h1><div class="shared-card"><div aria-hidden="true">${won ? '🟩 🟩 🟩 🟩 🟩 🟩' : '🟧 🟧 🟧 🟧 🟧 🟧'}</div><strong>${won ? formatTime(seconds) : '5:00'}</strong><span>${turns} turns</span></div><p>The card hides the tile layout. Play the same seed before comparing routes.</p><a class="button primary" data-route href="/play?seed=${encodeURIComponent(seed)}">Play this board</a></section>`);
+  if (!result) {
+    app.innerHTML = shell(`<section class="simple-page result-page invalid-result"><p class="eyebrow">Shared result</p><h1 tabindex="-1">This result link is incomplete</h1><p>Ask your friend to resend the result link, or open a board to play your own round.</p><a class="button primary" data-route href="/play">Play today’s board</a></section>`);
+    bindShell();
+    return;
+  }
+  const won = result.status === 'won';
+  app.innerHTML = shell(`<section class="simple-page result-page"><p class="eyebrow">Shared result · ${escapeText(result.seed)}</p><h1 tabindex="-1">${won ? 'This board was connected' : 'This board beat the clock'}</h1><div class="shared-card"><div aria-hidden="true">${won ? '🟩 🟩 🟩 🟩 🟩 🟩' : '🟧 🟧 🟧 🟧 🟧 🟧'}</div><strong>${won ? formatTime(result.seconds) : '5:00'}</strong><span>${result.turns} turns</span></div><p>The card hides the tile layout. Play the same seed before comparing routes.</p><a class="button primary" data-route href="/play?seed=${encodeURIComponent(result.seed)}">Play this board</a></section>`);
   bindShell();
 }
 
