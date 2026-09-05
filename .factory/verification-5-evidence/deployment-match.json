@@ -1,0 +1,14 @@
+{
+  "implementation_commit": "1cfe326029f0b69f15049f675d0846da3214fa77",
+  "documentation_commit": "7664d9bc1b408d2877a9011ed22873f81d0db5b9",
+  "compared_output_count": 28,
+  "mismatch_count": 0,
+  "key_sha256": {
+    "index.html": "8fdba56f68442ff491ce6167927bdee9f709856bf776dbd79f7f3da71e8afce1",
+    "assets/index-D0WxseaJ.js": "e66cd1e4bb2f413f85f411559050c7c976a8a9bd91999f87b718a11f976ad998",
+    "assets/index-BCq4_LNO.css": "c1aa5cec3a57df3d092b70f9fe5a0944295b93312db45a13a4c29f6e5dc13052",
+    "sw.js": "c557e1998e664eead260f0bf2d875cc4775a2f6db8538a5c23a177667436a90b"
+  },
+  "designed_404_status": 404,
+  "staticwebapp_config_public_status": 404
+}

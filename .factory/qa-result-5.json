@@ -1,0 +1,8 @@
+{
+  "verdict": "PASS",
+  "finding_count": 0,
+  "untested_claim_count": 0,
+  "candidate_commit": "1cfe326029f0b69f15049f675d0846da3214fa77",
+  "live_url": "https://seed-sprint.sociobot.in",
+  "report": "/work/repo/.factory/verification-5.md"
+}
