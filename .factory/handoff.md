@@ -1,32 +1,24 @@
-# Seed Sprint review 2 handoff — FAIL
+# Seed Sprint repair 3 handoff — PASS
 
 ## Outcome
 
-Review 2 failed candidate `b2bc5e107b7e57ed43c10cefa66bae1bdc23b7f3` with one finding and one untested public claim. No product code was changed.
+The strict review finding is resolved. The public **Recent results** promise now has a quantitative claim and outcome-based regression coverage: the test completes 15 distinct boards, verifies that exactly the newest 14 are visible, verifies the oldest is absent, then verifies view, replay, and clear.
 
-The live **Recent results** section promises that the last 14 finished boards stay in the browser. The registered `recent-results` claim and its test cover only one result, so they do not prove the quantitative limit. See `.factory/review-2.md` for the required resolution and full evidence.
+I also corrected a small documentation-to-product mismatch found during the final live check. **Start for real** now opens today’s playable board directly. Reset and exit both preserve any existing daily data while clearing demo data.
 
-## Verified behavior
+Implementation SHA: `1cfe326029f0b69f15049f675d0846da3214fa77`.
 
-- Every one of the 21 registered claim commands passed from a clean candidate checkout.
-- `npm test` passed 32/32 tests.
-- `npm run build` passed and produced `dist/`.
-- The sampled live route shells, assets, service worker, manifest, 404, and art match the candidate build by SHA-256.
-- Fresh desktop and touch-enabled phone contexts passed first-read, demo, isolation, reset, win, loss, restart, keyboard, sharing, independent friend link, recovery, offline, reduced-motion, routes, legal pages, and privacy-request checks.
-- The live audit passed 55/55 checks and measured 60.0 FPS.
-- Worker URL verification passed with no errors.
-- Lighthouse mobile scored Performance 99 and Accessibility 100; LCP was 2.1 s and CLS was 0.003.
+The retention-coverage commit is `2ea3d08fca6289eedaa895dc2d597ebe9b711364`. Earlier review/report documentation ended at `743e83d769f1a2ef0734314b49c4ce46797a24ac`; this handoff is a later documentation record, not a different implementation candidate.
 
-## Evidence
+## What changed
 
-- Review: `.factory/review-2.md`
-- Live results: `/work/.evidence/seed-sprint-review-2/live-review.json`
-- Screenshots: `/work/.evidence/seed-sprint-review-2/*.png`
-- Lighthouse: `/work/.evidence/seed-sprint-review-2/lighthouse.json`
-- Factory copy: `/work/.evidence/qa-report.md`
-- Machine result: `/work/.evidence/qa-result.json`
+- Registered the exact public promise: “The last 14 finished boards can be viewed, replayed, and cleared in this browser.”
+- Replaced the one-result history check with 15 real, distinct near-complete runs. Each reaches the result screen through a tile rotation before the visible retained list is checked.
+- Made the demo’s **Start for real** action navigate to `/play`, as documented.
+- Extended the demo-isolation claim to prove a pre-existing daily-storage probe survives a demo move, demo reset, and exit to `/play`; demo keys are removed.
+- Copied the verb-first 84-character catalog description to `/work/.evidence/catalog-description.txt`.
 
-## Reproduce
+## How to run and verify
 
 ```sh
 npm ci
@@ -34,8 +26,36 @@ npm test
 npm run build
 ```
 
-Then run each exact `test` command in `.factory/claims.json` from a clean checkout.
+Run every exact command in `.factory/claims.json` after `npm ci`. All 21 commands passed from a fresh clone at `/tmp/seed-sprint-final-clean.5fQsNH`.
 
-## Remaining work
+- Full Playwright suite: **32/32 passed**.
+- Production build: passed; `dist/` was generated.
+- Retention claim: passed after 15 completions; visible list contained `RETENTION-15` through `RETENTION-02`, with `RETENTION-01` absent.
+- Isolated Chromium frame check: **60.1 FPS**, above the declared 45 FPS floor.
+- `verify-url.sh` against HTTPS: passed in 631 ms, with title, `lang`, one `h1`, `main`, image alt attributes, labels, and no console or page errors.
+- Live Axe checks: zero serious or critical violations on the landing screen and active phone demo.
 
-Register and test the public 14-result retention limit, or remove the number from public copy. A PASS requires zero findings and zero untested claims.
+## Deployment and live check
+
+Static deployment completed successfully on the existing one-site `sf-seed-sprint` Static Web App. It reused the current durable app and custom domain; no backend, volume, replica, or infrastructure setting was changed.
+
+- Deployment ID: `588596ab-4fd2-4b94-80d6-f94e8f2ce462`.
+- Deployed implementation SHA: `1cfe326029f0b69f15049f675d0846da3214fa77`.
+- HTTPS now serves `/assets/index-D0WxseaJ.js`; the live AVIF response is `image/avif`.
+- Fresh desktop first read, without scrolling: job “Race the same signal puzzle”; audience “puzzle friends” wanting one shared five-minute board without accounts or schedules; first action “Try it with sample data,” which opens a partly solved practice board. The board starts at 132 px.
+- Fresh 390 × 844 touch first read has the same job, audience, and action; the board starts at 684 px, and `scrollWidth` equals 390 px.
+- The live demo opened in one click with the persistent sample label, 4:17 remaining, 11 turns, and 7 of 25 connected route tiles. Reset restored 4:18 and 11 turns. Exit removed demo keys, kept the daily probe unchanged, and opened `/play`.
+- A scripted `LIVE-WIN-2026` round reached the real **Connected** screen at 0:01 with 36 turns. **Play again** restored 5:00, zero turns, and the start control. `LIVE-LOSS-2026` reached the real **Time ended** screen at 5:00.
+- `/`, `/demo`, `/play`, `/privacy`, `/terms`, and a valid `/result` return 200. `/missing-board` returns the designed HTTP 404. Route titles are specific.
+
+Fresh evidence is in `.factory/repair-3-evidence/`, including landing screenshots, win/loss end screens, and `verify.json`.
+
+## Earlier finding disposition
+
+All findings from `verification.md`, `verification-2.md`, `review-1.md`, and `review-2.md` are covered by the current implementation and suite. This includes result and board-link recovery, reset timer, invalid shared data and persisted sessions, 44 px mobile targets, real 404 behavior, stable frame-rate testing, PWA updates, focus contrast, AVIF MIME type, demo state, touch, arrows, metadata, legal/404 shell, copy fixes, sitemap coverage, and useful local history.
+
+The last unresolved item from review 2 was the untested 14-result limit; it is now registered and tested quantitatively.
+
+## Known gaps and next steps
+
+No known release-blocking gaps remain. Seed Sprint is a static, local-first game with no backend or external integration, so server health, tenant isolation, SQLite restart persistence, rate limits, and 429/`Retry-After` checks do not apply.
