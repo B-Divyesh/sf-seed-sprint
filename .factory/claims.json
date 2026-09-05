@@ -92,10 +92,10 @@
   },
   {
     "id": "demo-isolation",
-    "claim": "Demo play uses separate storage and does not change the daily game.",
+    "claim": "Demo play uses separate storage. Reset and Start for real do not change the daily game.",
     "where": "demo banner, privacy, demo documentation",
     "test": "npm test -- --grep @claim:demo-isolation",
-    "sandbox": "fresh /demo; interact and assert every storage key begins with demo:"
+    "sandbox": "fresh /demo with a saved daily probe; interact, reset, and start for real; assert demo keys are cleared, the probe is unchanged, and today’s board opens"
   },
   {
     "id": "keyboard-controls",

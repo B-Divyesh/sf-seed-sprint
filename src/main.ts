@@ -51,7 +51,7 @@ window.addEventListener('popstate', renderRoute);
 function shell(content: string, demo = false): string {
   return `
     <a class="skip-link" href="#main">Skip to main content</a>
-    ${demo ? `<aside class="demo-banner" aria-label="Demo mode"><strong>Demo</strong> — sample board, nothing is saved to your daily game. <span><button data-reset-demo>Reset demo</button><a data-route data-exit-demo href="/">Start for real</a></span></aside>` : ''}
+    ${demo ? `<aside class="demo-banner" aria-label="Demo mode"><strong>Demo</strong> — sample board, nothing is saved to your daily game. <span><button data-reset-demo>Reset demo</button><a data-route data-exit-demo href="/play">Start for real</a></span></aside>` : ''}
     <header class="site-header">
       <a class="wordmark" data-route href="/" aria-label="Seed Sprint home"><span aria-hidden="true">✦</span> Seed Sprint</a>
       <nav aria-label="Main navigation"><a data-route href="/demo">Demo</a><a data-route href="/privacy">Privacy</a><button class="quiet-button" data-help>Show instructions</button></nav>

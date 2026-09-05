@@ -176,14 +176,21 @@ test('@claim:assist-mode assist mode removes the timer and stays on this device'
   await expect(page.getByRole('button', { name: 'Use timer' })).toHaveAttribute('aria-pressed', 'true');
 });
 
-test('@claim:demo-isolation demo uses only its own storage namespace', async ({ page }) => {
+test('@claim:demo-isolation demo uses separate storage and preserves the daily game on reset and exit', async ({ page }) => {
   await page.goto('/demo', { waitUntil: 'domcontentloaded' });
+  await page.evaluate(() => localStorage.setItem('daily:review-probe', 'real-game-data'));
   await page.locator('[data-tile]').first().click();
   const keys = await page.evaluate(() => Object.keys(localStorage));
-  expect(keys.length).toBeGreaterThan(0);
-  expect(keys.every((key) => key.startsWith('demo:'))).toBe(true);
-  await page.getByRole('link', { name: 'Start for real' }).click();
+  expect(keys.filter((key) => key.startsWith('demo:')).length).toBeGreaterThan(0);
+  expect(await page.evaluate(() => localStorage.getItem('daily:review-probe'))).toBe('real-game-data');
+  await page.getByRole('button', { name: 'Reset demo' }).click();
+  expect(await page.evaluate(() => localStorage.getItem('daily:review-probe'))).toBe('real-game-data');
   expect(await page.evaluate(() => Object.keys(localStorage).some((key) => key.startsWith('demo:')))).toBe(false);
+  await page.locator('[data-tile]').first().click();
+  await page.getByRole('link', { name: 'Start for real' }).click();
+  await expect(page).toHaveURL(/\/play$/);
+  expect(await page.evaluate(() => Object.keys(localStorage).some((key) => key.startsWith('demo:')))).toBe(false);
+  expect(await page.evaluate(() => localStorage.getItem('daily:review-probe'))).toBe('real-game-data');
 });
 
 test('@claim:five-minute-limit a timed round ends at five minutes', async ({ page }) => {
