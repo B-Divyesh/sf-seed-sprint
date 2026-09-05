@@ -32,6 +32,7 @@ Run every exact command in `.factory/claims.json` after `npm ci`. All 21 command
 - Production build: passed; `dist/` was generated.
 - Retention claim: passed after 15 completions; visible list contained `RETENTION-15` through `RETENTION-02`, with `RETENTION-01` absent.
 - Isolated Chromium frame check: **60.1 FPS**, above the declared 45 FPS floor.
+- Live mobile Lighthouse: Performance **99**, Accessibility **100**, Best Practices **100**, and SEO **100**.
 - `verify-url.sh` against HTTPS: passed in 631 ms, with title, `lang`, one `h1`, `main`, image alt attributes, labels, and no console or page errors.
 - Live Axe checks: zero serious or critical violations on the landing screen and active phone demo.
 
