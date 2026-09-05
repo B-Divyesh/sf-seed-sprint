@@ -255,21 +255,42 @@ test('@claim:privacy-local game flow sends requests only to its own origin', asy
   expect([...origins]).toEqual(['http://127.0.0.1:4173']);
 });
 
-test('@claim:recent-results finished boards can be viewed, replayed, and cleared locally', async ({ page }) => {
-  await page.goto('/play?seed=RECENT-RESULT', { waitUntil: 'domcontentloaded' });
-  await page.getByRole('button', { name: 'Start five-minute board' }).click();
-  await solveDemo(page);
-  await expect(page.getByText('Connected', { exact: true })).toBeVisible();
-  await page.goto('/play?seed=RECENT-RESULT', { waitUntil: 'domcontentloaded' });
+test('@claim:recent-results the last 14 finished boards can be viewed, replayed, and cleared locally', async ({ page }) => {
+  const seeds = Array.from({ length: 15 }, (_, index) => `RETENTION-${String(index + 1).padStart(2, '0')}`);
+
+  for (const [index, seed] of seeds.entries()) {
+    await page.goto(`/play?seed=${seed}`, { waitUntil: 'domcontentloaded' });
+    const target = Number(await page.locator('[data-tile]').first().getAttribute('data-tile'));
+    const tileCount = await page.locator('.tile').count();
+    await page.evaluate(({ boardSeed, targetTile, length, elapsed }) => {
+      const rotations = Array<number>(length).fill(0);
+      rotations[targetTile] = 3;
+      localStorage.setItem(`daily:session:${boardSeed}`, JSON.stringify({
+        rotations,
+        elapsed,
+        turns: 7,
+        status: 'playing',
+        assist: false
+      }));
+    }, { boardSeed: seed, targetTile: target, length: tileCount, elapsed: index + 1 });
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await page.locator(`[data-tile="${target}"]`).click();
+    await expect(page.getByText('Connected', { exact: true })).toBeVisible();
+  }
+
+  const newestSeed = seeds.at(-1)!;
+  await page.goto(`/play?seed=${newestSeed}`, { waitUntil: 'domcontentloaded' });
   const recent = page.getByRole('region', { name: 'Recent results' });
-  await expect(recent).toContainText('RECENT-RESULT');
+  await expect(recent.locator('.recent-list > li')).toHaveCount(14);
+  expect(await recent.locator('.recent-list strong').allTextContents()).toEqual([...seeds.slice(1)].reverse());
+  await expect(recent).not.toContainText(seeds[0]);
   await expect(recent).toContainText(/Connected in \d:\d{2}/);
-  await recent.getByRole('link', { name: 'View result' }).click();
-  await expect(page).toHaveURL(/\/result\?seed=RECENT-RESULT/);
-  await page.goto('/play?seed=RECENT-RESULT', { waitUntil: 'domcontentloaded' });
-  await page.getByRole('link', { name: 'Replay' }).click();
-  await expect(page).toHaveURL(/\/play\?seed=RECENT-RESULT/);
-  await page.goto('/play?seed=RECENT-RESULT', { waitUntil: 'domcontentloaded' });
+  await recent.getByRole('link', { name: 'View result' }).first().click();
+  await expect(page).toHaveURL(new RegExp(`/result\\?seed=${newestSeed}`));
+  await page.goto(`/play?seed=${newestSeed}`, { waitUntil: 'domcontentloaded' });
+  await page.getByRole('region', { name: 'Recent results' }).getByRole('link', { name: 'Replay' }).first().click();
+  await expect(page).toHaveURL(new RegExp(`/play\\?seed=${newestSeed}`));
+  await page.goto(`/play?seed=${newestSeed}`, { waitUntil: 'domcontentloaded' });
   page.once('dialog', (dialog) => dialog.accept());
   await page.getByRole('button', { name: 'Clear recent results' }).click();
   await expect(page.getByText('Finished boards will appear here.')).toBeVisible();

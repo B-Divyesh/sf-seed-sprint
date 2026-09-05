@@ -120,10 +120,10 @@
   },
   {
     "id": "recent-results",
-    "claim": "Recent finished boards can be viewed, replayed, and cleared in this browser.",
-    "where": "play page and privacy page",
+    "claim": "The last 14 finished boards can be viewed, replayed, and cleared in this browser.",
+    "where": "Recent results section on the play page",
     "test": "npm test -- --grep @claim:recent-results",
-    "sandbox": "fresh /play; complete a board, open the recent result, replay it, then clear local history"
+    "sandbox": "fresh /play; complete 15 distinct boards, assert the newest 14 are listed and the oldest is removed, then view, replay, and clear local history"
   },
   {
     "id": "offline-reload",
