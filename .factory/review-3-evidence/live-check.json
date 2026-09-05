@@ -1,0 +1,492 @@
+{
+  "startedAt": "2026-09-05T20:29:33.546Z",
+  "liveUrl": "https://seed-sprint.sociobot.in",
+  "passCount": 22,
+  "failCount": 0,
+  "results": [
+    {
+      "name": "desktop first screen states job, audience, first action, facts, and shows game",
+      "pass": true,
+      "detail": {
+        "title": "Seed Sprint — play a daily signal puzzle",
+        "h1": "Race the same signal puzzle",
+        "lede": "For puzzle friends who want one shared five-minute board without accounts or schedules.",
+        "action": "Try it with sample data",
+        "outcome": "Opens a partly solved practice board.",
+        "plainFacts": [
+          "Free to play",
+          "Works offline after your first visit",
+          "Progress stays on this device"
+        ],
+        "gameTop": 132,
+        "viewportHeight": 900,
+        "scrollY": 0
+      }
+    },
+    {
+      "name": "desktop landing has zero Axe violations",
+      "pass": true,
+      "detail": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "instructions dialog manages keyboard focus",
+      "pass": true,
+      "detail": {
+        "openedWithEnter": true,
+        "closedWithEscape": true,
+        "focusReturned": true
+      }
+    },
+    {
+      "name": "one-click demo opens populated sample with persistent label",
+      "pass": true,
+      "detail": {
+        "timer": "4:17",
+        "turns": "11",
+        "status": "7 of 25 route tiles connected.",
+        "banner": "Demo — sample board, nothing is saved to your daily game. Reset demo Start for real"
+      }
+    },
+    {
+      "name": "live keyboard controls move, rotate, pause, and resume",
+      "pass": true,
+      "detail": {
+        "ArrowLeft": {
+          "from": 2,
+          "to": 0
+        },
+        "ArrowRight": {
+          "from": 0,
+          "to": 2
+        },
+        "ArrowUp": {
+          "from": 6,
+          "to": 0
+        },
+        "ArrowDown": {
+          "from": 0,
+          "to": 6
+        }
+      }
+    },
+    {
+      "name": "sample reaches real win and result link hides board layout",
+      "pass": true,
+      "detail": {
+        "status": "Connected in 0:43 with 45 turns.",
+        "fields": [
+          "seed",
+          "status",
+          "time",
+          "turns"
+        ],
+        "layoutTilesInResult": 0
+      }
+    },
+    {
+      "name": "demo reset restores sample and leaves real daily session unchanged",
+      "pass": true,
+      "detail": {
+        "dailyKey": "daily:session:2026-09-05",
+        "preserved": true,
+        "demoKeysAfterExit": []
+      }
+    },
+    {
+      "name": "daily board completes, shares, and Play again fully resets",
+      "pass": true,
+      "detail": {
+        "boardCode": "2026-09-05",
+        "endStatus": "Connected in 0:02 with 43 turns.",
+        "restartTimer": "5:00",
+        "restartTurns": 0
+      }
+    },
+    {
+      "name": "clipboard denial exposes selectable fixed board and result links",
+      "pass": true,
+      "detail": {
+        "boardLink": "https://seed-sprint.sociobot.in/play?seed=REVIEW3-COPY&room=LT4X1",
+        "resultLink": "https://seed-sprint.sociobot.in/result?seed=REVIEW3-COPY&status=won&time=2&turns=47"
+      }
+    },
+    {
+      "name": "independent clients open the same fixed board and keep the room on reload",
+      "pass": true,
+      "detail": {
+        "roomLink": "https://seed-sprint.sociobot.in/play?seed=REVIEW3-ROOM&room=12C3K",
+        "room": "Room 12C3K",
+        "independentContexts": 2,
+        "boardSignaturesMatch": true,
+        "reloadKeepsRoom": true
+      }
+    },
+    {
+      "name": "five-minute boundary reaches actual loss screen",
+      "pass": true,
+      "detail": {
+        "timer": "5:00",
+        "turns": "0"
+      }
+    },
+    {
+      "name": "invalid result and invalid saved session recover safely",
+      "pass": true,
+      "detail": {
+        "malformedResultRejected": true,
+        "invalidSessionRemoved": true
+      }
+    },
+    {
+      "name": "assist setting and progress survive reload",
+      "pass": true,
+      "detail": {
+        "timer": "No limit",
+        "turns": 12
+      }
+    },
+    {
+      "name": "live active board sustains at least 45 fps",
+      "pass": true,
+      "detail": {
+        "fps": 60.615094152133956
+      }
+    },
+    {
+      "name": "live 14-result history retains newest, removes oldest, supports view, replay, clear",
+      "pass": true,
+      "detail": {
+        "count": 14,
+        "newest": "R3LIVE-15",
+        "oldestRetained": "R3LIVE-02",
+        "removed": "R3LIVE-01",
+        "view": true,
+        "replay": true,
+        "clear": true
+      }
+    },
+    {
+      "name": "routes have correct status, titles, structure, metadata, legal content, and designed 404",
+      "pass": true,
+      "detail": [
+        {
+          "route": "/",
+          "status": 200,
+          "title": "Seed Sprint — play a daily signal puzzle",
+          "h1": [
+            "Race the same signal puzzle"
+          ],
+          "main": 1,
+          "lang": "en",
+          "canonical": "https://seed-sprint.sociobot.in/",
+          "ogUrl": "https://seed-sprint.sociobot.in/",
+          "description": "Rotate a shared five-minute signal puzzle, then compare results with friends through a link."
+        },
+        {
+          "route": "/demo",
+          "status": 200,
+          "title": "Demo — Seed Sprint",
+          "h1": [
+            "Connect every seed to the sprout"
+          ],
+          "main": 1,
+          "lang": "en",
+          "canonical": "https://seed-sprint.sociobot.in/demo",
+          "ogUrl": "https://seed-sprint.sociobot.in/demo",
+          "description": "Try the partly solved Seed Sprint sample board. Demo play is separate from your daily game."
+        },
+        {
+          "route": "/play",
+          "status": 200,
+          "title": "Play — Seed Sprint",
+          "h1": [
+            "Connect every seed to the sprout"
+          ],
+          "main": 1,
+          "lang": "en",
+          "canonical": "https://seed-sprint.sociobot.in/play",
+          "ogUrl": "https://seed-sprint.sociobot.in/play",
+          "description": "Play a five-minute signal-routing board and share a result when you finish."
+        },
+        {
+          "route": "/privacy",
+          "status": 200,
+          "title": "Privacy — Seed Sprint",
+          "h1": [
+            "Privacy in plain words"
+          ],
+          "main": 1,
+          "lang": "en",
+          "canonical": "https://seed-sprint.sociobot.in/privacy",
+          "ogUrl": "https://seed-sprint.sociobot.in/privacy",
+          "description": "Learn what Seed Sprint saves in this browser and what a shared result link contains."
+        },
+        {
+          "route": "/terms",
+          "status": 200,
+          "title": "Terms — Seed Sprint",
+          "h1": [
+            "Terms of play"
+          ],
+          "main": 1,
+          "lang": "en",
+          "canonical": "https://seed-sprint.sociobot.in/terms",
+          "ogUrl": "https://seed-sprint.sociobot.in/terms",
+          "description": "Read the terms for playing Seed Sprint."
+        },
+        {
+          "route": "/result?seed=ROUTE-5&status=won&time=94&turns=32",
+          "status": 200,
+          "title": "Shared result — Seed Sprint",
+          "h1": [
+            "This board was connected"
+          ],
+          "main": 1,
+          "lang": "en",
+          "canonical": "https://seed-sprint.sociobot.in/result",
+          "ogUrl": "https://seed-sprint.sociobot.in/result",
+          "description": "A Seed Sprint result card shows a time and turn count without showing the board layout."
+        },
+        {
+          "route": "/missing-review-3",
+          "status": 404,
+          "title": "Page not found — Seed Sprint",
+          "h1": [
+            "This board link does not exist"
+          ],
+          "main": 1,
+          "lang": "en",
+          "canonical": "https://seed-sprint.sociobot.in/404",
+          "ogUrl": "https://seed-sprint.sociobot.in/404",
+          "description": "This Seed Sprint board link does not exist. Open today’s board to play."
+        }
+      ]
+    },
+    {
+      "name": "internal links are valid and external link is safely marked",
+      "pass": true,
+      "detail": {
+        "internal": [
+          {
+            "href": "https://seed-sprint.sociobot.in/#main",
+            "status": 200
+          },
+          {
+            "href": "https://seed-sprint.sociobot.in/",
+            "status": 200
+          },
+          {
+            "href": "https://seed-sprint.sociobot.in/demo",
+            "status": 200
+          },
+          {
+            "href": "https://seed-sprint.sociobot.in/privacy",
+            "status": 200
+          },
+          {
+            "href": "https://seed-sprint.sociobot.in/play",
+            "status": 200
+          },
+          {
+            "href": "https://seed-sprint.sociobot.in/terms",
+            "status": 200
+          }
+        ],
+        "externalMarkedWithoutCrossScopeFetch": [
+          {
+            "href": "https://hello-factory.sociobot.in/",
+            "rel": "noreferrer",
+            "text": "Built by Param Factory (external site)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "phone first screen shows job, audience, action, and game without overflow",
+      "pass": true,
+      "detail": {
+        "h1": "Race the same signal puzzle",
+        "lede": "For puzzle friends who want one shared five-minute board without accounts or schedules.",
+        "action": "Try it with sample data",
+        "gameTop": 684.21875,
+        "viewportHeight": 844,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "undersized": [],
+        "tile": {
+          "x": 26,
+          "y": 596.9375,
+          "width": 56.328125,
+          "height": 56.328125
+        },
+        "touchRotated": true
+      }
+    },
+    {
+      "name": "200 percent zoom equivalent keeps content without horizontal overflow",
+      "pass": true,
+      "detail": {
+        "client": 640,
+        "scroll": 640,
+        "h1": "Race the same signal puzzle"
+      }
+    },
+    {
+      "name": "reduced motion removes visible transition and smooth scrolling",
+      "pass": true,
+      "detail": {
+        "transition": "1e-05s",
+        "animation": "1e-05s",
+        "scroll": "auto"
+      }
+    },
+    {
+      "name": "service worker installs and demo reloads offline",
+      "pass": true,
+      "detail": {
+        "active": "https://seed-sprint.sociobot.in/sw.js",
+        "caches": [
+          "seed-sprint-v3"
+        ],
+        "offlineReload": true
+      }
+    },
+    {
+      "name": "live requests stay same-origin with no unexpected console or page errors",
+      "pass": true,
+      "detail": {
+        "requestCount": 375,
+        "origins": [
+          "https://seed-sprint.sociobot.in"
+        ],
+        "expected404": [
+          {
+            "url": "https://seed-sprint.sociobot.in/missing-review-3",
+            "text": "Failed to load resource: the server responded with a status of 404 ()"
+          }
+        ],
+        "unexpectedConsole": [],
+        "pageErrors": []
+      }
+    }
+  ],
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Seed Sprint — play a daily signal puzzle",
+      "h1": [
+        "Race the same signal puzzle"
+      ],
+      "main": 1,
+      "lang": "en",
+      "canonical": "https://seed-sprint.sociobot.in/",
+      "ogUrl": "https://seed-sprint.sociobot.in/",
+      "description": "Rotate a shared five-minute signal puzzle, then compare results with friends through a link."
+    },
+    {
+      "route": "/demo",
+      "status": 200,
+      "title": "Demo — Seed Sprint",
+      "h1": [
+        "Connect every seed to the sprout"
+      ],
+      "main": 1,
+      "lang": "en",
+      "canonical": "https://seed-sprint.sociobot.in/demo",
+      "ogUrl": "https://seed-sprint.sociobot.in/demo",
+      "description": "Try the partly solved Seed Sprint sample board. Demo play is separate from your daily game."
+    },
+    {
+      "route": "/play",
+      "status": 200,
+      "title": "Play — Seed Sprint",
+      "h1": [
+        "Connect every seed to the sprout"
+      ],
+      "main": 1,
+      "lang": "en",
+      "canonical": "https://seed-sprint.sociobot.in/play",
+      "ogUrl": "https://seed-sprint.sociobot.in/play",
+      "description": "Play a five-minute signal-routing board and share a result when you finish."
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "title": "Privacy — Seed Sprint",
+      "h1": [
+        "Privacy in plain words"
+      ],
+      "main": 1,
+      "lang": "en",
+      "canonical": "https://seed-sprint.sociobot.in/privacy",
+      "ogUrl": "https://seed-sprint.sociobot.in/privacy",
+      "description": "Learn what Seed Sprint saves in this browser and what a shared result link contains."
+    },
+    {
+      "route": "/terms",
+      "status": 200,
+      "title": "Terms — Seed Sprint",
+      "h1": [
+        "Terms of play"
+      ],
+      "main": 1,
+      "lang": "en",
+      "canonical": "https://seed-sprint.sociobot.in/terms",
+      "ogUrl": "https://seed-sprint.sociobot.in/terms",
+      "description": "Read the terms for playing Seed Sprint."
+    },
+    {
+      "route": "/result?seed=ROUTE-5&status=won&time=94&turns=32",
+      "status": 200,
+      "title": "Shared result — Seed Sprint",
+      "h1": [
+        "This board was connected"
+      ],
+      "main": 1,
+      "lang": "en",
+      "canonical": "https://seed-sprint.sociobot.in/result",
+      "ogUrl": "https://seed-sprint.sociobot.in/result",
+      "description": "A Seed Sprint result card shows a time and turn count without showing the board layout."
+    },
+    {
+      "route": "/missing-review-3",
+      "status": 404,
+      "title": "Page not found — Seed Sprint",
+      "h1": [
+        "This board link does not exist"
+      ],
+      "main": 1,
+      "lang": "en",
+      "canonical": "https://seed-sprint.sociobot.in/404",
+      "ogUrl": "https://seed-sprint.sociobot.in/404",
+      "description": "This Seed Sprint board link does not exist. Open today’s board to play."
+    }
+  ],
+  "axe": {
+    "desktop landing": [],
+    "instructions dialog": [],
+    "sample win": [],
+    "shared result": [],
+    "/": [],
+    "/demo": [],
+    "/play": [],
+    "/privacy": [],
+    "/terms": [],
+    "/result?seed=ROUTE-5&status=won&time=94&turns=32": [],
+    "designed 404": [],
+    "phone demo": []
+  },
+  "requestOrigins": [
+    "https://seed-sprint.sociobot.in"
+  ],
+  "consoleErrors": [
+    {
+      "url": "https://seed-sprint.sociobot.in/missing-review-3",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    }
+  ],
+  "pageErrors": []
+}

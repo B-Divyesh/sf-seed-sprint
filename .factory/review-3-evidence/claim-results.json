@@ -1,0 +1,202 @@
+{
+  "cleanCheckout": "/tmp/seed-sprint-review3-clean.gGISPL/repo",
+  "commit": "eb864f792f3848b21da26f9f74ca25bb3f87553b",
+  "claimCount": 21,
+  "uniqueCommands": 21,
+  "results": [
+    {
+      "id": "deterministic-board",
+      "command": "npm test -- --grep @claim:deterministic-board",
+      "status": 0,
+      "durationSeconds": 7,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:deterministic-board\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/core.spec.ts:4:1 › @claim:deterministic-board every seed is deterministic and verified (906ms)\n\n  1 passed (5.5s)\n",
+      "stderr": "[WebServer] (node:1227) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:1269) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:1287) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:1287) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "complete-board",
+      "command": "npm test -- --grep @claim:complete-board",
+      "status": 0,
+      "durationSeconds": 8.2,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:complete-board\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:27:1 › @claim:complete-board the demo reaches a result card (2.4s)\n\n  1 passed (6.9s)\n",
+      "stderr": "[WebServer] (node:1346) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:1388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:1406) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:1406) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "demo-seeded-state",
+      "command": "npm test -- --grep @claim:demo-seeded-state",
+      "status": 0,
+      "durationSeconds": 6.5,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:demo-seeded-state\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:35:1 › @claim:demo-seeded-state demo starts partly solved and Reset demo restores it (662ms)\n\n  1 passed (5.2s)\n",
+      "stderr": "[WebServer] (node:1524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:1566) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:1584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:1584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "touch-controls",
+      "command": "npm test -- --grep @claim:touch-controls",
+      "status": 0,
+      "durationSeconds": 6.3,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:touch-controls\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:52:1 › @claim:touch-controls tapping a tile rotates it on a touch screen (454ms)\n\n  1 passed (4.9s)\n",
+      "stderr": "[WebServer] (node:1699) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:1741) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:1759) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:1759) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "free-play",
+      "command": "npm test -- --grep @claim:free-play",
+      "status": 0,
+      "durationSeconds": 6.4,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:free-play\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:63:1 › @claim:free-play a player can start a board without an account or payment (527ms)\n\n  1 passed (5.1s)\n",
+      "stderr": "[WebServer] (node:1877) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:1920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:1938) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:1938) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "share-result",
+      "command": "npm test -- --grep @claim:share-result",
+      "status": 0,
+      "durationSeconds": 8.5,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:share-result\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:70:1 › @claim:share-result copied result links contain only a spoiler-safe result summary (2.6s)\n\n  1 passed (7.2s)\n",
+      "stderr": "[WebServer] (node:2053) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:2095) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:2113) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:2113) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "same-board-link",
+      "command": "npm test -- --grep @claim:same-board-link",
+      "status": 0,
+      "durationSeconds": 6.5,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:same-board-link\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:114:1 › @claim:same-board-link a copied room link opens the identical board for a friend (756ms)\n\n  1 passed (5.2s)\n",
+      "stderr": "[WebServer] (node:2250) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:2292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:2310) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:2310) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "share-recovery",
+      "command": "npm test -- --grep @claim:share-recovery",
+      "status": 0,
+      "durationSeconds": 6.3,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:share-recovery\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:98:1 › @claim:share-recovery clipboard denial exposes a durable board link (518ms)\n\n  1 passed (5.0s)\n",
+      "stderr": "[WebServer] (node:2427) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:2469) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:2487) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:2487) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "no-social-services",
+      "command": "npm test -- --grep @claim:no-social-services",
+      "status": 0,
+      "durationSeconds": 6.2,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:no-social-services\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:126:1 › @claim:no-social-services play has no account, chat, lobby, or endless-feed step (522ms)\n\n  1 passed (5.0s)\n",
+      "stderr": "[WebServer] (node:2604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:2646) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:2664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:2664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "shared-link-fields",
+      "command": "npm test -- --grep @claim:shared-link-fields",
+      "status": 0,
+      "durationSeconds": 8.6,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:shared-link-fields\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:133:1 › @claim:shared-link-fields a result link records seed, result, time, and turns (2.7s)\n\n  1 passed (7.3s)\n",
+      "stderr": "[WebServer] (node:2780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:2822) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:2840) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:2840) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "restart-state",
+      "command": "npm test -- --grep @claim:restart-state",
+      "status": 0,
+      "durationSeconds": 8.5,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:restart-state\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:145:1 › @claim:restart-state a real completed run reaches the end screen and Play again resets it (2.7s)\n\n  1 passed (7.2s)\n",
+      "stderr": "[WebServer] (node:2961) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:3003) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:3021) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:3021) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "progress-reload",
+      "command": "npm test -- --grep @claim:progress-reload",
+      "status": 0,
+      "durationSeconds": 6.5,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:progress-reload\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:160:1 › @claim:progress-reload progress stays on this device (710ms)\n\n  1 passed (5.2s)\n",
+      "stderr": "[WebServer] (node:3154) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:3196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:3214) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:3214) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "five-minute-limit",
+      "command": "npm test -- --grep @claim:five-minute-limit",
+      "status": 0,
+      "durationSeconds": 7.8,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:five-minute-limit\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:196:1 › @claim:five-minute-limit a timed round ends at five minutes (1.0s)\n\n  1 passed (6.5s)\n",
+      "stderr": "[WebServer] (node:3336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:3378) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:3396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:3396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "demo-isolation",
+      "command": "npm test -- --grep @claim:demo-isolation",
+      "status": 0,
+      "durationSeconds": 6.5,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:demo-isolation\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:179:1 › @claim:demo-isolation demo uses separate storage and preserves the daily game on reset and exit (686ms)\n\n  1 passed (5.1s)\n",
+      "stderr": "[WebServer] (node:3514) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:3556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:3574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:3574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "keyboard-controls",
+      "command": "npm test -- --grep @claim:keyboard-controls",
+      "status": 0,
+      "durationSeconds": 6.5,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:keyboard-controls\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:212:1 › @claim:keyboard-controls keyboard controls move focus, rotate, and pause (720ms)\n\n  1 passed (5.2s)\n",
+      "stderr": "[WebServer] (node:3689) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:3732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:3750) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:3750) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "assist-mode",
+      "command": "npm test -- --grep @claim:assist-mode",
+      "status": 0,
+      "durationSeconds": 6.5,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:assist-mode\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:170:1 › @claim:assist-mode assist mode removes the timer and stays on this device (703ms)\n\n  1 passed (5.2s)\n",
+      "stderr": "[WebServer] (node:3869) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:3911) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:3929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:3929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "privacy-local",
+      "command": "npm test -- --grep @claim:privacy-local",
+      "status": 0,
+      "durationSeconds": 6.2,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:privacy-local\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:256:1 › @claim:privacy-local game flow sends requests only to its own origin (504ms)\n\n  1 passed (5.0s)\n",
+      "stderr": "[WebServer] (node:4046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:4089) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:4107) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:4107) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "recent-results",
+      "command": "npm test -- --grep @claim:recent-results",
+      "status": 0,
+      "durationSeconds": 14,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:recent-results\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:265:1 › @claim:recent-results the last 14 finished boards can be viewed, replayed, and cleared locally (6.9s)\n\n  1 passed (12.7s)\n",
+      "stderr": "[WebServer] (node:4245) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:4290) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:4308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:4308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "offline-reload",
+      "command": "npm test -- --grep @claim:offline-reload",
+      "status": 0,
+      "durationSeconds": 7.8,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:offline-reload\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/product.spec.ts:307:1 › @claim:offline-reload works offline after the first visit (833ms)\n\n  1 passed (6.4s)\n",
+      "stderr": "[WebServer] (node:4428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:4471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:4489) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:4489) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "pwa-update",
+      "command": "npm test -- --grep @claim:pwa-update",
+      "status": 0,
+      "durationSeconds": 8,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:pwa-update\n\n\nRunning 1 test using 1 worker\n\n  ✓  1 [chromium] › tests/sw-upgrade.spec.mjs:14:1 › @claim:pwa-update an old cache-first install activates the repaired worker and loads current HTML (2.3s)\n\n  1 passed (6.7s)\n",
+      "stderr": "[WebServer] (node:4606) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:4648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:4666) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:4666) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "id": "frame-rate",
+      "command": "npm test -- --grep @claim:frame-rate --workers=1",
+      "status": 0,
+      "durationSeconds": 8.5,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test --grep @claim:frame-rate --workers=1\n\n\nRunning 1 test using 1 worker\n\nMeasured active board cadence: 60.1 fps\n  ✓  1 [chromium] › tests/product.spec.ts:239:1 › @claim:frame-rate the active board sustains the tested 45 fps floor in isolated Chromium (2.6s)\n\n  1 passed (7.1s)\n",
+      "stderr": "[WebServer] (node:4784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:4826) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:4863) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:4863) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ],
+  "gates": [
+    {
+      "name": "full-suite",
+      "command": "npm test",
+      "status": 0,
+      "durationSeconds": 40,
+      "stdout": "\n> seed-sprint@1.0.1 test\n> playwright test\n\n\nRunning 32 tests using 2 workers\n\n  ✓   1 [chromium] › tests/core.spec.ts:4:1 › @claim:deterministic-board every seed is deterministic and verified (1.7s)\n  ✓   2 [chromium] › tests/product.spec.ts:27:1 › @claim:complete-board the demo reaches a result card (3.4s)\n  ✓   4 [chromium] › tests/product.spec.ts:35:1 › @claim:demo-seeded-state demo starts partly solved and Reset demo restores it (559ms)\n  ✓   3 [chromium] › tests/sw-upgrade.spec.mjs:14:1 › @claim:pwa-update an old cache-first install activates the repaired worker and loads current HTML (2.6s)\n  ✓   6 [chromium] › tests/sw-upgrade.spec.mjs:72:1 › static deployment maps AVIF files to image/avif (9ms)\n  ✓   7 [chromium] › tests/sw-upgrade.spec.mjs:77:1 › built route shells publish their own canonical, Open Graph, and Twitter metadata (61ms)\n  ✓   8 [chromium] › tests/sw-upgrade.spec.mjs:95:1 › the static 404 shell retains navigation, legal links, and route metadata (64ms)\n  ✓   5 [chromium] › tests/product.spec.ts:52:1 › @claim:touch-controls tapping a tile rotates it on a touch screen (473ms)\n  ✓   9 [chromium] › tests/product.spec.ts:63:1 › @claim:free-play a player can start a board without an account or payment (387ms)\n  ✓  10 [chromium] › tests/product.spec.ts:70:1 › @claim:share-result copied result links contain only a spoiler-safe result summary (2.3s)\n  ✓  11 [chromium] › tests/product.spec.ts:82:1 › clipboard denial exposes the generated result link as selectable recovery (2.4s)\n  ✓  12 [chromium] › tests/product.spec.ts:98:1 › @claim:share-recovery clipboard denial exposes a durable board link (434ms)\n  ✓  13 [chromium] › tests/product.spec.ts:114:1 › @claim:same-board-link a copied room link opens the identical board for a friend (532ms)\n  ✓  14 [chromium] › tests/product.spec.ts:126:1 › @claim:no-social-services play has no account, chat, lobby, or endless-feed step (302ms)\n  ✓  15 [chromium] › tests/product.spec.ts:133:1 › @claim:shared-link-fields a result link records seed, result, time, and turns (2.4s)\n  ✓  16 [chromium] › tests/product.spec.ts:145:1 › @claim:restart-state a real completed run reaches the end screen and Play again resets it (2.5s)\n  ✓  17 [chromium] › tests/product.spec.ts:160:1 › @claim:progress-reload progress stays on this device (480ms)\n  ✓  18 [chromium] › tests/product.spec.ts:170:1 › @claim:assist-mode assist mode removes the timer and stays on this device (481ms)\n  ✓  19 [chromium] › tests/product.spec.ts:179:1 › @claim:demo-isolation demo uses separate storage and preserves the daily game on reset and exit (597ms)\n  ✓  20 [chromium] › tests/product.spec.ts:196:1 › @claim:five-minute-limit a timed round ends at five minutes (905ms)\n  ✓  21 [chromium] › tests/product.spec.ts:212:1 › @claim:keyboard-controls keyboard controls move focus, rotate, and pause (583ms)\nMeasured active board cadence: 60.5 fps\n  ✓  22 [chromium] › tests/product.spec.ts:239:1 › @claim:frame-rate the active board sustains the tested 45 fps floor in isolated Chromium (2.5s)\n  ✓  23 [chromium] › tests/product.spec.ts:256:1 › @claim:privacy-local game flow sends requests only to its own origin (361ms)\n  ✓  24 [chromium] › tests/product.spec.ts:265:1 › @claim:recent-results the last 14 finished boards can be viewed, replayed, and cleared locally (5.1s)\n  ✓  25 [chromium] › tests/product.spec.ts:307:1 › @claim:offline-reload works offline after the first visit (599ms)\n  ✓  26 [chromium] › tests/product.spec.ts:320:1 › landing page passes structure and automated accessibility checks (1.3s)\n  ✓  27 [chromium] › tests/product.spec.ts:336:1 › mobile layout fits 390px and keeps game targets usable (294ms)\n  ✓  28 [chromium] › tests/product.spec.ts:354:1 › play screen and instructions pass automated accessibility checks (1.7s)\n  ✓  29 [chromium] › tests/product.spec.ts:364:1 › privacy, terms, result, and missing routes render one heading (620ms)\n  ✓  30 [chromium] › tests/product.spec.ts:372:1 › malformed shared-result values are rejected with a safe recovery screen (222ms)\n  ✓  31 [chromium] › tests/product.spec.ts:379:1 › invalid persisted sessions are rejected field by field (1.5s)\n  ✓  32 [chromium] › tests/product.spec.ts:404:1 › keyboard focus indicator clears 3:1 contrast on both paper surfaces (288ms)\n\n  32 passed (38.7s)\n",
+      "stderr": "[WebServer] (node:4979) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:5022) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:5041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:5040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:5041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:5040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "name": "build",
+      "command": "npm run build",
+      "status": 0,
+      "durationSeconds": 2.3,
+      "stdout": "\n> seed-sprint@1.0.1 build\n> tsc --noEmit && vite build && node tools/render-route-shells.mjs\n\nvite v7.3.6 building client environment for production...\ntransforming...\n✓ 5 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                  1.65 kB │ gzip: 0.59 kB\ndist/assets/index-BCq4_LNO.css  15.01 kB │ gzip: 4.24 kB\ndist/assets/index-D0WxseaJ.js   25.40 kB │ gzip: 9.30 kB │ map: 61.17 kB\n✓ built in 240ms\n",
+      "stderr": ""
+    },
+    {
+      "name": "audit",
+      "command": "npm audit --audit-level=high",
+      "status": 0,
+      "durationSeconds": 0.5,
+      "stdout": "found 0 vulnerabilities\n",
+      "stderr": ""
+    }
+  ]
+}
