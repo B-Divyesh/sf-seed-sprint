@@ -1,0 +1,41 @@
+{
+  "win": {
+    "status": "Connected in 0:02 with 43 turns.",
+    "scrollWidth": 390,
+    "clientWidth": 390
+  },
+  "winTarget": {
+    "x": 205.5,
+    "y": 691.5625,
+    "width": 118,
+    "height": 47.5
+  },
+  "winReset": {
+    "timer": "5:00",
+    "turns": "0",
+    "startVisible": true
+  },
+  "loss": {
+    "status": "Time ended. Restart this board to try again.",
+    "timer": "5:00",
+    "scrollWidth": 390,
+    "clientWidth": 390
+  },
+  "lossResult": {
+    "url": "https://seed-sprint.sociobot.in/result?seed=REVIEW5-PHONE-LOSS&status=lost&time=300&turns=0",
+    "heading": "This board beat the clock",
+    "layoutTiles": 0
+  },
+  "lossTarget": {
+    "x": 205.5,
+    "y": 691.5625,
+    "width": 118,
+    "height": 47.5
+  },
+  "lossReset": {
+    "timer": "5:00",
+    "turns": "0",
+    "startVisible": true
+  },
+  "errors": []
+}

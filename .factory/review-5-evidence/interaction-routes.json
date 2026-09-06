@@ -1,0 +1,470 @@
+{
+  "links": [
+    {
+      "route": "/",
+      "documentStatus": 200,
+      "links": [
+        {
+          "text": "Skip to main content",
+          "href": "https://seed-sprint.sociobot.in/#main",
+          "rel": "",
+          "checked": true,
+          "inPage": true
+        },
+        {
+          "text": "✦ Seed Sprint",
+          "href": "https://seed-sprint.sociobot.in/",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Demo",
+          "href": "https://seed-sprint.sociobot.in/demo",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Try it with sample data",
+          "href": "https://seed-sprint.sociobot.in/demo",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Play today’s board",
+          "href": "https://seed-sprint.sociobot.in/play",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Terms",
+          "href": "https://seed-sprint.sociobot.in/terms",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Built by Param Factory (external site)",
+          "href": "https://hello-factory.sociobot.in/",
+          "rel": "noreferrer",
+          "checked": false,
+          "reason": "outside product scope"
+        }
+      ]
+    },
+    {
+      "route": "/demo",
+      "documentStatus": 200,
+      "links": [
+        {
+          "text": "Skip to main content",
+          "href": "https://seed-sprint.sociobot.in/demo#main",
+          "rel": "",
+          "checked": true,
+          "inPage": true
+        },
+        {
+          "text": "Start for real",
+          "href": "https://seed-sprint.sociobot.in/play",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "✦ Seed Sprint",
+          "href": "https://seed-sprint.sociobot.in/",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Demo",
+          "href": "https://seed-sprint.sociobot.in/demo",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Terms",
+          "href": "https://seed-sprint.sociobot.in/terms",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Built by Param Factory (external site)",
+          "href": "https://hello-factory.sociobot.in/",
+          "rel": "noreferrer",
+          "checked": false,
+          "reason": "outside product scope"
+        }
+      ]
+    },
+    {
+      "route": "/play",
+      "documentStatus": 200,
+      "links": [
+        {
+          "text": "Skip to main content",
+          "href": "https://seed-sprint.sociobot.in/play#main",
+          "rel": "",
+          "checked": true,
+          "inPage": true
+        },
+        {
+          "text": "✦ Seed Sprint",
+          "href": "https://seed-sprint.sociobot.in/",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Demo",
+          "href": "https://seed-sprint.sociobot.in/demo",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Terms",
+          "href": "https://seed-sprint.sociobot.in/terms",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Built by Param Factory (external site)",
+          "href": "https://hello-factory.sociobot.in/",
+          "rel": "noreferrer",
+          "checked": false,
+          "reason": "outside product scope"
+        }
+      ]
+    },
+    {
+      "route": "/privacy",
+      "documentStatus": 200,
+      "links": [
+        {
+          "text": "Skip to main content",
+          "href": "https://seed-sprint.sociobot.in/privacy#main",
+          "rel": "",
+          "checked": true,
+          "inPage": true
+        },
+        {
+          "text": "✦ Seed Sprint",
+          "href": "https://seed-sprint.sociobot.in/",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Demo",
+          "href": "https://seed-sprint.sociobot.in/demo",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Terms",
+          "href": "https://seed-sprint.sociobot.in/terms",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Built by Param Factory (external site)",
+          "href": "https://hello-factory.sociobot.in/",
+          "rel": "noreferrer",
+          "checked": false,
+          "reason": "outside product scope"
+        }
+      ]
+    },
+    {
+      "route": "/terms",
+      "documentStatus": 200,
+      "links": [
+        {
+          "text": "Skip to main content",
+          "href": "https://seed-sprint.sociobot.in/terms#main",
+          "rel": "",
+          "checked": true,
+          "inPage": true
+        },
+        {
+          "text": "✦ Seed Sprint",
+          "href": "https://seed-sprint.sociobot.in/",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Demo",
+          "href": "https://seed-sprint.sociobot.in/demo",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Terms",
+          "href": "https://seed-sprint.sociobot.in/terms",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Built by Param Factory (external site)",
+          "href": "https://hello-factory.sociobot.in/",
+          "rel": "noreferrer",
+          "checked": false,
+          "reason": "outside product scope"
+        }
+      ]
+    },
+    {
+      "route": "/result?seed=LINK-5&status=won&time=94&turns=32",
+      "documentStatus": 200,
+      "links": [
+        {
+          "text": "Skip to main content",
+          "href": "https://seed-sprint.sociobot.in/result?seed=LINK-5&status=won&time=94&turns=32#main",
+          "rel": "",
+          "checked": true,
+          "inPage": true
+        },
+        {
+          "text": "✦ Seed Sprint",
+          "href": "https://seed-sprint.sociobot.in/",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Demo",
+          "href": "https://seed-sprint.sociobot.in/demo",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Play this board",
+          "href": "https://seed-sprint.sociobot.in/play?seed=LINK-5",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Terms",
+          "href": "https://seed-sprint.sociobot.in/terms",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Built by Param Factory (external site)",
+          "href": "https://hello-factory.sociobot.in/",
+          "rel": "noreferrer",
+          "checked": false,
+          "reason": "outside product scope"
+        }
+      ]
+    },
+    {
+      "route": "/missing-review-5-links",
+      "documentStatus": 404,
+      "links": [
+        {
+          "text": "Skip to main content",
+          "href": "https://seed-sprint.sociobot.in/missing-review-5-links#main",
+          "rel": "",
+          "checked": true,
+          "inPage": true
+        },
+        {
+          "text": "✦ Seed Sprint",
+          "href": "https://seed-sprint.sociobot.in/",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Demo",
+          "href": "https://seed-sprint.sociobot.in/demo",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Open today’s board",
+          "href": "https://seed-sprint.sociobot.in/",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Open today’s board",
+          "href": "https://seed-sprint.sociobot.in/",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Privacy",
+          "href": "https://seed-sprint.sociobot.in/privacy",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Terms",
+          "href": "https://seed-sprint.sociobot.in/terms",
+          "rel": "",
+          "checked": true,
+          "status": 200
+        },
+        {
+          "text": "Built by Param Factory (external site)",
+          "href": "https://hello-factory.sociobot.in/",
+          "rel": "noreferrer",
+          "checked": false,
+          "reason": "outside product scope"
+        }
+      ]
+    }
+  ],
+  "skipLink": {
+    "hash": "#main",
+    "activeTag": "H1",
+    "activeWithinMain": true,
+    "scrollY": 0
+  },
+  "nativeKeyboard": {
+    "before": "tile route r0 ",
+    "afterEnter": "tile route r1 ",
+    "afterSpace": "tile route r2 "
+  },
+  "visibilityPause": {
+    "resumeVisible": true,
+    "pauseDialogVisible": true
+  },
+  "routeFocus": {
+    "demo": {
+      "path": "/demo",
+      "active": "H1",
+      "text": "Connect every seed to the sprout"
+    },
+    "back": {
+      "path": "/",
+      "active": "H1",
+      "text": "Race the same signal puzzle"
+    },
+    "forward": {
+      "path": "/demo",
+      "active": "H1",
+      "text": "Connect every seed to the sprout"
+    }
+  },
+  "securityHeaders": {
+    "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+    "strict-transport-security": "max-age=10886400; includeSubDomains; preload",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()"
+  }
+}
