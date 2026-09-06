@@ -1,0 +1,37 @@
+{
+  "win": {
+    "status": "Connected in 0:02 with 51 turns.",
+    "scrollWidth": 390,
+    "clientWidth": 390
+  },
+  "replay": {
+    "timer": "5:00",
+    "turns": "0",
+    "startVisible": true
+  },
+  "loss": {
+    "status": "Time ended. Restart this board to try again.",
+    "timer": "5:00",
+    "scrollWidth": 390,
+    "clientWidth": 390
+  },
+  "lossReset": {
+    "timer": "5:00",
+    "turns": "0",
+    "startVisible": true
+  },
+  "targets": {
+    "winPlayAgain": {
+      "x": 205.5,
+      "y": 691.5625,
+      "width": 118,
+      "height": 47.5
+    },
+    "lossPlayAgain": {
+      "x": 205.5,
+      "y": 691.5625,
+      "width": 118,
+      "height": 47.5
+    }
+  }
+}

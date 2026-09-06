@@ -1,0 +1,188 @@
+{
+  "checkout": "49548c89d2897dee44a686a12a71a1b1c5498d42",
+  "implementation": "1cfe326029f0b69f15049f675d0846da3214fa77",
+  "prerequisites": {
+    "command": "npm ci",
+    "status": "PASS",
+    "packages": 22,
+    "vulnerabilities": 0
+  },
+  "manifest": {
+    "claimCount": 21,
+    "uniqueIdCount": 21,
+    "oneTaggedTestEach": true
+  },
+  "claims": [
+    {
+      "id": "deterministic-board",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:deterministic-board",
+      "outputTail": "created) [WebServer] (node:2966) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:2985) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:2985) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/core.spec.ts:4:1 › @claim:deterministic-board every seed is deterministic and verified (878ms)    1 passed (5.0s)"
+    },
+    {
+      "id": "complete-board",
+      "status": "PASS",
+      "seconds": 8,
+      "command": "npm test -- --grep @claim:complete-board",
+      "outputTail": "warning was created) [WebServer] (node:3096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:3114) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:3114) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:27:1 › @claim:complete-board the demo reaches a result card (2.3s)    1 passed (6.8s)"
+    },
+    {
+      "id": "demo-seeded-state",
+      "status": "PASS",
+      "seconds": 7,
+      "command": "npm test -- --grep @claim:demo-seeded-state",
+      "outputTail": "erver] (node:3282) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:3300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:3300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:35:1 › @claim:demo-seeded-state demo starts partly solved and Reset demo restores it (575ms)    1 passed (5.0s)"
+    },
+    {
+      "id": "touch-controls",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:touch-controls",
+      "outputTail": "eated) [WebServer] (node:3473) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:3491) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:3491) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:52:1 › @claim:touch-controls tapping a tile rotates it on a touch screen (440ms)    1 passed (4.8s)"
+    },
+    {
+      "id": "free-play",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:free-play",
+      "outputTail": "WebServer] (node:3661) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:3679) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:3679) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:63:1 › @claim:free-play a player can start a board without an account or payment (480ms)    1 passed (4.9s)"
+    },
+    {
+      "id": "share-result",
+      "status": "PASS",
+      "seconds": 8,
+      "command": "npm test -- --grep @claim:share-result",
+      "outputTail": "r] (node:3869) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:3887) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:3887) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:70:1 › @claim:share-result copied result links contain only a spoiler-safe result summary (2.3s)    1 passed (6.7s)"
+    },
+    {
+      "id": "same-board-link",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:same-board-link",
+      "outputTail": "r] (node:4059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:4077) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:4077) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:114:1 › @claim:same-board-link a copied room link opens the identical board for a friend (628ms)    1 passed (5.0s)"
+    },
+    {
+      "id": "share-recovery",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:share-recovery",
+      "outputTail": "ted) [WebServer] (node:4246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:4264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:4264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:98:1 › @claim:share-recovery clipboard denial exposes a durable board link (502ms)    1 passed (4.9s)"
+    },
+    {
+      "id": "no-social-services",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:no-social-services",
+      "outputTail": "r] (node:4454) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:4472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:4472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:126:1 › @claim:no-social-services play has no account, chat, lobby, or endless-feed step (404ms)    1 passed (4.8s)"
+    },
+    {
+      "id": "shared-link-fields",
+      "status": "PASS",
+      "seconds": 8,
+      "command": "npm test -- --grep @claim:shared-link-fields",
+      "outputTail": "erver] (node:4642) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:4660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:4660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:133:1 › @claim:shared-link-fields a result link records seed, result, time, and turns (2.4s)    1 passed (6.8s)"
+    },
+    {
+      "id": "restart-state",
+      "status": "PASS",
+      "seconds": 8,
+      "command": "npm test -- --grep @claim:restart-state",
+      "outputTail": ":4830) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:4848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:4848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:145:1 › @claim:restart-state a real completed run reaches the end screen and Play again resets it (2.6s)    1 passed (7.0s)"
+    },
+    {
+      "id": "progress-reload",
+      "status": "PASS",
+      "seconds": 7,
+      "command": "npm test -- --grep @claim:progress-reload",
+      "outputTail": "rning was created) [WebServer] (node:5017) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:5035) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:5035) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:160:1 › @claim:progress-reload progress stays on this device (614ms)    1 passed (5.0s)"
+    },
+    {
+      "id": "five-minute-limit",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:five-minute-limit",
+      "outputTail": "was created) [WebServer] (node:5204) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:5222) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:5222) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:196:1 › @claim:five-minute-limit a timed round ends at five minutes (1.0s)    1 passed (5.4s)"
+    },
+    {
+      "id": "demo-isolation",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:demo-isolation",
+      "outputTail": "Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:5429) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:5429) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:179:1 › @claim:demo-isolation demo uses separate storage and preserves the daily game on reset and exit (625ms)    1 passed (5.0s)"
+    },
+    {
+      "id": "keyboard-controls",
+      "status": "PASS",
+      "seconds": 7,
+      "command": "npm test -- --grep @claim:keyboard-controls",
+      "outputTail": "WebServer] (node:5599) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:5617) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:5617) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:212:1 › @claim:keyboard-controls keyboard controls move focus, rotate, and pause (602ms)    1 passed (5.0s)"
+    },
+    {
+      "id": "assist-mode",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:assist-mode",
+      "outputTail": "ebServer] (node:5785) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:5803) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:5803) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:170:1 › @claim:assist-mode assist mode removes the timer and stays on this device (534ms)    1 passed (4.9s)"
+    },
+    {
+      "id": "privacy-local",
+      "status": "PASS",
+      "seconds": 6,
+      "command": "npm test -- --grep @claim:privacy-local",
+      "outputTail": "d) [WebServer] (node:5973) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:6009) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:6009) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:256:1 › @claim:privacy-local game flow sends requests only to its own origin (421ms)    1 passed (4.8s)"
+    },
+    {
+      "id": "recent-results",
+      "status": "PASS",
+      "seconds": 10,
+      "command": "npm test -- --grep @claim:recent-results",
+      "outputTail": ") Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:6199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:6199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:265:1 › @claim:recent-results the last 14 finished boards can be viewed, replayed, and cleared locally (5.0s)    1 passed (9.4s)"
+    },
+    {
+      "id": "offline-reload",
+      "status": "PASS",
+      "seconds": 7,
+      "command": "npm test -- --grep @claim:offline-reload",
+      "outputTail": "was created) [WebServer] (node:6372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:6390) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:6390) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/product.spec.ts:307:1 › @claim:offline-reload works offline after the first visit (675ms)    1 passed (5.1s)"
+    },
+    {
+      "id": "pwa-update",
+      "status": "PASS",
+      "seconds": 8,
+      "command": "npm test -- --grep @claim:pwa-update",
+      "outputTail": "ing: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:6577) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:6577) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created)   ✓  1 [chromium] › tests/sw-upgrade.spec.mjs:14:1 › @claim:pwa-update an old cache-first install activates the repaired worker and loads current HTML (2.3s)    1 passed (6.6s)"
+    },
+    {
+      "id": "frame-rate",
+      "status": "PASS",
+      "seconds": 8,
+      "command": "npm test -- --grep @claim:frame-rate --workers=1",
+      "outputTail": "gnored due to the 'FORCE_COLOR' env being set. [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)  Running 1 test using 1 worker  (node:6765) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) (node:6765) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set. (Use `node --trace-warnings ...` to show where the warning was created) Measured active board cadence: 60.1 fps   ✓  1 [chromium] › tests/product.spec.ts:239:1 › @claim:frame-rate the active board sustains the tested 45 fps floor in isolated Chromium (2.6s)    1 passed (7.0s)"
+    }
+  ],
+  "summary": {
+    "pass": 21,
+    "fail": 0
+  },
+  "gates": {
+    "npmTest": {
+      "status": "PASS",
+      "tests": 32,
+      "durationSeconds": 35.9
+    },
+    "npmRunBuild": {
+      "status": "PASS",
+      "dist": true,
+      "jsRawBytes": 25404,
+      "jsGzipBytes": 9282,
+      "cssRawBytes": 15013,
+      "cssGzipBytes": 4250
+    },
+    "npmAuditHigh": {
+      "status": "PASS",
+      "vulnerabilities": 0
+    },
+    "frameRateClaimFps": 60.1
+  }
+}
